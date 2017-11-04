@@ -5,18 +5,18 @@
   
   <title>lifeCycle | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重要一讲：生存周期生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容">
+  <meta name="description" content="生存周期生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容">
 <meta name="keywords" content="javascript,vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lifeCycle">
 <meta property="og:url" content="http://yoursite.com/2017/11/04/lifeCycle/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="重要一讲：生存周期生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容">
+<meta property="og:description" content="生存周期生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-04T04:10:03.234Z">
+<meta property="og:updated_time" content="2017-11-04T04:12:51.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lifeCycle">
-<meta name="twitter:description" content="重要一讲：生存周期生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容">
+<meta name="twitter:description" content="生存周期生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -101,14 +101,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="重要一讲：生存周期"><a href="#重要一讲：生存周期" class="headerlink" title="重要一讲：生存周期"></a>重要一讲：生存周期</h1><h2 id="生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容"><a href="#生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容" class="headerlink" title="生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容"></a>生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容</h2><a id="more"></a>
+        <h1 id="生存周期"><a href="#生存周期" class="headerlink" title="生存周期"></a>生存周期</h1><h2 id="生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容"><a href="#生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容" class="headerlink" title="生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容"></a>生存周期是想设置vue的哪些动作或者是vue在网页中的一些我们肉眼看不到的行为？带着这样的问题，我们可以进一步的学习下面的内容</h2><a id="more"></a>
 <h2 id="1、首先我先简单的介绍一下什么是生存周期。Vue实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、卸载等一系列过程，我们称这是Vue的生命周期。通俗说就是Vue实例从创建到销毁的过程，就是生命周期。它也叫做钩子函数。"><a href="#1、首先我先简单的介绍一下什么是生存周期。Vue实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、卸载等一系列过程，我们称这是Vue的生命周期。通俗说就是Vue实例从创建到销毁的过程，就是生命周期。它也叫做钩子函数。" class="headerlink" title="1、首先我先简单的介绍一下什么是生存周期。Vue实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、卸载等一系列过程，我们称这是Vue的生命周期。通俗说就是Vue实例从创建到销毁的过程，就是生命周期。它也叫做钩子函数。"></a>1、首先我先简单的介绍一下什么是生存周期。Vue实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、卸载等一系列过程，我们称这是Vue的生命周期。通俗说就是Vue实例从创建到销毁的过程，就是生命周期。它也叫做钩子函数。</h2><h2 id="2、它有一系列的事件，如beforeCreate-创建之前-、created（创建之后）、beforeCompile（编译之前）、compiled（编译之后）、ready（将文本节点插入到文档中）；销毁事件：beforeDestroy（销毁之前）、destroyed（销毁之后）。"><a href="#2、它有一系列的事件，如beforeCreate-创建之前-、created（创建之后）、beforeCompile（编译之前）、compiled（编译之后）、ready（将文本节点插入到文档中）；销毁事件：beforeDestroy（销毁之前）、destroyed（销毁之后）。" class="headerlink" title="2、它有一系列的事件，如beforeCreate(创建之前)、created（创建之后）、beforeCompile（编译之前）、compiled（编译之后）、ready（将文本节点插入到文档中）；销毁事件：beforeDestroy（销毁之前）、destroyed（销毁之后）。"></a>2、它有一系列的事件，如beforeCreate(创建之前)、created（创建之后）、beforeCompile（编译之前）、compiled（编译之后）、ready（将文本节点插入到文档中）；销毁事件：beforeDestroy（销毁之前）、destroyed（销毁之后）。</h2><h2 id="3、它的使用的方法："><a href="#3、它的使用的方法：" class="headerlink" title="3、它的使用的方法："></a>3、它的使用的方法：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  <span class="keyword">var</span> vm=<span class="keyword">new</span> Vue(&#123;</div><div class="line">    el:<span class="string">'#box'</span>,</div><div class="line">    data:&#123;</div><div class="line">      msg:<span class="string">'well'</span></div><div class="line">    &#125;,</div><div class="line">    created:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      alert(<span class="string">'实例创建完成'</span>);</div><div class="line">    &#125;,</div><div class="line">    beforeCompile:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      alert(<span class="string">'编译之前'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">  &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="4、如点击页面销毁vue对象："><a href="#4、如点击页面销毁vue对象：" class="headerlink" title="4、如点击页面销毁vue对象："></a>4、如点击页面销毁vue对象：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  vm.$destroy();<span class="comment">//vm实例</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/04/lifeCycle/" data-id="cj9kt93cp000tisvp54ni60oi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/04/lifeCycle/" data-id="cj9ktdb0d000u5ovptr6nf1pr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
