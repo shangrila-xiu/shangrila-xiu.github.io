@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="SQL的一些问题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-11T11:09:54.670Z">
+<meta property="og:updated_time" content="2017-11-11T12:59:34.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="connectionsql">
 <meta name="twitter:description" content="SQL的一些问题">
@@ -43,9 +43,9 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>12</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>11</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>15</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>12</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -111,11 +111,20 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">Exception report</div><div class="line"></div><div class="line">message</div><div class="line"></div><div class="line">description The server encountered an internal error () that prevented it from fulfilling this request.</div><div class="line"></div><div class="line">exception</div><div class="line"></div><div class="line">org.apache.jasper.JasperException: Unable to compile class for JSP:</div><div class="line"></div><div class="line">An error occurred at line: 19 in E:\aboutmyeclipse\apache-tomcat-7.0.42\work\Catalina\localhost\testsql\org\apache\jsp\index_jsp.java/</div><div class="line"></div><div class="line">Stacktrace:</div><div class="line">org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)</div><div class="line">org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)</div><div class="line">org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)</div><div class="line">org.apache.jasper.compiler.Compiler.compile(Compiler.java:308)</div><div class="line">org.apache.jasper.compiler.Compiler.compile(Compiler.java:286)</div><div class="line">org.apache.jasper.compiler.Compiler.compile(Compiler.java:273)</div><div class="line">org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)</div><div class="line">org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)</div><div class="line">org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:320)</div><div class="line">org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)</div><div class="line">javax.servlet.http.HttpServlet.service(HttpServlet.java:803)</div><div class="line">com.xj.mobile.filter.EncodingFilter.doFilter(EncodingFilter.java:27)</div></pre></td></tr></table></figure>
 <h4 id="对于上面的那个的详细解决方法是："><a href="#对于上面的那个的详细解决方法是：" class="headerlink" title="对于上面的那个的详细解决方法是："></a>对于上面的那个的详细解决方法是：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1：下载mysql-connector-java-x.x.x-bin.jar，目前最新版为mysql-connector-java-5.1.22-bin.jar。</div><div class="line">在Eclipse中，选择 项目-&gt;属性-&gt;Java构建路径，在“库”选项卡中，选择“添加外部JAR”，找到下载的mysql-connector-java-5.1.22-bin.jar文件，将其添加进项目。</div><div class="line"></div><div class="line">2： 在web项目中还需要把jar 文件放入tomcat 的lib 目录中</div></pre></td></tr></table></figure>
 <h2 id="3、引入的外部的jar包为啥进不去WEB-INF的lib"><a href="#3、引入的外部的jar包为啥进不去WEB-INF的lib" class="headerlink" title="3、引入的外部的jar包为啥进不去WEB-INF的lib"></a>3、引入的外部的jar包为啥进不去WEB-INF的lib</h2><p>解决方法：直接找到mysql-connector-java-5.1.22-bin.jar，然后复制，并粘贴到web项目的WEB_INF的lib目录下面即可。</p>
+<h2 id="4、访问出错："><a href="#4、访问出错：" class="headerlink" title="4、访问出错："></a>4、访问出错：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">org.apache.jasper.JasperException: java.lang.NullPointerException	org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:549)	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:470)	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)	javax.servlet.http.HttpServlet.service(HttpServlet.java:728)</div></pre></td></tr></table></figure>
+<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><p><u>你的工程/WEB-INF/lib下面看有没有servlet-api.jar、jsp-api.jar 等在Apache Software Foundation/Tomcat6.0/lib 下面已经存在的jar包， 如果有则删除。重启后，问题解决。</u></p>
+<p>但是我的问题并没有解决：</p>
+<p>报错如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Stacktrace:</div><div class="line">	org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:568)</div><div class="line">	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:470)</div><div class="line">	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)</div><div class="line">	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)</div><div class="line">	javax.servlet.http.HttpServlet.service(HttpServlet.java:728)</div><div class="line"></div><div class="line">root cause</div><div class="line"></div><div class="line">java.lang.NullPointerException</div><div class="line">	org.apache.jsp.check_005flogin_jsp._jspService(check_005flogin_jsp.java:90)</div><div class="line">	org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)</div><div class="line">	javax.servlet.http.HttpServlet.service(HttpServlet.java:728)</div><div class="line">	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)</div><div class="line">	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)</div><div class="line">	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)</div><div class="line">	javax.servlet.http.HttpServlet.service(HttpServlet.java:728)</div></pre></td></tr></table></figure>
+<p>对于上述的解决办法是：（在程序中，我的表名写错了！）</p>
+<p>一：是在你的SQL语句上做修改，产生NULL的原因有可能是你数据库里的值就是NULL，这种情况可以用ORACLE的NVL函数来解决，例如：NVL(NULL, 0)；</p>
+<p> 二：是在jsp页面做修改，虽然传到前台的值是NULL，可以在jsp页面把NULL转换成你所需要的值。例如：可以通过if语句判断后把你要显示在jsp页面的值赋予你想要的值（0）。</p>
+<p><strong>我改 表名之后就没有报错了</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/11/connectionsql/" data-id="cj9v8by0a0000hgvp6oewj8di" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/11/connectionsql/" data-id="cj9wbnufg0002nwvpcmph9s15" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
@@ -126,9 +135,18 @@
     
 <nav id="article-nav">
   
+    <a href="/2017/11/12/jsp-login/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          jsp_login
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/11/04/lifeCycle/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ouder</strong>
       <div class="article-nav-title">lifeCycle</div>
     </a>
   
@@ -178,9 +196,9 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>12</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>11</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>15</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>12</strong><br>标签</div></a>
     </div>
 
 

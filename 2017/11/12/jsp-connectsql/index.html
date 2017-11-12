@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jsp_connectsql | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="jsp&amp;amp;sql今天要说的是数据库和web的连接问题，首先我先新建了一个目录来测试。">
+<meta name="keywords" content="sql,jsp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jsp_connectsql">
+<meta property="og:url" content="http://yoursite.com/2017/11/12/jsp-connectsql/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="jsp&amp;amp;sql今天要说的是数据库和web的连接问题，首先我先新建了一个目录来测试。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-12T05:15:25.361Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jsp_connectsql">
+<meta name="twitter:description" content="jsp&amp;amp;sql今天要说的是数据库和web的连接问题，首先我先新建了一个目录来测试。">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>15</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>12</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-jsp-connectsql" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/12/jsp-connectsql/" class="article-date">
+  <time class="post-time" datetime="2017-11-12T04:49:20.000Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">12</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jsp_connectsql
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/关于jspweb项目连接数据库的一些操作/">关于jspweb项目连接数据库的一些操作</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jsp-amp-sql"><a href="#jsp-amp-sql" class="headerlink" title="jsp&amp;sql"></a>jsp&amp;sql</h1><h2 id="今天要说的是数据库和web的连接问题，首先我先新建了一个目录来测试。"><a href="#今天要说的是数据库和web的连接问题，首先我先新建了一个目录来测试。" class="headerlink" title="今天要说的是数据库和web的连接问题，首先我先新建了一个目录来测试。"></a>今天要说的是数据库和web的连接问题，首先我先新建了一个目录来测试。</h2><a id="more"></a>
+<h2 id="一、测试连接成功的代码："><a href="#一、测试连接成功的代码：" class="headerlink" title="一、测试连接成功的代码："></a>一、测试连接成功的代码：</h2><p>当然的把mysql-connector-java-5.1.13-bin.jar放到项目中。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</div><div class="line">&lt;%</div><div class="line">String path = request.getContextPath();</div><div class="line">String basePath = request.getScheme()+<span class="string">"://"</span>+request.getServerName()+<span class="string">":"</span>+request.getServerPort()+path+<span class="string">"/"</span>;</div><div class="line">%&gt;</div><div class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"com.mysql.jdbc.Driver"</span>%&gt; </div><div class="line"></div><div class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.sql.*"</span>%&gt;</div><div class="line">&lt;%</div><div class="line">        <span class="comment">// 注册jdbc驱动</span></div><div class="line">        Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>).newInstance();</div><div class="line">        <span class="comment">// 设置连接字符串（包括主机名，端口，数据库名，用户名，密码等）</span></div><div class="line">        String uri = <span class="string">"jdbc:mysql://localhost:3306/checkmysql?user=root&amp;password=123123"</span>;</div><div class="line">        <span class="comment">// 建立数据库连接</span></div><div class="line">        Connection connection = DriverManager.getConnection(uri);</div><div class="line">        <span class="comment">// 创建语句</span></div><div class="line">        Statement statement = connection.createStatement();</div><div class="line">        <span class="comment">// 执行查询语句，并将结果保存在resultSet对象中</span></div><div class="line">        ResultSet resultSet = statement.executeQuery(<span class="string">"SELECT * FROM emp"</span>);</div><div class="line">        <span class="comment">// 循环读取表</span></div><div class="line">        <span class="keyword">while</span>(resultSet.next())&#123;</div><div class="line">            out.print(resultSet.getString(<span class="number">1</span>)+<span class="string">"&amp;&amp;"</span>+resultSet.getString(<span class="number">2</span>)+<span class="string">"&lt;br&gt;"</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line">    %&gt;</div></pre></td></tr></table></figure>
+<h2 id="二、1：打开myeclipse-点击window，鼠标移动到open-Perspective-在旁边可以看到一个Myeclipse-Database-Explore-就会在myeclipse打开一个新的视图-注意-如果打开后是空白的，没有看到DB-Browser，就这样做：，选择菜单栏Window–-gt-Show-View–-gt-Other，展开MyEclipse-Database，选择DB-Browser，打开数据库浏览视图。就可以看到了"><a href="#二、1：打开myeclipse-点击window，鼠标移动到open-Perspective-在旁边可以看到一个Myeclipse-Database-Explore-就会在myeclipse打开一个新的视图-注意-如果打开后是空白的，没有看到DB-Browser，就这样做：，选择菜单栏Window–-gt-Show-View–-gt-Other，展开MyEclipse-Database，选择DB-Browser，打开数据库浏览视图。就可以看到了" class="headerlink" title="二、1：打开myeclipse,点击window，鼠标移动到open Perspective,在旁边可以看到一个Myeclipse Database Explore,就会在myeclipse打开一个新的视图[^注意]如果打开后是空白的，没有看到DB Browser，就这样做：，选择菜单栏Window–&gt;Show View–&gt;Other，展开MyEclipse Database，选择DB Browser，打开数据库浏览视图。就可以看到了"></a>二、1：<u>打开myeclipse,点击window，鼠标移动到open Perspective,在旁边可以看到一个Myeclipse Database Explore,就会在myeclipse打开一个新的视图[^注意]如果打开后是空白的，没有看到DB Browser，就这样做：</u>，选择菜单栏Window–&gt;Show View–&gt;Other，展开MyEclipse Database，选择DB Browser，打开数据库浏览视图。就可以看到了</h2><h3 id="2、空白处右键–-gt-NEW，按图配置，Driver-Name是自己随便取个名字，连接字符串这里以MySQL-Connector-J为例，databaseName是数据库名字，数据库连接驱动jar包需要自己根据需要找，存到某个文件夹下，再点Add-Jars导入，最后点Test-Driver，看是否连接成功，最后finish。"><a href="#2、空白处右键–-gt-NEW，按图配置，Driver-Name是自己随便取个名字，连接字符串这里以MySQL-Connector-J为例，databaseName是数据库名字，数据库连接驱动jar包需要自己根据需要找，存到某个文件夹下，再点Add-Jars导入，最后点Test-Driver，看是否连接成功，最后finish。" class="headerlink" title="2、空白处右键–&gt;NEW，按图配置，Driver Name是自己随便取个名字，连接字符串这里以MySQL Connector/J为例，databaseName是数据库名字，数据库连接驱动jar包需要自己根据需要找，存到某个文件夹下，再点Add Jars导入，最后点Test Driver，看是否连接成功，最后finish。"></a>2、空白处右键–&gt;NEW，按图配置，Driver Name是自己随便取个名字，连接字符串这里以MySQL Connector/J为例，databaseName是数据库名字，数据库连接驱动jar包需要自己根据需要找，存到某个文件夹下，再点Add Jars导入，最后点Test Driver，看是否连接成功，最后finish。</h3><h2 id="3、返回Package-Explorer中，打开导入Hinernate框架时创建的hibernate-cfg-xml文件，这是点击DB-Driver下拉框就会出现新建的DB，选择就可以了"><a href="#3、返回Package-Explorer中，打开导入Hinernate框架时创建的hibernate-cfg-xml文件，这是点击DB-Driver下拉框就会出现新建的DB，选择就可以了" class="headerlink" title="3、返回Package Explorer中，打开导入Hinernate框架时创建的hibernate.cfg.xml文件，这是点击DB Driver下拉框就会出现新建的DB，选择就可以了"></a>3、返回Package Explorer中，打开导入Hinernate框架时创建的hibernate.cfg.xml文件，这是点击DB Driver下拉框就会出现新建的DB，选择就可以了</h2><p>讲解：New Database Connection Driver对话框</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">对话框中包含了如下信息设置：</div><div class="line"></div><div class="line">Driver template:选择数据库驱动模板。</div><div class="line"></div><div class="line">Driver Name：定义数据库连接名称。</div><div class="line"></div><div class="line">Connection URL：定义数据库的连接URL。</div><div class="line"></div><div class="line">User name：定义登录数据库的用户名。</div><div class="line"></div><div class="line">Password：输入登录的用户密码。</div><div class="line"></div><div class="line">Driver JARs：定义连接数据库采用的JAR包。</div><div class="line"></div><div class="line">Driver classname：选择数据库连接驱动的类名称。</div><div class="line">Save password：选择是否保存登录用户的密码。</div></pre></td></tr></table></figure>
+<h3 id="三、上面的一测试成功后，我新建了一个web目录，也可以不用新建了"><a href="#三、上面的一测试成功后，我新建了一个web目录，也可以不用新建了" class="headerlink" title="三、上面的一测试成功后，我新建了一个web目录，也可以不用新建了"></a>三、上面的一测试成功后，我新建了一个web目录，也可以不用新建了</h3><h4 id="1、用户登录index-jsp"><a href="#1、用户登录index-jsp" class="headerlink" title="1、用户登录index.jsp"></a>1、用户登录index.jsp</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> contentType=<span class="string">"text/html;charset=utf-8"</span>%&gt;  </div><div class="line">&lt;html&gt;  </div><div class="line">&lt;head&gt;  </div><div class="line">&lt;title&gt;  </div><div class="line">用户登录  </div><div class="line">&lt;/title&gt;  </div><div class="line">&lt;/head&gt;  </div><div class="line">&lt;body bgcolor=<span class="string">"#e3e3e3"</span>&gt;  </div><div class="line">&lt;center&gt;  </div><div class="line">&lt;form action=<span class="string">"check_login.jsp"</span> method=<span class="string">"post"</span>&gt;  </div><div class="line">&lt;table&gt;  </div><div class="line">  &lt;caption&gt;用户登录&lt;/caption&gt;  </div><div class="line">  &lt;tr&gt;&lt;td&gt;用户名:&lt;/td&gt;&lt;td&gt;&lt;input type="text" name="username" size="20"/&gt;&lt;/td&gt;&lt;/tr&gt;  </div><div class="line">  &lt;tr&gt;&lt;td&gt;密码:&lt;/td&gt;&lt;td&gt;&lt;input type="text" name="password" size="20"/&gt;&lt;/td&gt;&lt;/tr&gt;  </div><div class="line">  &lt;tr&gt;&lt;td&gt;&lt;input type=<span class="string">"submit"</span> value=<span class="string">"登录"</span>/&gt;&lt;td&gt;&lt;input type=<span class="string">"reset"</span> value=<span class="string">"重置"</span>/&gt;  </div><div class="line">  &lt;/table&gt;  </div><div class="line">&lt;/form&gt;  </div><div class="line">    </div><div class="line">&lt;/body&gt;  </div><div class="line">&lt;/center&gt;  </div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h4 id="2、验证登录，输入的用户名和密码是否与数据库的对接上check-login-jsp"><a href="#2、验证登录，输入的用户名和密码是否与数据库的对接上check-login-jsp" class="headerlink" title="2、验证登录，输入的用户名和密码是否与数据库的对接上check_login.jsp"></a>2、验证登录，输入的用户名和密码是否与数据库的对接上check_login.jsp</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">    &lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.sql.*"</span> contentType=<span class="string">"text/html;charset=utf-8"</span>%&gt;  </div><div class="line">    &lt;%  </div><div class="line">    String path = request.getContextPath();  </div><div class="line">    String basePath = request.getScheme()+<span class="string">"://"</span>+request.getServerName()+<span class="string">":"</span>+request.getServerPort()+path+<span class="string">"/"</span>;  </div><div class="line">    %&gt;  </div><div class="line">    &lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span>&gt;  </div><div class="line">    &lt;html&gt;  </div><div class="line">      &lt;head&gt;  </div><div class="line">        &lt;base href=<span class="string">"&lt;%=basePath%&gt;"</span>&gt;  </div><div class="line">        &lt;title&gt;My JSP 'check.jsp' starting page&lt;/title&gt;  </div><div class="line">        &lt;meta http-equiv=<span class="string">"pragma"</span> content=<span class="string">"no-cache"</span>&gt;  </div><div class="line">        &lt;meta http-equiv=<span class="string">"cache-control"</span> content=<span class="string">"no-cache"</span>&gt;  </div><div class="line">        &lt;meta http-equiv=<span class="string">"expires"</span> content=<span class="string">"0"</span>&gt;      </div><div class="line">        &lt;meta http-equiv=<span class="string">"keywords"</span> content=<span class="string">"keyword1,keyword2,keyword3"</span>&gt;  </div><div class="line">        &lt;meta http-equiv=<span class="string">"description"</span> content=<span class="string">"This is my page"</span>&gt;  </div><div class="line">        &lt;!--  </div><div class="line">        &lt;link rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span> href=<span class="string">"styles.css"</span>&gt;  </div><div class="line">        --&gt;  </div><div class="line">     &lt;/head&gt;  </div><div class="line">      &lt;body&gt;  </div><div class="line">    &lt;%  </div><div class="line">    String username=request.getParameter(<span class="string">"username"</span>);  </div><div class="line">    String password=request.getParameter(<span class="string">"password"</span>);  </div><div class="line">    <span class="keyword">try</span> &#123;  </div><div class="line">        <span class="comment">// 加载数据库驱动，注册到驱动管理器  </span></div><div class="line">        Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);  </div><div class="line">        <span class="comment">// 数据库连接字符串  </span></div><div class="line">        String url = <span class="string">"jdbc:mysql://localhost:3306/checkmysql"</span>;  </div><div class="line">        <span class="comment">// 数据库用户名  </span></div><div class="line">        String usename = <span class="string">"root"</span>;  </div><div class="line">        <span class="comment">// 数据库密码  </span></div><div class="line">        String psw = <span class="string">"123123"</span>;  </div><div class="line">        <span class="comment">// 创建Connection连接  </span></div><div class="line">        Connection conn = DriverManager.getConnection(url,usename,psw);  </div><div class="line">        <span class="comment">// 判断 数据库连接是否为空  </span></div><div class="line">        <span class="keyword">if</span>(conn != <span class="keyword">null</span>)&#123;             </div><div class="line">            String sql=<span class="string">"select * from emp where empno='"</span>+username+<span class="string">"' and password='"</span>+ password + <span class="string">"'"</span>;  </div><div class="line">            Statement stmt = conn.createStatement();  </div><div class="line">            ResultSet rs=stmt.executeQuery(sql);  </div><div class="line">            <span class="keyword">if</span>(rs.next())&#123;  </div><div class="line">               request.getRequestDispatcher(<span class="string">"success.jsp"</span>).forward(request,response);               </div><div class="line">            &#125;<span class="keyword">else</span>&#123; </div><div class="line">              response.sendRedirect(<span class="string">"wrong.jsp"</span>); </div><div class="line">                </div><div class="line">      %&gt;  </div><div class="line">                </div><div class="line">&lt;%   </div><div class="line">            &#125;             </div><div class="line">            <span class="comment">// 输出连接信息  </span></div><div class="line">            <span class="comment">//out.println("数据库连接成功！");  </span></div><div class="line">            <span class="comment">// 关闭数据库连接  </span></div><div class="line">            conn.close();  </div><div class="line">        &#125;<span class="keyword">else</span>&#123;  </div><div class="line">            <span class="comment">// 输出连接信息  </span></div><div class="line">            out.println(<span class="string">"数据库连接失败！"</span>);                          </div><div class="line">        &#125;  </div><div class="line">    &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;  </div><div class="line">        e.printStackTrace();  </div><div class="line">    &#125; <span class="keyword">catch</span> (SQLException e) &#123;  </div><div class="line">        e.printStackTrace();  </div><div class="line">    &#125;  </div><div class="line">%&gt;  </div><div class="line">    &lt;/body&gt;  </div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>
+<h4 id="3、如果对接上，就直接进入登录成功页面success-jsp"><a href="#3、如果对接上，就直接进入登录成功页面success-jsp" class="headerlink" title="3、如果对接上，就直接进入登录成功页面success.jsp"></a>3、如果对接上，就直接进入登录成功页面success.jsp</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</div><div class="line">&lt;%</div><div class="line">String path = request.getContextPath();</div><div class="line">String basePath = request.getScheme()+<span class="string">"://"</span>+request.getServerName()+<span class="string">":"</span>+request.getServerPort()+path+<span class="string">"/"</span>;</div><div class="line">%&gt;</div><div class="line"></div><div class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span>&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;base href=<span class="string">"&lt;%=basePath%&gt;"</span>&gt;</div><div class="line">    </div><div class="line">    &lt;title&gt;My JSP 'success.jsp' starting page&lt;/title&gt;</div><div class="line">    </div><div class="line">	&lt;meta http-equiv=<span class="string">"pragma"</span> content=<span class="string">"no-cache"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"cache-control"</span> content=<span class="string">"no-cache"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"expires"</span> content=<span class="string">"0"</span>&gt;    </div><div class="line">	&lt;meta http-equiv=<span class="string">"keywords"</span> content=<span class="string">"keyword1,keyword2,keyword3"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"description"</span> content=<span class="string">"This is my page"</span>&gt;</div><div class="line">	&lt;!--</div><div class="line">	&lt;link rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span> href=<span class="string">"styles.css"</span>&gt;</div><div class="line">	--&gt;</div><div class="line"></div><div class="line">  &lt;/head&gt;</div><div class="line">  </div><div class="line">  &lt;body&gt;</div><div class="line">            登陆成功,欢迎您！ &lt;%=request.getParameter(<span class="string">"username"</span>)%&gt; &lt;br&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h4 id="4、失败的话，就跳转到失败页面wrong-jsp"><a href="#4、失败的话，就跳转到失败页面wrong-jsp" class="headerlink" title="4、失败的话，就跳转到失败页面wrong.jsp"></a>4、失败的话，就跳转到失败页面wrong.jsp</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.sql.*"</span> contentType=<span class="string">"text/html;charset=utf-8"</span>%&gt;  </div><div class="line">&lt;%  </div><div class="line">String path = request.getContextPath();  </div><div class="line">String basePath = request.getScheme()+<span class="string">"://"</span>+request.getServerName()+<span class="string">":"</span>+request.getServerPort()+path+<span class="string">"/"</span>;  </div><div class="line">%&gt;  </div><div class="line">  </div><div class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span>&gt;  </div><div class="line">&lt;html&gt;  </div><div class="line">  &lt;head&gt;  </div><div class="line">    &lt;base href=<span class="string">"&lt;%=basePath%&gt;"</span>&gt;  </div><div class="line">      </div><div class="line">    &lt;title&gt;登录失败&lt;/title&gt;  </div><div class="line">      </div><div class="line">    &lt;meta http-equiv=<span class="string">"pragma"</span> content=<span class="string">"no-cache"</span>&gt;  </div><div class="line">    &lt;meta http-equiv=<span class="string">"cache-control"</span> content=<span class="string">"no-cache"</span>&gt;  </div><div class="line">    &lt;meta http-equiv=<span class="string">"expires"</span> content=<span class="string">"0"</span>&gt;      </div><div class="line">    &lt;meta http-equiv=<span class="string">"keywords"</span> content=<span class="string">"keyword1,keyword2,keyword3"</span>&gt;  </div><div class="line">    &lt;meta http-equiv=<span class="string">"description"</span> content=<span class="string">"This is my page"</span>&gt;  </div><div class="line">    &lt;!--  </div><div class="line">    &lt;link rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span> href=<span class="string">"styles.css"</span>&gt;  </div><div class="line">    --&gt;  </div><div class="line">  </div><div class="line">  &lt;/head&gt;  </div><div class="line">    </div><div class="line">  &lt;body&gt;  </div><div class="line">  &lt;% out.println(<span class="string">"登录失败"</span>);%&gt;   </div><div class="line">   </div><div class="line">  &lt;% response.setHeader(<span class="string">"refresh"</span>,<span class="string">"5;url=index.jsp"</span>);%&gt;  </div><div class="line">  &lt;a href="javascript:history.back()"&gt;返回&lt;/a&gt; </div><div class="line">  &lt;/body&gt;  </div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/12/jsp-connectsql/" data-id="cj9wbnuhm000jnwvp1jkswkx0" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/12/jsp-neizhiduixiang/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          jsp_neizhiduixiang
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/12/jsp-login/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">jsp_login</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">Hexo</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>15</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>12</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://exacity.github.io" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2016 - 2017 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
