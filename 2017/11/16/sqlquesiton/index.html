@@ -3,15 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/9 | Hexo</title>
+  <title>sqlquesiton | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2017/09/index.html">
+  <meta name="description" content="sql 的一些问题的解决办法：1、报错如此：mysql #1062 –Duplicate entry ‘1’ for key ‘PRIMARY’见词知意：primary这是主键的关键字，这是因为我们的表中已经创建了这个关键字的记录。只要把表中有这个关键字字段的记录删除就可以了。2、MySQL 执行插入操作时报1366 - Incorrect string value: ‘\xE4\xB8\xAD\">
+<meta name="keywords" content="sql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sqlquesiton">
+<meta property="og:url" content="http://yoursite.com/2017/11/16/sqlquesiton/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="sql 的一些问题的解决办法：1、报错如此：mysql #1062 –Duplicate entry ‘1’ for key ‘PRIMARY’见词知意：primary这是主键的关键字，这是因为我们的表中已经创建了这个关键字的记录。只要把表中有这个关键字字段的记录删除就可以了。2、MySQL 执行插入操作时报1366 - Incorrect string value: ‘\xE4\xB8\xAD\">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-16T02:07:09.768Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="sqlquesiton">
+<meta name="twitter:description" content="sql 的一些问题的解决办法：1、报错如此：mysql #1062 –Duplicate entry ‘1’ for key ‘PRIMARY’见词知意：primary这是主键的关键字，这是因为我们的表中已经创建了这个关键字的记录。只要把表中有这个关键字字段的记录删除就可以了。2、MySQL 执行插入操作时报1366 - Incorrect string value: ‘\xE4\xB8\xAD\">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,245 +69,70 @@
   </div>
 </div>
 
-        <section id="main">
-  
-  
+        <section id="main"><article id="post-sqlquesiton" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/16/sqlquesiton/" class="article-date">
+  <time class="post-time" datetime="2017-11-16T01:54:06.000Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">16</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap animated rubberBand">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      sqlquesiton
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/关于数据库的一些问题的解决办法/">关于数据库的一些问题的解决办法</a>
+  </div>
+
+          
+              
+
+          
         </div>
-        <div class="archives">
+      </header>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/30/ex-teraction/" class="archive-article-date">
-  <time class="post-time" datetime="2017-09-30T13:44:22.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">30</span>
-  </time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/30/ex-teraction/">ex-teraction</a>
-    </h1>
-  
+        <h1 id="sql-的一些问题的解决办法："><a href="#sql-的一些问题的解决办法：" class="headerlink" title="sql 的一些问题的解决办法："></a>sql 的一些问题的解决办法：</h1><h2 id="1、报错如此：mysql-1062-–Duplicate-entry-‘1’-for-key-‘PRIMARY’"><a href="#1、报错如此：mysql-1062-–Duplicate-entry-‘1’-for-key-‘PRIMARY’" class="headerlink" title="1、报错如此：mysql #1062 –Duplicate entry ‘1’ for key ‘PRIMARY’"></a>1、报错如此：mysql #1062 –Duplicate entry ‘1’ for key ‘PRIMARY’</h2><h3 id="见词知意：primary这是主键的关键字，这是因为我们的表中已经创建了这个关键字的记录。只要把表中有这个关键字字段的记录删除就可以了。"><a href="#见词知意：primary这是主键的关键字，这是因为我们的表中已经创建了这个关键字的记录。只要把表中有这个关键字字段的记录删除就可以了。" class="headerlink" title="见词知意：primary这是主键的关键字，这是因为我们的表中已经创建了这个关键字的记录。只要把表中有这个关键字字段的记录删除就可以了。"></a>见词知意：primary这是主键的关键字，这是因为我们的表中已经创建了这个关键字的记录。只要把表中有这个关键字字段的记录删除就可以了。</h3><h2 id="2、MySQL-执行插入操作时报1366-Incorrect-string-value-‘-xE4-xB8-xAD-xE6-x96-x87’-for-column-‘name’-at-row-1"><a href="#2、MySQL-执行插入操作时报1366-Incorrect-string-value-‘-xE4-xB8-xAD-xE6-x96-x87’-for-column-‘name’-at-row-1" class="headerlink" title="2、MySQL 执行插入操作时报1366 - Incorrect string value: ‘\xE4\xB8\xAD\xE6\x96\x87’ for column ‘name’ at row 1"></a>2、MySQL 执行插入操作时报1366 - Incorrect string value: ‘\xE4\xB8\xAD\xE6\x96\x87’ for column ‘name’ at row 1</h2><h3 id="我们只要把字符集设置一下就行了。当然这是在设计表的时候设置的。字符集设为utf8，排序规则选择utf8-general-ci"><a href="#我们只要把字符集设置一下就行了。当然这是在设计表的时候设置的。字符集设为utf8，排序规则选择utf8-general-ci" class="headerlink" title="我们只要把字符集设置一下就行了。当然这是在设计表的时候设置的。字符集设为utf8，排序规则选择utf8-general_ci."></a>我们只要把字符集设置一下就行了。当然这是在设计表的时候设置的。字符集设为utf8，排序规则选择utf8-general_ci.</h3><p>这样我今天遇到的这两个问题就解决了表也成功的创建了。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/27/interaction/" class="archive-article-date">
-  <time class="post-time" datetime="2017-09-27T13:49:31.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">27</span>
-  </time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/interaction/">inteaction</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/25/filt/" class="archive-article-date">
-  <time class="post-time" datetime="2017-09-25T11:58:20.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">25</span>
-  </time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/16/sqlquesiton/" data-id="cja1u5rh3000niwvpeqskiz1u" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/25/filt/">filt</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/23/model/" class="archive-article-date">
-  <time class="post-time" datetime="2017-09-23T14:56:51.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">23</span>
-  </time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/23/model/">model</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/12/jsp-neizhiduixiang/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">jsp_neizhiduixiang</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/23/classAndStyle/" class="archive-article-date">
-  <time class="post-time" datetime="2017-09-23T13:59:11.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">23</span>
-  </time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/23/classAndStyle/">classAndStyle</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/20/v-bindProperty/" class="archive-article-date">
-  <time class="post-time" datetime="2017-09-20T12:55:48.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">20</span>
-  </time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/20/v-bindProperty/">v-bindProperty</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/20/keyboard/" class="archive-article-date">
-  <time class="post-time" datetime="2017-09-20T11:54:46.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">20</span>
-  </time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/20/keyboard/">keyboard</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/19/default/" class="archive-article-date">
-  <time class="post-time" datetime="2017-09-19T14:07:47.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">19</span>
-  </time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/19/default/">default</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/19/bubble/" class="archive-article-date">
-  <time class="post-time" datetime="2017-09-19T13:20:54.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">19</span>
-  </time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/19/bubble/">using_event</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/19/todolist/" class="archive-article-date">
-  <time class="post-time" datetime="2017-09-19T11:55:15.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">19</span>
-  </time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/19/todolist/">todolist</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
 
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/09/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/09/page/2/">next &raquo;</a>
-  </nav>
 
 </section>
         
