@@ -3,15 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: jsp的内置对象 | Hexo</title>
+  <title>sqlquestion1 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/categories/jsp的内置对象/index.html">
+  <meta name="description" content="jsp处理过程中遇到的问题">
+<meta name="keywords" content="jsp,mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sqlquestion1">
+<meta property="og:url" content="http://yoursite.com/2017/12/06/sqlquestion1/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="jsp处理过程中遇到的问题">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-06T17:00:40.799Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="sqlquestion1">
+<meta name="twitter:description" content="jsp处理过程中遇到的问题">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,42 +69,79 @@
   </div>
 </div>
 
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap animated rubberBand">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/11/12/jsp-neizhiduixiang/" class="archive-article-date">
-  <time class="post-time" datetime="2017-11-12T05:15:48.000Z" itemprop="datePublished">
-    <span class="post-month">11月</span><br/>
-    <span class="post-day">12</span>
+        <section id="main"><article id="post-sqlquestion1" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/06/sqlquestion1/" class="article-date">
+  <time class="post-time" datetime="2017-12-06T13:55:23.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">06</span>
   </time>
 </a>
-      
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/12/jsp-neizhiduixiang/">jsp_neizhiduixiang</a>
+    <h1 class="article-title" itemprop="name">
+      sqlquestion1
     </h1>
   
 
-    </header>
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/关于今天新遇到的问题/">关于今天新遇到的问题</a>
   </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jsp处理过程中遇到的问题"><a href="#jsp处理过程中遇到的问题" class="headerlink" title="jsp处理过程中遇到的问题"></a>jsp处理过程中遇到的问题</h1><a id="more"></a>
+<h2 id="1、报错内容如下："><a href="#1、报错内容如下：" class="headerlink" title="1、报错内容如下："></a>1、报错内容如下：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.</div><div class="line">java.lang.NullPointerException</div><div class="line">	at cn.itcast.DB.DBHelper.query(DBHelper.java:95)</div><div class="line">	at servlet.ModifyPasswordServlet.doPost(ModifyPasswordServlet.java:64)</div><div class="line">	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647)</div><div class="line">	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)</div><div class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)</div><div class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)</div><div class="line">	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)</div><div class="line">	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)</div><div class="line"></div><div class="line">	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)</div><div class="line">	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)</div><div class="line">	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)</div><div class="line">	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)</div><div class="line">	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)</div><div class="line">	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)</div><div class="line">	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1023)</div><div class="line">	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:589)</div><div class="line">	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)</div><div class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)</div><div class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)</div><div class="line">	at java.lang.Thread.run(Thread.java:745)</div></pre></td></tr></table></figure>
+<h2 id="百度上讲的解决方案1是：把没有用处的标签去掉就行了"><a href="#百度上讲的解决方案1是：把没有用处的标签去掉就行了" class="headerlink" title="百度上讲的解决方案1是：把没有用处的标签去掉就行了"></a>百度上讲的解决方案1是：<u>把没有用处的标签去掉就行了</u></h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/06/sqlquestion1/" data-id="cjavc79yw001pygvpt9i34hu0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/06/reFoundPassword/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          reFoundPassword
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/06/sqlregister/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">sqlregister</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 
 
 </section>
