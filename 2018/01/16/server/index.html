@@ -5,14 +5,25 @@
   
   <title>server | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一">
+<meta name="keywords" content="nfs,tftp">
+<meta property="og:type" content="article">
 <meta property="og:title" content="server">
 <meta property="og:url" content="http://yoursite.com/2018/01/16/server/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-16T13:25:51.082Z">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/wiredconnection.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/ip1.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/portforcomputer.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/portchage.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/ubootfs4412.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/setorige.png">
+<meta property="og:updated_time" content="2018-01-16T14:04:38.076Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="server">
+<meta name="twitter:description" content="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一">
+<meta name="twitter:image" content="https://github.com/shangrila-xiu/IMG/raw/master/wiredconnection.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -40,8 +51,8 @@
     <h3 class="description"></h3>
     <div class="count-box">
       <a href="/archives"><div><strong>39</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>28</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+      <a href="/categories"><div><strong>29</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -88,6 +99,10 @@
 
         <div>
           
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tftp服务器和nfs服务器的知识点/">tftp服务器和nfs服务器的知识点</a>
+  </div>
+
           
               
 
@@ -97,13 +112,61 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一"><a href="#tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一" class="headerlink" title="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一"></a>tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一</h1><a id="more"></a>
+<h2 id="1、tftp服务器"><a href="#1、tftp服务器" class="headerlink" title="1、tftp服务器"></a>1、tftp服务器</h2><p>a、检测：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo dpkg –s tftpd-hpa</div></pre></td></tr></table></figure>
+<p>b、配置TFTP的服务器端：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo vi /ect/default/tftpd-hpa</div></pre></td></tr></table></figure>
+<p>c、存放与内核相关的内容，包括内核镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">TFTP_USERNAME=”tftp”</div><div class="line">TFTP_DIRECTORY=”tftpboot”   //传输目录</div></pre></td></tr></table></figure>
+<p><em>自行创建：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo mkdir /tftpboot</div></pre></td></tr></table></figure>
+<p><em>修改权限赋予最高权限</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo chmod 777 /tftpboot</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">TFTP_ADDRESS=”0.0.0.0:69”   端口号</div><div class="line">TFTP_OPTIONS=”-c  -s  -l”    配置参数</div></pre></td></tr></table></figure>
+<p>讲解：-c  create   可上传新文件        </p>
+<p>​    -s  server    uboot默认tftpboot目录为传输目录    </p>
+<p>​    -l  listen     监听</p>
+<p>d、启动tftp服务器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:~#  service tftpd-hpa restart</div></pre></td></tr></table></figure>
+<p>e、编辑/etc/exports</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">在第10行加上 “#”</div><div class="line">/source/rootfs/ *(rw,sync,no_subtree_check,no_root_squash)</div></pre></td></tr></table></figure>
+<p>解释：</p>
+<pre><code>/source    共享目录       自行创建
+rw      读写
+sync 文件系统中的文件可以同步到内存与硬盘
+no_subtree_check 如果子目录可以被访问，不检测父目录权限
+no_root_squash 如果以root用户进入到文件系统
+</code></pre><h2 id="2、nfs服务器"><a href="#2、nfs服务器" class="headerlink" title="2、nfs服务器"></a>2、nfs服务器</h2><p>a、启动服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:~# /etc/init.d/nfs-kernel-server restart</div></pre></td></tr></table></figure>
+<p>b、配置wired connection</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/wiredconnection.png" alt="wiredconnection的配置图"></p>
+<p>c、查看ip地址是否配置成功：</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/ip1.png" alt="配置后的IP地址的显示图"></p>
+<p>d、查看本机的端口号和接入开发板后的端口号的变化</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/portforcomputer.png" alt="本机端口号的变化"></p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/portchage.png" alt="端口号改变后"></p>
+<p>e、拷贝sdfuse_q到ubuntu的目录中</p>
+<p>f、将如下的文件名拷贝到SD卡中</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/ubootfs4412.png" alt="ubootfs4412的文件"></p>
+<p>g、在打开工具PUTTY之后，对它的如下参数进行配置：可以使用pri命令查看配置的结果</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/setorige.png" alt="配置的原理和方法"></p>
+<p>解释：</p>
+<p>​    setenv设置新的环境变量</p>
+<p>​    bootcmd自启动命令</p>
+<p>​    pri显示配置的环境变量</p>
+<p>​    saveenv保存配置的命令</p>
+<p>​    tftp      远程传输    tftp + address + file（二进制）</p>
+<p>​    CPU是硬件，作用是取址（虚拟的物理地址）</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/server/" data-id="cjchoczq700261kvpzg2z8d6n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/server/" data-id="cjchpmy270023iovp7mexofse" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nfs/">nfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tftp/">tftp</a></li></ul>
+
     </footer>
   </div>
   
@@ -163,8 +226,8 @@
     <h3 class="description"></h3>
     <div class="count-box">
       <a href="/archives"><div><strong>39</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>28</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+      <a href="/categories"><div><strong>29</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
     </div>
 
 
