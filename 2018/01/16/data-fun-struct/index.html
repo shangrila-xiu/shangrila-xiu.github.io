@@ -13,10 +13,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-16T12:51:28.445Z">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/linklistExe.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/afterExeLinklist.png">
+<meta property="og:updated_time" content="2018-03-06T13:03:25.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="data_fun_struct">
 <meta name="twitter:description" content="对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解">
+<meta name="twitter:image" content="https://github.com/shangrila-xiu/IMG/raw/master/linklistExe.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -43,9 +46,9 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>39</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>29</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>53</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -153,11 +156,44 @@
 <p>​    Size_t 读取的个数</p>
 <p>返回值;成功    实际读取的个数</p>
 <p>​    失败     返回-1</p>
+<hr>
+<h2 id="6、数据结构"><a href="#6、数据结构" class="headerlink" title="6、数据结构"></a>6、数据结构</h2><p>1）概念：<strong>数据结构体数组研究的是数据和数据之间的关系。</strong></p>
+<p>2）数据（data）: 数据即信息的载体，是能够输入到计算机中并且能被计算机识别、存储和处理的符号总称。数据就是研究对象。</p>
+<p>3)数据元素（data element）: 数据元素是数据的基本单位，又称之为记录（Record）。</p>
+<p>4)数据项：数据项是数据元素的最小单位。</p>
+<p>5）数据类型（data type）：  数据类型是对数据元素取值范围与运算的限定。</p>
+<p>6）数据结构指的是数据的逻辑结构和存储结构及其操作</p>
+<p>​    a、逻辑结构：表示数据运算之间的抽象关系（如邻接关系、从属关系等），按每个元素可能具有的直接前趋数和直接后继数将逻辑结构分为“线性结构”和“非线性结构”两大类</p>
+<p>​        线性结构——一个对一个，如线性表、栈、队列</p>
+<p>​        树形结构——一个对多个，如树</p>
+<p>​        图状结构——多个对多个，如图</p>
+<p>​    b、存储结构：逻辑结构在计算机中的具体实现方法，分为顺序存储方法、链接存储方法、索引存储方法、散列存储方法。</p>
+<p>c、顺序存储：数据在内存当中存储时，需要开辟一块连续的空间，使用数组，为了方便操作，定义数组下标来标识数组现有元素的个数。</p>
+<p>​    d、链式存储：不需要开辟一块连续的空间，所以每一个数据不再是单纯的数据，而是一个结点，由两部分组成，数据域和指针域，指针域里面存储下一个结点的地址。</p>
+<p>操作：<strong>增、删、改、查</strong></p>
+<h3 id="1、单链表（线性表的链式存储）的实现"><a href="#1、单链表（线性表的链式存储）的实现" class="headerlink" title="1、单链表（线性表的链式存储）的实现"></a>1、单链表（线性表的链式存储）的实现</h3><p>1)头文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;stdlib.h&gt;</div></pre></td></tr></table></figure>
+<p>2)定义数据类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">typedef  int datatype_t;</div><div class="line">指针域是指向下一个指针节点。</div><div class="line">创建一个指针变量的头结点不放数据，则指向空（即为NULL）</div></pre></td></tr></table></figure>
+<p>3)定义结点结构体</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">typedef  struct node&#123;</div><div class="line">		datatype_t data;//数据域</div><div class="line">		struct node *next;//指针域，保存下一个结点的地址，并且能够访问下一个结点的数据，类型指定为结构体类型</div><div class="line">&#125;linklist_t;</div></pre></td></tr></table></figure>
+<p>4)创建一个空链表:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">linklist_create()&#123;</div><div class="line">		//创建一个头结点，数据域不放数据，指针域指向NULL标识为空</div><div class="line">		Linklist_t *h=(linklist_t *)malloc(sizeof(linklist_t));</div><div class="line">		h-&gt;next=NULL;</div><div class="line">return h;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>执行原理图：</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/linklistExe.png" alt=""></p>
+<p>5)插入数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">void linklist_insert_head(linklist_ t *h,datatype_t value)&#123;</div><div class="line">		//申请空间并赋值</div><div class="line">	linklist_t *temp = (linklist_t *)malloc(sizeof(linklist_t));</div><div class="line">	temp-&gt;data = value;</div><div class="line">//将头结点的下一个结点的地址保存在新插入的结点的指针域里面</div><div class="line">	temp-&gt;next = h-&gt;next;</div><div class="line">//将新插入的结点的地址保存在头结点的指针域里面</div><div class="line">	h-&gt;next = temp;</div><div class="line"></div><div class="line">	return ;//</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>6)打印数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">void linklist_show(linklist_t *h)&#123;</div><div class="line">		while(h-&gt;next != NULL)</div><div class="line">	&#123;</div><div class="line">		h = h-&gt;next;</div><div class="line">		printf(&quot;%d &quot;, h-&gt;data);</div><div class="line">	&#125;</div><div class="line">	putchar(10);</div><div class="line">	return ;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>7)main函数中调用上面的函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">int main(int argc, const char *argv[])</div><div class="line">&#123;</div><div class="line">	linklist_t *h = linklist_create();</div><div class="line"></div><div class="line">	linklist_insert_head(h, 10);</div><div class="line">	linklist_insert_head(h, 20);</div><div class="line">	linklist_insert_head(h, 30);</div><div class="line">	linklist_insert_head(h, 40);</div><div class="line">	linklist_insert_head(h, 50);</div><div class="line">	linklist_insert_head(h, 60);</div><div class="line"></div><div class="line">	linklist_show(h);</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>执行结构为：</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/afterExeLinklist.png" alt=""></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/data-fun-struct/" data-id="cjchpmxvu000hiovp0elfk4o6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/data-fun-struct/" data-id="cjefqwune000oukvpxyqr00ex" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/">data</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/struct/">struct</a></li></ul>
@@ -169,7 +205,7 @@
 <nav id="article-nav">
   
     <a href="/2018/01/16/process/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Nieuwer</strong>
       <div class="article-nav-title">
         
           process
@@ -179,7 +215,7 @@
   
   
     <a href="/2018/01/16/howtoshowimg/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ouder</strong>
       <div class="article-nav-title">howtoshowimg</div>
     </a>
   
@@ -229,9 +265,9 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>39</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>29</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>53</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
     </div>
 
 

@@ -38,9 +38,9 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>39</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>29</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>53</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -66,12 +66,12 @@
 
         <section id="main">
   
-    <article id="post-server" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-UDP" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/16/server/" class="article-date">
-  <time class="post-time" datetime="2018-01-16T13:25:51.000Z" itemprop="datePublished">
-    <span class="post-month">1月</span><br/>
-    <span class="post-day">16</span>
+    <a href="/2018/03/06/UDP/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T14:08:39.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">06</span>
   </time>
 </a>
    
@@ -83,14 +83,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/16/server/">server</a>
+      <a class="article-title" href="/2018/03/06/UDP/">UDP</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/tftp服务器和nfs服务器的知识点/">tftp服务器和nfs服务器的知识点</a>
+    <a class="article-category-link" href="/categories/UDP网络编程/">UDP网络编程</a>
   </div>
 
           
@@ -102,75 +102,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一"><a href="#tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一" class="headerlink" title="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一"></a>tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一</h1>
-        
-          <p class="article-more-link">
-            <a href="/2018/01/16/server/#more">Read More</a>
-          </p>
-        
+        <h1 id="UDP网络编程"><a href="#UDP网络编程" class="headerlink" title="UDP网络编程"></a>UDP网络编程</h1><p>1、UDP网络编程的流程</p>
+<p>a、服务器：</p>
+<p>​        创建套接字 socket( )</p>
+<p>​        填充服务器网络信息结构体 sockaddr_in</p>
+<p>​        将套接字与服务器网络信息结构体绑定 bind( )</p>
+<p>​        进行通信 recvfrom( )/sendto( )</p>
+<p>​    b、客户端：</p>
+<p>​        创建套接字 socket( )</p>
+<p>​        填充服务器网络信息结构体 sockaddr_in</p>
+<p>​        进行通信 sendto( )/recvfrom( )</p>
+<p>2、网络聊天室</p>
+<p>1）原理图</p>
+<p>客户端</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/ChatroomClient.png" alt=""></p>
+<p>服务器</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/ChatroomServer.png" alt=""></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/server/" data-id="cjchpmy270023iovp7mexofse" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nfs/">nfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tftp/">tftp</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-sysmovelive" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/16/sysmovelive/" class="article-date">
-  <time class="post-time" datetime="2018-01-16T13:05:16.000Z" itemprop="datePublished">
-    <span class="post-month">1月</span><br/>
-    <span class="post-day">16</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/16/sysmovelive/">sysmovelive</a>
-    </h1>
-  
-
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/系统移植/">系统移植</a>
-  </div>
-
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="系统移植"><a href="#系统移植" class="headerlink" title="系统移植"></a>系统移植</h1><h3 id="系统移植先从系统的内部开始了解，知道基本的结构"><a href="#系统移植先从系统的内部开始了解，知道基本的结构" class="headerlink" title="系统移植先从系统的内部开始了解，知道基本的结构"></a>系统移植先从系统的内部开始了解，知道基本的结构</h3>
-        
-          <p class="article-more-link">
-            <a href="/2018/01/16/sysmovelive/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/sysmovelive/" data-id="cjchpmy3l002hiovpo5h10dca" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/UDP/" data-id="cjefqwumw000gukvpaf9xrkjr" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -182,12 +134,12 @@
 
 
   
-    <article id="post-process" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-TCP" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/16/process/" class="article-date">
-  <time class="post-time" datetime="2018-01-16T12:55:56.000Z" itemprop="datePublished">
-    <span class="post-month">1月</span><br/>
-    <span class="post-day">16</span>
+    <a href="/2018/03/06/TCP/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T13:48:14.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">06</span>
   </time>
 </a>
    
@@ -199,14 +151,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/16/process/">process</a>
+      <a class="article-title" href="/2018/03/06/TCP/">TCP</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/进程/">进程</a>
+    <a class="article-category-link" href="/categories/TCP网络编程/">TCP网络编程</a>
   </div>
 
           
@@ -218,16 +170,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><h2 id="进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的"><a href="#进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的" class="headerlink" title="进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的"></a>进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的</h2>
+        <h1 id="TCP编程"><a href="#TCP编程" class="headerlink" title="TCP编程"></a>TCP编程</h1><p>1、流程：</p>
+<p>举个例子：</p>
         
           <p class="article-more-link">
-            <a href="/2018/01/16/process/#more">Read More</a>
+            <a href="/2018/03/06/TCP/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/process/" data-id="cjchpmy1o001wiovphm6183eq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/TCP/" data-id="cjefqwun8000jukvp924scs38" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -239,12 +192,12 @@
 
 
   
-    <article id="post-data-fun-struct" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-IPAddress" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/16/data-fun-struct/" class="article-date">
-  <time class="post-time" datetime="2018-01-16T08:17:12.000Z" itemprop="datePublished">
-    <span class="post-month">1月</span><br/>
-    <span class="post-day">16</span>
+    <a href="/2018/03/06/IPAddress/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T13:35:29.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">06</span>
   </time>
 </a>
    
@@ -256,14 +209,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/16/data-fun-struct/">data_fun_struct</a>
+      <a class="article-title" href="/2018/03/06/IPAddress/">IPAddress</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/对数据结构、C语言的指针，函数、结构体的讲解/">对数据结构、C语言的指针，函数、结构体的讲解</a>
+    <a class="article-category-link" href="/categories/IP地址/">IP地址</a>
   </div>
 
           
@@ -275,19 +228,76 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解"><a href="#对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解" class="headerlink" title="对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解"></a>对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解</h1>
+        <h1 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h1><p>1、IP地址是Internet中主机的唯一标识</p>
         
           <p class="article-more-link">
-            <a href="/2018/01/16/data-fun-struct/#more">Read More</a>
+            <a href="/2018/03/06/IPAddress/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/data-fun-struct/" data-id="cjchpmxvu000hiovp0elfk4o6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/IPAddress/" data-id="cjefqwuiu0001ukvp28phigxb" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/">data</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/struct/">struct</a></li></ul>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-socket" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/06/socket/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T13:30:32.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">06</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/06/socket/">socket</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/socket的讲解/">socket的讲解</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h1><h2 id="1、socket的类型"><a href="#1、socket的类型" class="headerlink" title="1、socket的类型"></a>1、socket的类型</h2><p>1）流式套接字(SOCK_STREAM)</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/03/06/socket/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/06/socket/" data-id="cjefqwuug002jukvp784cygpj" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/socket/">socket</a></li></ul>
 
     </footer>
   </div>
@@ -298,12 +308,12 @@
 
 
   
-    <article id="post-howtoshowimg" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-LinuxNetworkProgramming" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/16/howtoshowimg/" class="article-date">
-  <time class="post-time" datetime="2018-01-16T07:55:01.000Z" itemprop="datePublished">
-    <span class="post-month">1月</span><br/>
-    <span class="post-day">16</span>
+    <a href="/2018/03/06/LinuxNetworkProgramming/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T13:19:17.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">06</span>
   </time>
 </a>
    
@@ -315,14 +325,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/16/howtoshowimg/">howtoshowimg</a>
+      <a class="article-title" href="/2018/03/06/LinuxNetworkProgramming/">LinuxNetworkProgramming</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/关于github的图片的加载问题的讲解/">关于github的图片的加载问题的讲解</a>
+    <a class="article-category-link" href="/categories/Linux网络编程/">Linux网络编程</a>
   </div>
 
           
@@ -334,19 +344,76 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="分为两个阶段来做：1、在GitHub上创建自己的仓库（如IMG）；2、将创建好的地址复制到本地计算机的某一个盘的某个文件夹中。"><a href="#分为两个阶段来做：1、在GitHub上创建自己的仓库（如IMG）；2、将创建好的地址复制到本地计算机的某一个盘的某个文件夹中。" class="headerlink" title="分为两个阶段来做：1、在GitHub上创建自己的仓库（如IMG）；2、将创建好的地址复制到本地计算机的某一个盘的某个文件夹中。"></a>分为两个阶段来做：1、在GitHub上创建自己的仓库（如IMG）；2、将创建好的地址复制到本地计算机的某一个盘的某个文件夹中。</h1>
+        <h1 id="Linux网络编程"><a href="#Linux网络编程" class="headerlink" title="Linux网络编程"></a>Linux网络编程</h1><h2 id="1、网络体系结构：即指网络的层次结构和每层所使用协议的集合"><a href="#1、网络体系结构：即指网络的层次结构和每层所使用协议的集合" class="headerlink" title="1、网络体系结构：即指网络的层次结构和每层所使用协议的集合"></a>1、网络体系结构：即指网络的层次结构和每层所使用协议的集合</h2><h2 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h2><h4 id="1）协议：一组控制数据通信的规则。"><a href="#1）协议：一组控制数据通信的规则。" class="headerlink" title="1）协议：一组控制数据通信的规则。"></a>1）协议：一组控制数据通信的规则。</h4>
         
           <p class="article-more-link">
-            <a href="/2018/01/16/howtoshowimg/#more">Read More</a>
+            <a href="/2018/03/06/LinuxNetworkProgramming/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/howtoshowimg/" data-id="cjchpmxy10012iovp29k22l4w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/LinuxNetworkProgramming/" data-id="cjefqwuyq0043ukvpti7b39yq" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li></ul>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-MemmoryDistribution" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/06/MemmoryDistribution/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T12:37:51.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">06</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/06/MemmoryDistribution/">MemmoryDistribution</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/内存分布/">内存分布</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="内存分布"><a href="#内存分布" class="headerlink" title="内存分布"></a>内存分布</h1><p>1、内存空间的划分：<strong><em>全局区、静态区、栈区、堆区、常量区、数据区</em></strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2018/03/06/MemmoryDistribution/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/06/MemmoryDistribution/" data-id="cjefqwule0007ukvpdkubv95q" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/malloc/">malloc</a></li></ul>
 
     </footer>
   </div>
@@ -357,12 +424,12 @@
 
 
   
-    <article id="post-linuxconcept1" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-functionOfMain" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/15/linuxconcept1/" class="article-date">
-  <time class="post-time" datetime="2018-01-15T13:03:27.000Z" itemprop="datePublished">
-    <span class="post-month">1月</span><br/>
-    <span class="post-day">15</span>
+    <a href="/2018/03/06/functionOfMain/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T12:29:54.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">06</span>
   </time>
 </a>
    
@@ -374,14 +441,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/15/linuxconcept1/">linuxconcept1</a>
+      <a class="article-title" href="/2018/03/06/functionOfMain/">functionOfMain</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux的基础知识一/">Linux的基础知识一</a>
+    <a class="article-category-link" href="/categories/关于main函数的讲解/">关于main函数的讲解</a>
   </div>
 
           
@@ -393,20 +460,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="linux的基础讲解"><a href="#linux的基础讲解" class="headerlink" title="linux的基础讲解"></a>linux的基础讲解</h1><h2 id="今天开始进入Linux的讲解，从Linux的基础命令、路径，最后还会涉及到C语言和数据结构、网络相关的知识点。但是今天讲不到C语言那些去。"><a href="#今天开始进入Linux的讲解，从Linux的基础命令、路径，最后还会涉及到C语言和数据结构、网络相关的知识点。但是今天讲不到C语言那些去。" class="headerlink" title="今天开始进入Linux的讲解，从Linux的基础命令、路径，最后还会涉及到C语言和数据结构、网络相关的知识点。但是今天讲不到C语言那些去。"></a>今天开始进入Linux的讲解，从Linux的基础命令、路径，最后还会涉及到C语言和数据结构、网络相关的知识点。但是今天讲不到C语言那些去。</h2>
+        <h1 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h1><p>1、main函数的原型：</p>
         
           <p class="article-more-link">
-            <a href="/2018/01/15/linuxconcept1/#more">Read More</a>
+            <a href="/2018/03/06/functionOfMain/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/linuxconcept1/" data-id="cjchpmy0q001niovpm1wfrxhf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/functionOfMain/" data-id="cjefqwup50015ukvp6hp51nit" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
-
     </footer>
   </div>
   
@@ -416,12 +481,12 @@
 
 
   
-    <article id="post-ServletCart3" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-functionReview" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/08/ServletCart3/" class="article-date">
-  <time class="post-time" datetime="2017-12-08T14:56:04.000Z" itemprop="datePublished">
-    <span class="post-month">12月</span><br/>
-    <span class="post-day">08</span>
+    <a href="/2018/03/06/functionReview/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T12:18:58.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">06</span>
   </time>
 </a>
    
@@ -433,14 +498,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/08/ServletCart3/">ServletCart3</a>
+      <a class="article-title" href="/2018/03/06/functionReview/">functionReview</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/经过前面两次的编写，现在来实现显示购物车的功能/">经过前面两次的编写，现在来实现显示购物车的功能</a>
+    <a class="article-category-link" href="/categories/函数的复习/">函数的复习</a>
   </div>
 
           
@@ -452,20 +517,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="接下来的代码有些少了。不像前面两次那样的长篇大论的。但是在实际的项目中，必须结合着三个才能正常的运行"><a href="#接下来的代码有些少了。不像前面两次那样的长篇大论的。但是在实际的项目中，必须结合着三个才能正常的运行" class="headerlink" title="接下来的代码有些少了。不像前面两次那样的长篇大论的。但是在实际的项目中，必须结合着三个才能正常的运行"></a>接下来的代码有些少了。不像前面两次那样的长篇大论的。但是在实际的项目中，必须结合着三个才能正常的运行</h1>
+        <h1 id="函数的复习知识总结"><a href="#函数的复习知识总结" class="headerlink" title="函数的复习知识总结"></a>函数的复习知识总结</h1><p>1、如果函数体写在main函数下方，则需要声明</p>
+<p>2、函数的定义</p>
+<p>void：返回值类型，如果没有返回值，则写void</p>
+<p>hello：函数名，函数名命名遵循标识符的命名规则</p>
         
           <p class="article-more-link">
-            <a href="/2017/12/08/ServletCart3/#more">Read More</a>
+            <a href="/2018/03/06/functionReview/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/08/ServletCart3/" data-id="cjchpmxt50006iovpvbwdloi4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/functionReview/" data-id="cjefqwup50014ukvp7fd2vxrj" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li></ul>
-
     </footer>
   </div>
   
@@ -475,12 +541,12 @@
 
 
   
-    <article id="post-ServletCart2" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-LinuxAddCOfBasic" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/08/ServletCart2/" class="article-date">
-  <time class="post-time" datetime="2017-12-08T13:21:15.000Z" itemprop="datePublished">
-    <span class="post-month">12月</span><br/>
-    <span class="post-day">08</span>
+    <a href="/2018/03/06/LinuxAddCOfBasic/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T11:40:37.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">06</span>
   </time>
 </a>
    
@@ -492,14 +558,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/08/ServletCart2/">ServletCart2</a>
+      <a class="article-title" href="/2018/03/06/LinuxAddCOfBasic/">LinuxAddCOfBasic</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/刚才学习了购物车类。下面来写一下购物车的servlet层/">刚才学习了购物车类。下面来写一下购物车的servlet层</a>
+    <a class="article-category-link" href="/categories/C语言和Linux的基础知识/">C语言和Linux的基础知识</a>
   </div>
 
           
@@ -511,20 +577,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="下面继续学习购物车的servlet层的一些设计"><a href="#下面继续学习购物车的servlet层的一些设计" class="headerlink" title="下面继续学习购物车的servlet层的一些设计"></a>下面继续学习购物车的servlet层的一些设计</h1><h3 id="准备工作是：在刚才创建的购物车的web工程点击new、servlet就可以创建一个servlet了。创建好之后，那就开始吧"><a href="#准备工作是：在刚才创建的购物车的web工程点击new、servlet就可以创建一个servlet了。创建好之后，那就开始吧" class="headerlink" title="准备工作是：在刚才创建的购物车的web工程点击new、servlet就可以创建一个servlet了。创建好之后，那就开始吧"></a>准备工作是：在刚才创建的购物车的web工程点击new、servlet就可以创建一个servlet了。创建好之后，那就开始吧</h3>
+        <h1 id="C语言和Linux"><a href="#C语言和Linux" class="headerlink" title="C语言和Linux"></a>C语言和Linux</h1><p>1、四个重要的人物</p>
+<p>​    a、肯·汤姆森    AT&amp;T公司的研发人员、Unix操作系统的发明者（B语言发）， C语言的发明者</p>
+<p>​    b、丹尼斯·里奇    C语言之父、UNIX之父、（UNIX是闭源的，源代码不开放）</p>
         
           <p class="article-more-link">
-            <a href="/2017/12/08/ServletCart2/#more">Read More</a>
+            <a href="/2018/03/06/LinuxAddCOfBasic/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/08/ServletCart2/" data-id="cjchpmxrt0002iovpkfhoqt4i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/LinuxAddCOfBasic/" data-id="cjefqwukc0005ukvppayp1j52" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
-
     </footer>
   </div>
   
@@ -534,12 +600,12 @@
 
 
   
-    <article id="post-ServletCart1" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-SystemCorelBurning" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/08/ServletCart1/" class="article-date">
-  <time class="post-time" datetime="2017-12-08T12:07:49.000Z" itemprop="datePublished">
-    <span class="post-month">12月</span><br/>
-    <span class="post-day">08</span>
+    <a href="/2018/03/06/SystemCorelBurning/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T11:33:05.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">06</span>
   </time>
 </a>
    
@@ -551,14 +617,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/08/ServletCart1/">ServletCart1</a>
+      <a class="article-title" href="/2018/03/06/SystemCorelBurning/">SystemCorelBurning</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/简单的购物车类的实现代码/">简单的购物车类的实现代码</a>
+    <a class="article-category-link" href="/categories/系统内核的烧写/">系统内核的烧写</a>
   </div>
 
           
@@ -570,79 +636,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="购物车的一些设计代码"><a href="#购物车的一些设计代码" class="headerlink" title="购物车的一些设计代码"></a>购物车的一些设计代码</h1><h2 id="今天学习了servlet实现购物车的添加商品进购物车，从购物车中删除商品，计算商品的总价格"><a href="#今天学习了servlet实现购物车的添加商品进购物车，从购物车中删除商品，计算商品的总价格" class="headerlink" title="今天学习了servlet实现购物车的添加商品进购物车，从购物车中删除商品，计算商品的总价格"></a>今天学习了servlet实现购物车的添加商品进购物车，从购物车中删除商品，计算商品的总价格</h2>
+        <h1 id="系统内核的烧写"><a href="#系统内核的烧写" class="headerlink" title="系统内核的烧写"></a>系统内核的烧写</h1><h3 id="1、zImage与uImage的区别："><a href="#1、zImage与uImage的区别：" class="headerlink" title="1、zImage与uImage的区别："></a>1、zImage与uImage的区别：</h3><p>​    zImage 没有加头信息的镜像；uImage是加有头信息的镜像。</p>
+<p>​    信息包括：版本和配置</p>
         
           <p class="article-more-link">
-            <a href="/2017/12/08/ServletCart1/#more">Read More</a>
+            <a href="/2018/03/06/SystemCorelBurning/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/08/ServletCart1/" data-id="cjchpmxq00000iovptkwa6orv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/SystemCorelBurning/" data-id="cjefqwumg000cukvp7eqfhae8" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-ServletStudy1" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/08/ServletStudy1/" class="article-date">
-  <time class="post-time" datetime="2017-12-08T11:54:22.000Z" itemprop="datePublished">
-    <span class="post-month">12月</span><br/>
-    <span class="post-day">08</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/08/ServletStudy1/">ServletStudy1</a>
-    </h1>
-  
-
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/学习Servlet的一些记录/">学习Servlet的一些记录</a>
-  </div>
-
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="学习servlet的旅程一"><a href="#学习servlet的旅程一" class="headerlink" title="学习servlet的旅程一"></a>学习servlet的旅程一</h1>
-        
-          <p class="article-more-link">
-            <a href="/2017/12/08/ServletStudy1/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/08/ServletStudy1/" data-id="cjchpmxt50007iovp5uae44p4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
-
     </footer>
   </div>
   
@@ -655,7 +661,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">next &raquo;</a>
   </nav>
 </section>
         
@@ -696,9 +702,9 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>39</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>29</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>53</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
     </div>
 
 

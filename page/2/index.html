@@ -38,9 +38,9 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>39</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>29</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>53</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -66,70 +66,11 @@
 
         <section id="main">
   
-    <article id="post-rememberPassword" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Linuxcorel" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/07/rememberPassword/" class="article-date">
-  <time class="post-time" datetime="2017-12-06T17:01:03.000Z" itemprop="datePublished">
-    <span class="post-month">12月</span><br/>
-    <span class="post-day">07</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/07/rememberPassword/">rememberPassword</a>
-    </h1>
-  
-
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/记住密码登录操作/">记住密码登录操作</a>
-  </div>
-
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="关于记住密码的代码："><a href="#关于记住密码的代码：" class="headerlink" title="关于记住密码的代码："></a>关于记住密码的代码：</h1>
-        
-          <p class="article-more-link">
-            <a href="/2017/12/07/rememberPassword/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/rememberPassword/" data-id="cjchpmy270026iovpydv7w7ug" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-reFoundPassword" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/06/reFoundPassword/" class="article-date">
-  <time class="post-time" datetime="2017-12-06T15:22:52.000Z" itemprop="datePublished">
-    <span class="post-month">12月</span><br/>
+    <a href="/2018/03/06/Linuxcorel/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T11:23:35.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
     <span class="post-day">06</span>
   </time>
 </a>
@@ -142,12 +83,16 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/06/reFoundPassword/">reFoundPassword</a>
+      <a class="article-title" href="/2018/03/06/Linuxcorel/">Linuxcorel</a>
     </h1>
   
 
         <div>
           
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux内核/">Linux内核</a>
+  </div>
+
           
               
 
@@ -157,11 +102,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Linux内核"><a href="#Linux内核" class="headerlink" title="Linux内核"></a>Linux内核</h1><p>1、Linux内核：driver  驱动程序</p>
+<p>​        cdev_add将函数添加到链表中，嵌套了一个结构体file_operations（初始化结构体：cdev_init）</p>
+<p>硬件</p>
+<p>2、驱动如何去操作（硬件设备）应用函数中的接口？</p>
+<p>1）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">应用函数：int ioctl(int d,int request,...)</div><div class="line"></div><div class="line">功能：控制设备</div><div class="line"></div><div class="line">参数：d    文件描述符</div><div class="line"></div><div class="line">	Request    命令码</div><div class="line"></div><div class="line">…        实现数据的传递</div></pre></td></tr></table></figure>
+<p>2）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">define _IO(type,nr)</div><div class="line"></div><div class="line">	#define _IOR(type,nr,size)</div><div class="line"></div><div class="line">	#define _IOW(type,nr,size)</div><div class="line"></div><div class="line">	#define _IOWR(type,nr,size)</div><div class="line"></div><div class="line">type幻数，任意的数</div><div class="line"></div><div class="line">nr  编号，从0开始</div><div class="line"></div><div class="line">size   传输数据的大小</div><div class="line"></div><div class="line">返回值：	成功   0</div><div class="line"></div><div class="line">		失败   -1</div></pre></td></tr></table></figure>
+<p>3)驱动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Long test_ioctl(struct file *filep ,unsigned int cmd,unsigned long arg)&#123;</div><div class="line"></div><div class="line">	//实现对设备的控制</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4)硬件控制</p>
+<p>​    物理地址————-à虚拟地址</p>
+<p>A、</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">函数原型：void *ioremap(unsigned long offset,unsigned long size)</div><div class="line"></div><div class="line">	功能：物理地址转换为虚拟地址</div><div class="line"></div><div class="line">	参数：offset  物理地址</div><div class="line"></div><div class="line">			size  范围</div><div class="line"></div><div class="line">	返回值：成功     虚拟地址</div><div class="line"></div><div class="line">			失败     NULL</div></pre></td></tr></table></figure>
+<p>B、</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">函数原型：void iounmap(volatile void_iomemd *adr)</div><div class="line"></div><div class="line">	参数adr   虚拟地址</div><div class="line"></div><div class="line">	返回值：成功    寄存器值</div></pre></td></tr></table></figure>
+<p>C、</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">函数原型;void write(u32 b,volatile void_iomemd *addr )</div><div class="line"></div><div class="line">	功能：将修改之后的寄存器的值，写到寄存器</div><div class="line"></div><div class="line">	参数： b    修改之后的值</div><div class="line"></div><div class="line">			addr   寄存器所在的地址</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/reFoundPassword/" data-id="cjchpmy1u001ziovpuo8rhu3n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/Linuxcorel/" data-id="cjefqwujl0003ukvpoh51iyxa" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -173,11 +136,11 @@
 
 
   
-    <article id="post-sqlquestion1" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-chardrivefram" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/06/sqlquestion1/" class="article-date">
-  <time class="post-time" datetime="2017-12-06T13:55:23.000Z" itemprop="datePublished">
-    <span class="post-month">12月</span><br/>
+    <a href="/2018/03/06/chardrivefram/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T10:51:39.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
     <span class="post-day">06</span>
   </time>
 </a>
@@ -190,14 +153,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/06/sqlquestion1/">sqlquestion1</a>
+      <a class="article-title" href="/2018/03/06/chardrivefram/">chardrivefram</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/关于今天新遇到的问题/">关于今天新遇到的问题</a>
+    <a class="article-category-link" href="/categories/字符设备驱动框架/">字符设备驱动框架</a>
   </div>
 
           
@@ -209,20 +172,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="jsp处理过程中遇到的问题"><a href="#jsp处理过程中遇到的问题" class="headerlink" title="jsp处理过程中遇到的问题"></a>jsp处理过程中遇到的问题</h1>
+        <h1 id="字符设备驱动框架"><a href="#字符设备驱动框架" class="headerlink" title="字符设备驱动框架"></a>字符设备驱动框架</h1><h3 id="1、设备号：驱动通过不同设备号区分不同的设备"><a href="#1、设备号：驱动通过不同设备号区分不同的设备" class="headerlink" title="1、设备号：驱动通过不同设备号区分不同的设备"></a>1、设备号：驱动通过不同设备号区分不同的设备</h3><h4 id="申请注册设备号的方法："><a href="#申请注册设备号的方法：" class="headerlink" title="申请注册设备号的方法："></a>申请注册设备号的方法：</h4>
         
           <p class="article-more-link">
-            <a href="/2017/12/06/sqlquestion1/#more">Read More</a>
+            <a href="/2018/03/06/chardrivefram/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/sqlquestion1/" data-id="cjchpmy3e002ciovpsma22rxv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/chardrivefram/" data-id="cjefqwumq000eukvp4uiilafk" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
-
     </footer>
   </div>
   
@@ -232,11 +193,11 @@
 
 
   
-    <article id="post-sqlregister" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-drive" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/06/sqlregister/" class="article-date">
-  <time class="post-time" datetime="2017-12-06T11:33:18.000Z" itemprop="datePublished">
-    <span class="post-month">12月</span><br/>
+    <a href="/2018/03/06/drive/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T10:34:40.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
     <span class="post-day">06</span>
   </time>
 </a>
@@ -249,14 +210,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/06/sqlregister/">sqlregister</a>
+      <a class="article-title" href="/2018/03/06/drive/">drive</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/关于jsp与mysql连接成功后的注册信息添加到数据库的问题/">关于jsp与mysql连接成功后的注册信息添加到数据库的问题</a>
+    <a class="article-category-link" href="/categories/驱动知识的讲解/">驱动知识的讲解</a>
   </div>
 
           
@@ -268,20 +229,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="jsp页面输入的注册信息添加到数据库"><a href="#jsp页面输入的注册信息添加到数据库" class="headerlink" title="jsp页面输入的注册信息添加到数据库"></a>jsp页面输入的注册信息添加到数据库</h1><h3 id="今天第一次实现的注册信息添加到数据库中，我就不讲那么多的废话了，就让我直接讲述一下这个问题的关键的代码吧："><a href="#今天第一次实现的注册信息添加到数据库中，我就不讲那么多的废话了，就让我直接讲述一下这个问题的关键的代码吧：" class="headerlink" title="今天第一次实现的注册信息添加到数据库中，我就不讲那么多的废话了，就让我直接讲述一下这个问题的关键的代码吧："></a>今天第一次实现的注册信息添加到数据库中，我就不讲那么多的废话了，就让我直接讲述一下这个问题的关键的代码吧：</h3>
-        
-          <p class="article-more-link">
-            <a href="/2017/12/06/sqlregister/#more">Read More</a>
-          </p>
-        
+        <h1 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h1><h2 id="一、驱动"><a href="#一、驱动" class="headerlink" title="一、驱动"></a>一、驱动</h2><h3 id="1-驱动的概念"><a href="#1-驱动的概念" class="headerlink" title="1.驱动的概念"></a>1.驱动的概念</h3><pre><code>#### 字符设备驱动、块设备驱动、网络设备驱动
+</code></pre><h3 id="2-驱动的三要素：加载函数、卸载函数、许可证声明"><a href="#2-驱动的三要素：加载函数、卸载函数、许可证声明" class="headerlink" title="2.驱动的三要素：加载函数、卸载函数、许可证声明"></a>2.驱动的三要素：加载函数、卸载函数、许可证声明</h3><h3 id="3-对上面的三要素的讲解"><a href="#3-对上面的三要素的讲解" class="headerlink" title="3.对上面的三要素的讲解"></a>3.对上面的三要素的讲解</h3><h4 id="1）加载函数-（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）"><a href="#1）加载函数-（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）" class="headerlink" title="1）加载函数:（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）"></a>1）加载函数:（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">缺省方式：int  init_module(void)&#123;</div><div class="line">//初始化代码（子函数）</div><div class="line">return 0;</div><div class="line">&#125;</div><div class="line">用户自定义：</div><div class="line">	int test_init(void)&#123;</div><div class="line">		//初始化函数</div><div class="line">&#125;</div><div class="line">	module_init(test_init);</div></pre></td></tr></table></figure>
+<p>解析：驱动加载到内核：</p>
+<p>​        方法1.a/直接编译成.ko文件b/内核编译</p>
+<p>​        方法2.a/insmod将驱动加载到内核，驱动被激活驱动自动执行加载的函数 接口。</p>
+<h4 id="2-卸载函数：（当使用rmmod将驱动从-Linux内核移除时，自动执行该函数接口）"><a href="#2-卸载函数：（当使用rmmod将驱动从-Linux内核移除时，自动执行该函数接口）" class="headerlink" title="2)卸载函数：（当使用rmmod将驱动从 Linux内核移除时，自动执行该函数接口）"></a>2)卸载函数：（当使用rmmod将驱动从 Linux内核移除时，自动执行该函数接口）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">缺省函数：void  cleanup_module(void)&#123;</div><div class="line">//资源释放</div><div class="line">&#125;</div><div class="line">用户自定义：</div><div class="line">	void test_exit(void)&#123;</div><div class="line">		//释放资源的代码</div><div class="line">&#125;</div><div class="line">		module_exit(test_exit);</div></pre></td></tr></table></figure>
+<p>解析：驱动被从内核中删除的时候，由驱动生成的代码也会被删除，释放内核的资源</p>
+<h4 id="3-许可证声明：（开放源代码）"><a href="#3-许可证声明：（开放源代码）" class="headerlink" title="3)许可证声明：（开放源代码）"></a>3)许可证声明：（开放源代码）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MODULE_LICENSE(“GPL”);</div></pre></td></tr></table></figure>
+<p>驱动不会自动去激活系统的软件。</p>
+<hr>
+<h2 id="重要命令的使用："><a href="#重要命令的使用：" class="headerlink" title="重要命令的使用："></a>重要命令的使用：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">printk		是内核格式化输出函数（打印函数）</div><div class="line">dmesg		查看内存打印缓冲区</div><div class="line">dmesg   -c   先查看，后刷新缓冲区</div><div class="line">dmesg   -C    直接刷新缓冲区</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/sqlregister/" data-id="cjchpmy3k002eiovpu7disuyk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/drive/" data-id="cjefqwuol000xukvpmje0d06h" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
-
     </footer>
   </div>
   
@@ -291,12 +256,12 @@
 
 
   
-    <article id="post-jsp-login" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-EMMCAddcorelandfileSystem" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/02/jsp-login/" class="article-date">
-  <time class="post-time" datetime="2017-12-02T11:16:00.000Z" itemprop="datePublished">
-    <span class="post-month">12月</span><br/>
-    <span class="post-day">02</span>
+    <a href="/2018/03/06/EMMCAddcorelandfileSystem/" class="article-date">
+  <time class="post-time" datetime="2018-03-06T10:12:07.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">06</span>
   </time>
 </a>
    
@@ -308,69 +273,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/02/jsp-login/">jsp-login</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="jsp登录"><a href="#jsp登录" class="headerlink" title="jsp登录"></a>jsp登录</h1><h2 id="学习了jsp的登录，下面直接给出示例代码"><a href="#学习了jsp的登录，下面直接给出示例代码" class="headerlink" title="学习了jsp的登录，下面直接给出示例代码"></a>学习了jsp的登录，下面直接给出示例代码</h2>
-        
-          <p class="article-more-link">
-            <a href="/2017/12/02/jsp-login/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/02/jsp-login/" data-id="cjchpmxzf001ciovpknswmscj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/login/">login</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-xampp1" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/26/xampp1/" class="article-date">
-  <time class="post-time" datetime="2017-11-26T09:46:46.000Z" itemprop="datePublished">
-    <span class="post-month">11月</span><br/>
-    <span class="post-day">26</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/26/xampp1/">xampp1</a>
+      <a class="article-title" href="/2018/03/06/EMMCAddcorelandfileSystem/">EMMCAddcorelandfileSystem</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/保存xampp的重要的地址的位置/">保存xampp的重要的地址的位置</a>
+    <a class="article-category-link" href="/categories/从EMMC加载内核和文件系统的一些步骤/">从EMMC加载内核和文件系统的一些步骤</a>
   </div>
 
           
@@ -382,20 +292,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="其实不是新问题了，是昨天我在注册服务器上改了几下地址，需要使用MYSQL的。但是不在本地了。我就需要改下。"><a href="#其实不是新问题了，是昨天我在注册服务器上改了几下地址，需要使用MYSQL的。但是不在本地了。我就需要改下。" class="headerlink" title="其实不是新问题了，是昨天我在注册服务器上改了几下地址，需要使用MYSQL的。但是不在本地了。我就需要改下。"></a>其实不是新问题了，是昨天我在注册服务器上改了几下地址，需要使用MYSQL的。但是不在本地了。我就需要改下。</h1>
+        <h1 id="从EMMC加载内核和文件系统"><a href="#从EMMC加载内核和文件系统" class="headerlink" title="从EMMC加载内核和文件系统"></a>从EMMC加载内核和文件系统</h1><h2 id="1、首先找到ramdisk-img，并拷贝到虚拟机的-tftpboot目录下（tftpboot是自己创建的）"><a href="#1、首先找到ramdisk-img，并拷贝到虚拟机的-tftpboot目录下（tftpboot是自己创建的）" class="headerlink" title="1、首先找到ramdisk.img，并拷贝到虚拟机的/tftpboot目录下（tftpboot是自己创建的）"></a>1、首先找到ramdisk.img，并拷贝到虚拟机的/tftpboot目录下（tftpboot是自己创建的）</h2><h2 id="2、烧写内核镜像到EMMC上（uboot交互模式下操作的），需要写的语句如下："><a href="#2、烧写内核镜像到EMMC上（uboot交互模式下操作的），需要写的语句如下：" class="headerlink" title="2、烧写内核镜像到EMMC上（uboot交互模式下操作的），需要写的语句如下："></a>2、烧写内核镜像到EMMC上（uboot交互模式下操作的），需要写的语句如下：</h2>
         
           <p class="article-more-link">
-            <a href="/2017/11/26/xampp1/#more">Read More</a>
+            <a href="/2018/03/06/EMMCAddcorelandfileSystem/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/26/xampp1/" data-id="cjchpmy4w002ziovp2qb6lkl0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/EMMCAddcorelandfileSystem/" data-id="cjefqwuo4000qukvpwsqo1daw" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xampp/">xampp</a></li></ul>
-
     </footer>
   </div>
   
@@ -405,66 +313,11 @@
 
 
   
-    <article id="post-xampp" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-server" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/23/xampp/" class="article-date">
-  <time class="post-time" datetime="2017-11-23T03:46:47.000Z" itemprop="datePublished">
-    <span class="post-month">11月</span><br/>
-    <span class="post-day">23</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/23/xampp/">xampp</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Xampp"><a href="#Xampp" class="headerlink" title="Xampp"></a>Xampp</h1><p>今天学习了xampp。就来简单讲解一下我今天遇到的问题吧</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/11/23/xampp/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/23/xampp/" data-id="cjchpmy4l002viovptbppuxe0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xampp/">xampp</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-sqlquesiton" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/16/sqlquesiton/" class="article-date">
-  <time class="post-time" datetime="2017-11-16T01:54:06.000Z" itemprop="datePublished">
-    <span class="post-month">11月</span><br/>
+    <a href="/2018/01/16/server/" class="article-date">
+  <time class="post-time" datetime="2018-01-16T13:25:51.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
     <span class="post-day">16</span>
   </time>
 </a>
@@ -477,14 +330,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/16/sqlquesiton/">sqlquesiton</a>
+      <a class="article-title" href="/2018/01/16/server/">server</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/关于数据库的一些问题的解决办法/">关于数据库的一些问题的解决办法</a>
+    <a class="article-category-link" href="/categories/tftp服务器和nfs服务器的知识点/">tftp服务器和nfs服务器的知识点</a>
   </div>
 
           
@@ -496,19 +349,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="sql-的一些问题的解决办法："><a href="#sql-的一些问题的解决办法：" class="headerlink" title="sql 的一些问题的解决办法："></a>sql 的一些问题的解决办法：</h1><h2 id="1、报错如此：mysql-1062-–Duplicate-entry-‘1’-for-key-‘PRIMARY’"><a href="#1、报错如此：mysql-1062-–Duplicate-entry-‘1’-for-key-‘PRIMARY’" class="headerlink" title="1、报错如此：mysql #1062 –Duplicate entry ‘1’ for key ‘PRIMARY’"></a>1、报错如此：mysql #1062 –Duplicate entry ‘1’ for key ‘PRIMARY’</h2>
+        <h1 id="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一"><a href="#tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一" class="headerlink" title="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一"></a>tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一</h1>
         
           <p class="article-more-link">
-            <a href="/2017/11/16/sqlquesiton/#more">Read More</a>
+            <a href="/2018/01/16/server/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/sqlquesiton/" data-id="cjchpmy2n002aiovpal0rkr50" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/server/" data-id="cjefqwuvx0033ukvppnzqpcfp" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nfs/">nfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tftp/">tftp</a></li></ul>
 
     </footer>
   </div>
@@ -519,12 +372,12 @@
 
 
   
-    <article id="post-jsp-neizhiduixiang" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sysmovelive" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/12/jsp-neizhiduixiang/" class="article-date">
-  <time class="post-time" datetime="2017-11-12T05:15:48.000Z" itemprop="datePublished">
-    <span class="post-month">11月</span><br/>
-    <span class="post-day">12</span>
+    <a href="/2018/01/16/sysmovelive/" class="article-date">
+  <time class="post-time" datetime="2018-01-16T13:05:16.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
+    <span class="post-day">16</span>
   </time>
 </a>
    
@@ -536,14 +389,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/12/jsp-neizhiduixiang/">jsp_neizhiduixiang</a>
+      <a class="article-title" href="/2018/01/16/sysmovelive/">sysmovelive</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/jsp的内置对象/">jsp的内置对象</a>
+    <a class="article-category-link" href="/categories/系统移植/">系统移植</a>
   </div>
 
           
@@ -555,20 +408,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="jsp的内置对象"><a href="#jsp的内置对象" class="headerlink" title="jsp的内置对象"></a>jsp的内置对象</h1><h2 id="jsp的常用的内置对象有：out、request、response、session、application、Page、pageContext、"><a href="#jsp的常用的内置对象有：out、request、response、session、application、Page、pageContext、" class="headerlink" title="jsp的常用的内置对象有：out、request、response、session、application、Page、pageContext、"></a>jsp的常用的内置对象有：out、request、response、session、application、Page、pageContext、</h2>
+        <h1 id="系统移植"><a href="#系统移植" class="headerlink" title="系统移植"></a>系统移植</h1><h3 id="系统移植先从系统的内部开始了解，知道基本的结构"><a href="#系统移植先从系统的内部开始了解，知道基本的结构" class="headerlink" title="系统移植先从系统的内部开始了解，知道基本的结构"></a>系统移植先从系统的内部开始了解，知道基本的结构</h3>
         
           <p class="article-more-link">
-            <a href="/2017/11/12/jsp-neizhiduixiang/#more">Read More</a>
+            <a href="/2018/01/16/sysmovelive/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/12/jsp-neizhiduixiang/" data-id="cjchpmxzv001eiovp508z1n3g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/sysmovelive/" data-id="cjefqwuw1003aukvpgiloewfr" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li></ul>
-
     </footer>
   </div>
   
@@ -578,12 +429,12 @@
 
 
   
-    <article id="post-jsp-connectsql" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-process" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/12/jsp-connectsql/" class="article-date">
-  <time class="post-time" datetime="2017-11-12T04:49:20.000Z" itemprop="datePublished">
-    <span class="post-month">11月</span><br/>
-    <span class="post-day">12</span>
+    <a href="/2018/01/16/process/" class="article-date">
+  <time class="post-time" datetime="2018-01-16T12:55:56.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
+    <span class="post-day">16</span>
   </time>
 </a>
    
@@ -595,14 +446,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/12/jsp-connectsql/">jsp_connectsql</a>
+      <a class="article-title" href="/2018/01/16/process/">process</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/关于jspweb项目连接数据库的一些操作/">关于jspweb项目连接数据库的一些操作</a>
+    <a class="article-category-link" href="/categories/进程/">进程</a>
   </div>
 
           
@@ -614,19 +465,194 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="jsp-amp-sql"><a href="#jsp-amp-sql" class="headerlink" title="jsp&amp;sql"></a>jsp&amp;sql</h1><h2 id="今天要说的是数据库和web的连接问题，首先我先新建了一个目录来测试。"><a href="#今天要说的是数据库和web的连接问题，首先我先新建了一个目录来测试。" class="headerlink" title="今天要说的是数据库和web的连接问题，首先我先新建了一个目录来测试。"></a>今天要说的是数据库和web的连接问题，首先我先新建了一个目录来测试。</h2>
+        <h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><h2 id="进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的"><a href="#进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的" class="headerlink" title="进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的"></a>进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的</h2>
         
           <p class="article-more-link">
-            <a href="/2017/11/12/jsp-connectsql/#more">Read More</a>
+            <a href="/2018/01/16/process/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/12/jsp-connectsql/" data-id="cjchpmxz00018iovp87g3339j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/process/" data-id="cjefqwuu1002cukvp2r27m4bz" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-data-fun-struct" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/16/data-fun-struct/" class="article-date">
+  <time class="post-time" datetime="2018-01-16T08:17:12.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
+    <span class="post-day">16</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/16/data-fun-struct/">data_fun_struct</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/对数据结构、C语言的指针，函数、结构体的讲解/">对数据结构、C语言的指针，函数、结构体的讲解</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解"><a href="#对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解" class="headerlink" title="对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解"></a>对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解</h1>
+        
+          <p class="article-more-link">
+            <a href="/2018/01/16/data-fun-struct/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/16/data-fun-struct/" data-id="cjefqwune000oukvpxyqr00ex" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/">data</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/struct/">struct</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-howtoshowimg" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/16/howtoshowimg/" class="article-date">
+  <time class="post-time" datetime="2018-01-16T07:55:01.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
+    <span class="post-day">16</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/16/howtoshowimg/">howtoshowimg</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/关于github的图片的加载问题的讲解/">关于github的图片的加载问题的讲解</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="分为两个阶段来做：1、在GitHub上创建自己的仓库（如IMG）；2、将创建好的地址复制到本地计算机的某一个盘的某个文件夹中。"><a href="#分为两个阶段来做：1、在GitHub上创建自己的仓库（如IMG）；2、将创建好的地址复制到本地计算机的某一个盘的某个文件夹中。" class="headerlink" title="分为两个阶段来做：1、在GitHub上创建自己的仓库（如IMG）；2、将创建好的地址复制到本地计算机的某一个盘的某个文件夹中。"></a>分为两个阶段来做：1、在GitHub上创建自己的仓库（如IMG）；2、将创建好的地址复制到本地计算机的某一个盘的某个文件夹中。</h1>
+        
+          <p class="article-more-link">
+            <a href="/2018/01/16/howtoshowimg/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/16/howtoshowimg/" data-id="cjefqwuqw001nukvp7xj8rzkp" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-linuxconcept1" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/15/linuxconcept1/" class="article-date">
+  <time class="post-time" datetime="2018-01-15T13:03:27.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
+    <span class="post-day">15</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/15/linuxconcept1/">linuxconcept1</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux的基础知识一/">Linux的基础知识一</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="linux的基础讲解"><a href="#linux的基础讲解" class="headerlink" title="linux的基础讲解"></a>linux的基础讲解</h1><h2 id="今天开始进入Linux的讲解，从Linux的基础命令、路径，最后还会涉及到C语言和数据结构、网络相关的知识点。但是今天讲不到C语言那些去。"><a href="#今天开始进入Linux的讲解，从Linux的基础命令、路径，最后还会涉及到C语言和数据结构、网络相关的知识点。但是今天讲不到C语言那些去。" class="headerlink" title="今天开始进入Linux的讲解，从Linux的基础命令、路径，最后还会涉及到C语言和数据结构、网络相关的知识点。但是今天讲不到C语言那些去。"></a>今天开始进入Linux的讲解，从Linux的基础命令、路径，最后还会涉及到C语言和数据结构、网络相关的知识点。但是今天讲不到C语言那些去。</h2>
+        
+          <p class="article-more-link">
+            <a href="/2018/01/15/linuxconcept1/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/15/linuxconcept1/" data-id="cjefqwuu1002gukvpsuou23be" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
 
     </footer>
   </div>
@@ -640,7 +666,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; pre</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; pre</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">next &raquo;</a>
   </nav>
 </section>
         
@@ -681,9 +707,9 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>39</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>29</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>53</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
     </div>
 
 
