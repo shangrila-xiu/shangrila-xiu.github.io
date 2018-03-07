@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/06/SystemCorelBurning/" data-id="cjeh0eizt000lv4vp14blw396" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/SystemCorelBurning/" data-id="cjeh0k1sp000lnovpywbr5pjn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,27 +162,15 @@
       
         <h1 id="Linux内核"><a href="#Linux内核" class="headerlink" title="Linux内核"></a>Linux内核</h1><p>1、Linux内核：driver  驱动程序</p>
 <p>​        cdev_add将函数添加到链表中，嵌套了一个结构体file_operations（初始化结构体：cdev_init）</p>
-<p>硬件</p>
-<p>2、驱动如何去操作（硬件设备）应用函数中的接口？</p>
-<p>1）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">应用函数：int ioctl(int d,int request,...)</div><div class="line"></div><div class="line">功能：控制设备</div><div class="line"></div><div class="line">参数：d    文件描述符</div><div class="line"></div><div class="line">	Request    命令码</div><div class="line"></div><div class="line">…        实现数据的传递</div></pre></td></tr></table></figure>
-<p>2）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">define _IO(type,nr)</div><div class="line"></div><div class="line">	#define _IOR(type,nr,size)</div><div class="line"></div><div class="line">	#define _IOW(type,nr,size)</div><div class="line"></div><div class="line">	#define _IOWR(type,nr,size)</div><div class="line"></div><div class="line">type幻数，任意的数</div><div class="line"></div><div class="line">nr  编号，从0开始</div><div class="line"></div><div class="line">size   传输数据的大小</div><div class="line"></div><div class="line">返回值：	成功   0</div><div class="line"></div><div class="line">		失败   -1</div></pre></td></tr></table></figure>
-<p>3)驱动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Long test_ioctl(struct file *filep ,unsigned int cmd,unsigned long arg)&#123;</div><div class="line"></div><div class="line">	//实现对设备的控制</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>4)硬件控制</p>
-<p>​    物理地址————-à虚拟地址</p>
-<p>A、</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">函数原型：void *ioremap(unsigned long offset,unsigned long size)</div><div class="line"></div><div class="line">	功能：物理地址转换为虚拟地址</div><div class="line"></div><div class="line">	参数：offset  物理地址</div><div class="line"></div><div class="line">			size  范围</div><div class="line"></div><div class="line">	返回值：成功     虚拟地址</div><div class="line"></div><div class="line">			失败     NULL</div></pre></td></tr></table></figure>
-<p>B、</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">函数原型：void iounmap(volatile void_iomemd *adr)</div><div class="line"></div><div class="line">	参数adr   虚拟地址</div><div class="line"></div><div class="line">	返回值：成功    寄存器值</div></pre></td></tr></table></figure>
-<p>C、</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">函数原型;void write(u32 b,volatile void_iomemd *addr )</div><div class="line"></div><div class="line">	功能：将修改之后的寄存器的值，写到寄存器</div><div class="line"></div><div class="line">	参数： b    修改之后的值</div><div class="line"></div><div class="line">			addr   寄存器所在的地址</div></pre></td></tr></table></figure>
-
+        
+          <p class="article-more-link">
+            <a href="/2018/03/06/Linuxcorel/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/06/Linuxcorel/" data-id="cjeh0eix80006v4vptlbq90bu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/Linuxcorel/" data-id="cjeh0k1qj0007novpnr31ypii" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/06/chardrivefram/" data-id="cjeh0ej14000xv4vp1qa9b2ad" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/chardrivefram/" data-id="cjeh0k1tl000vnovpbz4yxpy3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -288,21 +276,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h1><h2 id="一、驱动"><a href="#一、驱动" class="headerlink" title="一、驱动"></a>一、驱动</h2><h3 id="1-驱动的概念"><a href="#1-驱动的概念" class="headerlink" title="1.驱动的概念"></a>1.驱动的概念</h3><pre><code>#### 字符设备驱动、块设备驱动、网络设备驱动
-</code></pre><h3 id="2-驱动的三要素：加载函数、卸载函数、许可证声明"><a href="#2-驱动的三要素：加载函数、卸载函数、许可证声明" class="headerlink" title="2.驱动的三要素：加载函数、卸载函数、许可证声明"></a>2.驱动的三要素：加载函数、卸载函数、许可证声明</h3><h3 id="3-对上面的三要素的讲解"><a href="#3-对上面的三要素的讲解" class="headerlink" title="3.对上面的三要素的讲解"></a>3.对上面的三要素的讲解</h3><h4 id="1）加载函数-（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）"><a href="#1）加载函数-（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）" class="headerlink" title="1）加载函数:（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）"></a>1）加载函数:（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">缺省方式：int  init_module(void)&#123;</div><div class="line">//初始化代码（子函数）</div><div class="line">return 0;</div><div class="line">&#125;</div><div class="line">用户自定义：</div><div class="line">	int test_init(void)&#123;</div><div class="line">		//初始化函数</div><div class="line">&#125;</div><div class="line">	module_init(test_init);</div></pre></td></tr></table></figure>
-<p>解析：驱动加载到内核：</p>
-<p>​        方法1.a/直接编译成.ko文件b/内核编译</p>
-<p>​        方法2.a/insmod将驱动加载到内核，驱动被激活驱动自动执行加载的函数 接口。</p>
-<h4 id="2-卸载函数：（当使用rmmod将驱动从-Linux内核移除时，自动执行该函数接口）"><a href="#2-卸载函数：（当使用rmmod将驱动从-Linux内核移除时，自动执行该函数接口）" class="headerlink" title="2)卸载函数：（当使用rmmod将驱动从 Linux内核移除时，自动执行该函数接口）"></a>2)卸载函数：（当使用rmmod将驱动从 Linux内核移除时，自动执行该函数接口）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">缺省函数：void  cleanup_module(void)&#123;</div><div class="line">//资源释放</div><div class="line">&#125;</div><div class="line">用户自定义：</div><div class="line">	void test_exit(void)&#123;</div><div class="line">		//释放资源的代码</div><div class="line">&#125;</div><div class="line">		module_exit(test_exit);</div></pre></td></tr></table></figure>
-<p>解析：驱动被从内核中删除的时候，由驱动生成的代码也会被删除，释放内核的资源</p>
-<h4 id="3-许可证声明：（开放源代码）"><a href="#3-许可证声明：（开放源代码）" class="headerlink" title="3)许可证声明：（开放源代码）"></a>3)许可证声明：（开放源代码）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MODULE_LICENSE(“GPL”);</div></pre></td></tr></table></figure>
-<p>驱动不会自动去激活系统的软件。</p>
-<hr>
-<h2 id="重要命令的使用："><a href="#重要命令的使用：" class="headerlink" title="重要命令的使用："></a>重要命令的使用：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">printk		是内核格式化输出函数（打印函数）</div><div class="line">dmesg		查看内存打印缓冲区</div><div class="line">dmesg   -c   先查看，后刷新缓冲区</div><div class="line">dmesg   -C    直接刷新缓冲区</div></pre></td></tr></table></figure>
-
+</code></pre><h3 id="2-驱动的三要素：加载函数、卸载函数、许可证声明"><a href="#2-驱动的三要素：加载函数、卸载函数、许可证声明" class="headerlink" title="2.驱动的三要素：加载函数、卸载函数、许可证声明"></a>2.驱动的三要素：加载函数、卸载函数、许可证声明</h3>
+        
+          <p class="article-more-link">
+            <a href="/2018/03/06/drive/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/06/drive/" data-id="cjeh0ej3a001dv4vpyzijyv5b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/drive/" data-id="cjeh0k1vb001dnovpmznpv0d5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -359,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/06/EMMCAddcorelandfileSystem/" data-id="cjeh0eivh0000v4vpgxpefien" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/EMMCAddcorelandfileSystem/" data-id="cjeh0k1nx0000novpws889l3a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -416,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/server/" data-id="cjeh0ej8k0033v4vp76fbqv4q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/server/" data-id="cjeh0k22p0038novpmo5hxp2o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nfs/">nfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tftp/">tftp</a></li></ul>
@@ -475,7 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/sysmovelive/" data-id="cjeh0ej9v003iv4vpz3eysmyh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/sysmovelive/" data-id="cjeh0k234003inovpjvw6w5pt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -532,7 +515,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/process/" data-id="cjeh0ej84002vv4vp9a9ofrgo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/process/" data-id="cjeh0k21e002wnovpli79lcb3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -589,7 +572,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/data-fun-struct/" data-id="cjeh0ej2f0017v4vp12ka2ewq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/data-fun-struct/" data-id="cjeh0k1uv0017novphk7p9aa2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/">data</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/struct/">struct</a></li></ul>
@@ -648,7 +631,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/howtoshowimg/" data-id="cjeh0ej5i0021v4vpi6tc98so" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/16/howtoshowimg/" data-id="cjeh0k1ys0021novpezvm30uh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li></ul>

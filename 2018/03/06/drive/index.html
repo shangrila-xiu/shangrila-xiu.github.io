@@ -5,17 +5,17 @@
   
   <title>drive | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="驱动一、驱动1.驱动的概念#### 字符设备驱动、块设备驱动、网络设备驱动 2.驱动的三要素：加载函数、卸载函数、许可证声明3.对上面的三要素的讲解1）加载函数:（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）123456789缺省方式：int  init_module(void)&amp;#123;//初始化代码（子函数）return 0;&amp;#125;用户自定义：	int test">
+  <meta name="description" content="驱动一、驱动1.驱动的概念#### 字符设备驱动、块设备驱动、网络设备驱动 2.驱动的三要素：加载函数、卸载函数、许可证声明">
 <meta property="og:type" content="article">
 <meta property="og:title" content="drive">
 <meta property="og:url" content="http://yoursite.com/2018/03/06/drive/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="驱动一、驱动1.驱动的概念#### 字符设备驱动、块设备驱动、网络设备驱动 2.驱动的三要素：加载函数、卸载函数、许可证声明3.对上面的三要素的讲解1）加载函数:（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）123456789缺省方式：int  init_module(void)&amp;#123;//初始化代码（子函数）return 0;&amp;#125;用户自定义：	int test">
+<meta property="og:description" content="驱动一、驱动1.驱动的概念#### 字符设备驱动、块设备驱动、网络设备驱动 2.驱动的三要素：加载函数、卸载函数、许可证声明">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T10:50:40.878Z">
+<meta property="og:updated_time" content="2018-03-07T11:41:12.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="drive">
-<meta name="twitter:description" content="驱动一、驱动1.驱动的概念#### 字符设备驱动、块设备驱动、网络设备驱动 2.驱动的三要素：加载函数、卸载函数、许可证声明3.对上面的三要素的讲解1）加载函数:（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）123456789缺省方式：int  init_module(void)&amp;#123;//初始化代码（子函数）return 0;&amp;#125;用户自定义：	int test">
+<meta name="twitter:description" content="驱动一、驱动1.驱动的概念#### 字符设备驱动、块设备驱动、网络设备驱动 2.驱动的三要素：加载函数、卸载函数、许可证声明">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -105,7 +105,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h1><h2 id="一、驱动"><a href="#一、驱动" class="headerlink" title="一、驱动"></a>一、驱动</h2><h3 id="1-驱动的概念"><a href="#1-驱动的概念" class="headerlink" title="1.驱动的概念"></a>1.驱动的概念</h3><pre><code>#### 字符设备驱动、块设备驱动、网络设备驱动
-</code></pre><h3 id="2-驱动的三要素：加载函数、卸载函数、许可证声明"><a href="#2-驱动的三要素：加载函数、卸载函数、许可证声明" class="headerlink" title="2.驱动的三要素：加载函数、卸载函数、许可证声明"></a>2.驱动的三要素：加载函数、卸载函数、许可证声明</h3><h3 id="3-对上面的三要素的讲解"><a href="#3-对上面的三要素的讲解" class="headerlink" title="3.对上面的三要素的讲解"></a>3.对上面的三要素的讲解</h3><h4 id="1）加载函数-（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）"><a href="#1）加载函数-（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）" class="headerlink" title="1）加载函数:（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）"></a>1）加载函数:（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">缺省方式：int  init_module(void)&#123;</div><div class="line">//初始化代码（子函数）</div><div class="line">return 0;</div><div class="line">&#125;</div><div class="line">用户自定义：</div><div class="line">	int test_init(void)&#123;</div><div class="line">		//初始化函数</div><div class="line">&#125;</div><div class="line">	module_init(test_init);</div></pre></td></tr></table></figure>
+</code></pre><h3 id="2-驱动的三要素：加载函数、卸载函数、许可证声明"><a href="#2-驱动的三要素：加载函数、卸载函数、许可证声明" class="headerlink" title="2.驱动的三要素：加载函数、卸载函数、许可证声明"></a>2.驱动的三要素：加载函数、卸载函数、许可证声明</h3><a id="more"></a>
+<h3 id="3-对上面的三要素的讲解"><a href="#3-对上面的三要素的讲解" class="headerlink" title="3.对上面的三要素的讲解"></a>3.对上面的三要素的讲解</h3><h4 id="1）加载函数-（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）"><a href="#1）加载函数-（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）" class="headerlink" title="1）加载函数:（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）"></a>1）加载函数:（当使用insmod将驱动插入到Linux内核时，自动执行该函数接口）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">缺省方式：int  init_module(void)&#123;</div><div class="line">//初始化代码（子函数）</div><div class="line">return 0;</div><div class="line">&#125;</div><div class="line">用户自定义：</div><div class="line">	int test_init(void)&#123;</div><div class="line">		//初始化函数</div><div class="line">&#125;</div><div class="line">	module_init(test_init);</div></pre></td></tr></table></figure>
 <p>解析：驱动加载到内核：</p>
 <p>​        方法1.a/直接编译成.ko文件b/内核编译</p>
 <p>​        方法2.a/insmod将驱动加载到内核，驱动被激活驱动自动执行加载的函数 接口。</p>
@@ -119,7 +120,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/06/drive/" data-id="cjeh0ej3a001dv4vpyzijyv5b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/drive/" data-id="cjeh0k1vb001dnovpmznpv0d5" class="article-share-link">Share</a>
       
       
     </footer>
