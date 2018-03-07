@@ -5,17 +5,17 @@
   
   <title>hexodwrong | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="报错内容如下： 123456789101112131415161718fatal: HttpRequestException encountered.   An error occurred while sending the request.bash: /dev/tty: No such device or addresserror: failed to execute prompt scrip">
+  <meta name="description" content="报错内容如下：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexodwrong">
 <meta property="og:url" content="http://yoursite.com/2018/03/06/hexodwrong/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="报错内容如下： 123456789101112131415161718fatal: HttpRequestException encountered.   An error occurred while sending the request.bash: /dev/tty: No such device or addresserror: failed to execute prompt scrip">
+<meta property="og:description" content="报错内容如下：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T14:42:41.825Z">
+<meta property="og:updated_time" content="2018-03-07T11:35:49.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexodwrong">
-<meta name="twitter:description" content="报错内容如下： 123456789101112131415161718fatal: HttpRequestException encountered.   An error occurred while sending the request.bash: /dev/tty: No such device or addresserror: failed to execute prompt scrip">
+<meta name="twitter:description" content="报错内容如下：">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -105,12 +105,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>报错内容如下：</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">fatal: HttpRequestException encountered.</div><div class="line">   An error occurred while sending the request.</div><div class="line">bash: /dev/tty: No such device or address</div><div class="line">error: failed to execute prompt script (exit code 1)</div><div class="line">fatal: could not read Username for &apos;https://github.com&apos;: No error</div><div class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Error: fatal: HttpRequestException encountered.</div><div class="line">   An error occurred while sending the request.</div><div class="line">bash: /dev/tty: No such device or address</div><div class="line">error: failed to execute prompt script (exit code 1)</div><div class="line">fatal: could not read Username for &apos;https://github.com&apos;: No error</div><div class="line"></div><div class="line">    at ChildProcess.&lt;anonymous&gt; (D:\github\blog\hexo\node_modules\hexo-util\lib\spawn.js:37:17)</div><div class="line">    at emitTwo (events.js:125:13)</div><div class="line">    at ChildProcess.emit (events.js:213:7)</div><div class="line">    at ChildProcess.cp.emit (D:\github\blog\hexo\node_modules\cross-spawn\lib\enoent.js:40:29)</div><div class="line">    at maybeClose (internal/child_process.js:921:16)</div><div class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)</div></pre></td></tr></table></figure>
+<p>对上面的解决方法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config http.sslVerify &quot;false&quot;</div></pre></td></tr></table></figure>
+<p>对于我的配置而言，这条命令并没有运行成功！！！又报了一个错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fatal: not in a git directory</div></pre></td></tr></table></figure>
+<p>这可能是因为我的电脑上没有这个目录之类的。</p>
+<p>之后我把<strong>_config.yml文件中repository:<a href="https://github.com/shangrila-xiu/shangrila-xiu.github.io.git" target="_blank" rel="external">https://github.com/shangrila-xiu/shangrila-xiu.github.io.git</a>这个地址改为git@github.com:shangrila-xiu/shangrila-xiu.github.io.git</strong></p>
+<p>结果还是错的，心塞。。。。</p>
+<p>我又还原repository的配置： <a href="https://github.com/shangrila-xiu/shangrila-xiu.github.io.git，这样就运行通过了。我都有种重新下载的冲动！！！" target="_blank" rel="external">https://github.com/shangrila-xiu/shangrila-xiu.github.io.git，这样就运行通过了。我都有种重新下载的冲动！！！</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/06/hexodwrong/" data-id="cjeft61g3001qhgvp6xpvvdlz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/hexodwrong/" data-id="cjeh08np9001wh4vpzsx5aqv9" class="article-share-link">Share</a>
       
       
     </footer>
