@@ -103,23 +103,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="HTML5完整代码的编写"><a href="#HTML5完整代码的编写" class="headerlink" title="HTML5完整代码的编写"></a>HTML5完整代码的编写</h1><p>1、HTML的编写的格式：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">html 标题</div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">html主体</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>2、用HTML代码来改变网页的外观</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span><span class="tag">&lt;<span class="name">title</span>&gt;</span>新网页1<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">bgcolor</span>=<span class="string">"white"</span> <span class="attr">text</span>=<span class="string">"blank"</span> <span class="attr">link</span>=<span class="string">"red"</span> <span class="attr">vlink</span>=<span class="string">"green"</span> <span class="attr">alink</span>=<span class="string">"blue"</span>&gt;</span>html文件的主体<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>3、若改用css定义网页的外观</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span><span class="tag">&lt;<span class="name">title</span>&gt;</span>新网页1<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">	body&#123;</span></div><div class="line"><span class="css">      <span class="selector-tag">background</span><span class="selector-pseudo">:white</span>;</span></div><div class="line"><span class="css">  	  <span class="selector-tag">color</span><span class="selector-pseudo">:black</span>;</span></div><div class="line"><span class="undefined">	&#125;</span></div><div class="line"><span class="css">	<span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>:red;&#125;</span></div><div class="line"><span class="css">	<span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>:green;&#125;</span></div><div class="line"><span class="css">	<span class="selector-tag">a</span><span class="selector-pseudo">:active</span>&#123;<span class="attribute">color</span>:blue;&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>html文件的主体<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>4、除了标题之外，包括段落、图片、表格等区块也有align属性。但是在代码中是用css来写的。也就是变成了text-align，属性的值和原来的一样。</p>
-<p>5、HTML5新增的结构元素</p>
-<p>1）区段结构</p>
-<p>（1）&lt; article&gt;：这个元素可以用来标记网页的文本或独立的内容，例如博客的一片文章、新闻网站的一则新闻报导。</p>
-<p>（2）&lt; section&gt;：这个元素可以用来标记通用的区段，例如网页的文本分别为不同的主题区段，或将一片问还在那个分割为不同的章节或段落。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>唐诗欣赏<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">artcle</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">hgroup</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">h1</span>&gt;</span>唐诗<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">h2</span>&gt;</span>五言绝句篇<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">hgroup</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>五言绝句为近体诗的一种，每首四句，功十二字。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">h1</span>&gt;</span>送别<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span>山中相送罢，日暮掩柴扉。春草年年绿，王孙归不归。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">h1</span>&gt;</span>鹿柴<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span>空山不见人，但闻人语响。返景入深林，复照青苔上。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">	</div><div class="line">	<span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>显示结果为：<img src="https://github.com/shangrila-xiu/IMG/raw/master/tangpoem.png" alt=""></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2018/03/09/h5WriteStart/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/09/h5WriteStart/" data-id="cjejws2m0001xfkvpuwys617z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/09/h5WriteStart/" data-id="cjejwzabh001xi4vp0orjno5c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/09/h5BasicGrammar/" data-id="cjejws2lw001wfkvp17lo3my0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/09/h5BasicGrammar/" data-id="cjejwzabf001wi4vpbi8jsd29" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/09/h5wrtie/" data-id="cjejws2mv0023fkvpjzy7be0j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/09/h5wrtie/" data-id="cjejwzabv0023i4vp9brx853j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -291,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/08/h5newfun/" data-id="cjejws2mc0021fkvp1nrt9s04" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/08/h5newfun/" data-id="cjejwzabk0021i4vpuk4s71kz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
@@ -350,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/07/MobileAndPC/" data-id="cjejws2gg000bfkvpnbhpjk4r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/07/MobileAndPC/" data-id="cjejwza8a000bi4vpknuv3dea" class="article-share-link">Share</a>
       
       
     </footer>
@@ -408,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/07/WebDesignStep/" data-id="cjejws2ip000xfkvpsvqiwyuh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/07/WebDesignStep/" data-id="cjejwza9l000xi4vpgu2swl5s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -465,7 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/06/hexodwrong/" data-id="cjejws2nu002dfkvpz8k09ixx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/hexodwrong/" data-id="cjejwzaci002ji4vp594blqk3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -522,7 +514,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/06/UDP/" data-id="cjejws2i6000sfkvpabqpwd8w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/UDP/" data-id="cjejwza97000si4vp86p51a6q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -580,7 +572,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/06/TCP/" data-id="cjejws2hv000qfkvpkfz6zuqc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/TCP/" data-id="cjejwza93000qi4vpgib2zgsn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -637,7 +629,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/06/IPAddress/" data-id="cjejws2eb0002fkvptagsf8qb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/06/IPAddress/" data-id="cjejwza6z0002i4vpklopk7s2" class="article-share-link">Share</a>
       
       
     </footer>
