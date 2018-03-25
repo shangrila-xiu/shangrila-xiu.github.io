@@ -15,7 +15,8 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/pre.png">
 <meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/blockquote.png">
-<meta property="og:updated_time" content="2018-03-20T13:48:28.425Z">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/marquee.png">
+<meta property="og:updated_time" content="2018-03-25T12:49:59.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="qukuaigeshi">
 <meta name="twitter:description" content="区块格式pre元素（预先格式化的区块）由于浏览器会省略HTML元素之间多余的空格符和【enter】见，导致输入的某些内容时不方便。如程序代码 width=”n”：指定区块的宽度，n为像素数。">
@@ -46,8 +47,8 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>69</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>59</strong><br>分类</div></a>
+      <a href="/archives"><div><strong>70</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>60</strong><br>分类</div></a>
       <a href="/tags"><div><strong>29</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
@@ -118,15 +119,17 @@
 <p>结果如图所示：</p>
 <p><img src="https://github.com/shangrila-xiu/IMG/raw/master/blockquote.png" alt=""></p>
 <h2 id="hr元素（水平线）"><a href="#hr元素（水平线）" class="headerlink" title="hr元素（水平线）"></a>hr元素（水平线）</h2><h2 id="div元素（群组成一个区块）"><a href="#div元素（群组成一个区块）" class="headerlink" title="div元素（群组成一个区块）"></a>div元素（群组成一个区块）</h2><p>div元素用来将HTML文件中的某个范围的内容和元素组成一个区块，令文件的结构更加清晰。</p>
-<p>align=“{left,center,right,justify}”;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">align=“&#123;left,center,right,justify&#125;”;</div></pre></td></tr></table></figure>
 <h3 id="区块层级：是元素的内容在浏览器中会另起一行，例如div、p、pre、h1等"><a href="#区块层级：是元素的内容在浏览器中会另起一行，例如div、p、pre、h1等" class="headerlink" title="区块层级：是元素的内容在浏览器中会另起一行，例如div、p、pre、h1等"></a>区块层级：是元素的内容在浏览器中会另起一行，例如div、p、pre、h1等</h3><h2 id="marquee元素（跑马灯）"><a href="#marquee元素（跑马灯）" class="headerlink" title="marquee元素（跑马灯）"></a>marquee元素（跑马灯）</h2><h3 id="属性："><a href="#属性：" class="headerlink" title="属性："></a>属性：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">behavior=&quot;&#123;slide,scroll,alternate&#125;&quot;：指示跑马灯的表现方式（滑动、滚动、交替），省略不写的话，表示为默认值scroll。</div><div class="line">bgcolor=&quot;color|#rrgbb&quot;：指定跑马灯的背景颜色。</div><div class="line">derection=&quot;&#123;left,right,up,down&#125;&quot;：指定跑马灯的移动方向，省略不懈，默认向左。</div><div class="line">height=&quot;n&quot;：指定跑马灯的高度。（n为像素数）</div><div class="line">width=&quot;n&quot;：指定跑马灯的宽度。（n为像素数）</div><div class="line">hspace=&quot;n&quot;：指定跑马灯左右边界的大小。（n为像素数）</div><div class="line">loop=&quot;n&quot;：指定跑马灯文字的重复次数。（n为重复次数）</div><div class="line">scrollamount=&quot;n&quot;：指定跑马灯文字的移动距离。（n为像素数）</div><div class="line">scrolldelay=&quot;n&quot;：指定跑马灯文字的延迟时间（n为秒数）</div><div class="line">vspace=&quot;n&quot;：指定跑马灯的上下边界的大小。（n为像素数）</div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">		</div><div class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">marquee</span> <span class="attr">bgcolor</span>=<span class="string">"yellow"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"20"</span>&gt;</span>鹿港跑马灯<span class="tag">&lt;/<span class="name">marquee</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">marquee</span> <span class="attr">bgcolor</span>=<span class="string">"deeppink"</span> <span class="attr">width</span>=<span class="string">"80%"</span> <span class="attr">height</span>=<span class="string">"2%"</span>&gt;</span>欢迎你我<span class="tag">&lt;/<span class="name">marquee</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">		</div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>结果为：</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/marquee.png" alt=""></p>
+<h2 id="lt-–-–-gt-（注释）【！前面的空格是为了使改符号能正常的显示加上的】"><a href="#lt-–-–-gt-（注释）【！前面的空格是为了使改符号能正常的显示加上的】" class="headerlink" title="&lt; !– –&gt; （注释）【！前面的空格是为了使改符号能正常的显示加上的】"></a>&lt; !– –&gt; （注释）【！前面的空格是为了使改符号能正常的显示加上的】</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!-- --&gt;符号用来注释，而且注释不会显示在网页上</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/20/qukuaigeshi/" data-id="cjf553988004314vpzqskxxn3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/20/qukuaigeshi/" data-id="cjf6wrss7003u8gvpfcsm7wcc" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -138,7 +141,7 @@
 <nav id="article-nav">
   
     <a href="/2018/03/24/guimeishop/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
           guimeishop
@@ -148,7 +151,7 @@
   
   
     <a href="/2018/03/20/time-html/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">time-html</div>
     </a>
   
@@ -198,8 +201,8 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>69</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>59</strong><br>分类</div></a>
+      <a href="/archives"><div><strong>70</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>60</strong><br>分类</div></a>
       <a href="/tags"><div><strong>29</strong><br>标签</div></a>
     </div>
 
