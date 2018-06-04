@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js_break和continue的讲解 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="javascript的break和continue的讲解">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js_break和continue的讲解">
+<meta property="og:url" content="http://yoursite.com/2018/06/04/js_break和continue的讲解/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="javascript的break和continue的讲解">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-04T14:24:51.423Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js_break和continue的讲解">
+<meta name="twitter:description" content="javascript的break和continue的讲解">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>86</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>76</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>30</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-js_break和continue的讲解" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/04/js_break和continue的讲解/" class="article-date">
+  <time class="post-time" datetime="2018-06-04T14:15:52.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">04</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js_break和continue的讲解
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript的break和continue的讲解/">javascript的break和continue的讲解</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="javascript的break和continue的讲解"><a href="#javascript的break和continue的讲解" class="headerlink" title="javascript的break和continue的讲解"></a>javascript的break和continue的讲解</h1><a id="more"></a>
+<h2 id="break-在循环中，遇到这个关键字，直接跳出当前所在的循环"><a href="#break-在循环中，遇到这个关键字，直接跳出当前所在的循环" class="headerlink" title="break:在循环中，遇到这个关键字，直接跳出当前所在的循环"></a>break:在循环中，遇到这个关键字，直接跳出当前所在的循环</h2><h3 id="在循环中使用，遇到了break，就会跳出当前所在的循环"><a href="#在循环中使用，遇到了break，就会跳出当前所在的循环" class="headerlink" title="在循环中使用，遇到了break，就会跳出当前所在的循环"></a>在循环中使用，遇到了break，就会跳出当前所在的循环</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//找到100-200之间第一个能被7整除的数字----&gt;105</span></div><div class="line"><span class="keyword">for</span>(i=<span class="number">100</span>;i&lt;=<span class="number">200</span>;i++)&#123;</div><div class="line"><span class="keyword">if</span>(i%<span class="number">7</span>==<span class="number">0</span>)&#123;</div><div class="line">	<span class="built_in">console</span>.log(i);</div><div class="line">	<span class="keyword">break</span>;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="continue：在循环中遇到这个关键字，直接进行下一次循环，一般是直接跳到判断条件的位置"><a href="#continue：在循环中遇到这个关键字，直接进行下一次循环，一般是直接跳到判断条件的位置" class="headerlink" title="continue：在循环中遇到这个关键字，直接进行下一次循环，一般是直接跳到判断条件的位置"></a>continue：在循环中遇到这个关键字，直接进行下一次循环，一般是直接跳到判断条件的位置</h2><h3 id="continue：子循环中如果遇到continue关键字，直接开始下一次循环。"><a href="#continue：子循环中如果遇到continue关键字，直接开始下一次循环。" class="headerlink" title="continue：子循环中如果遇到continue关键字，直接开始下一次循环。"></a>continue：子循环中如果遇到continue关键字，直接开始下一次循环。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>(i&lt;<span class="number">10</span>)&#123;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"哈哈"</span>);</div><div class="line"><span class="comment">//continue;</span></div><div class="line">i++;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="求100-200之间的所有的奇数的和"><a href="#求100-200之间的所有的奇数的和" class="headerlink" title="求100-200之间的所有的奇数的和"></a>求100-200之间的所有的奇数的和</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum=<span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> i=<span class="number">100</span>;</div><div class="line"><span class="keyword">while</span>(i&lt;=<span class="number">200</span>)&#123;</div><div class="line"><span class="keyword">if</span>(i%<span class="number">2</span>!=<span class="number">0</span>)&#123;</div><div class="line">	sum+=i;</div><div class="line">&#125;</div><div class="line">i++;</div><div class="line">&#125;<span class="built_in">console</span>.log(<span class="string">"100-200之间的所有的奇数的和为"</span>+sum);</div><div class="line"><span class="comment">//7500</span></div></pre></td></tr></table></figure>
+<h3 id="求100-200之间的所有的奇数的和-continue"><a href="#求100-200之间的所有的奇数的和-continue" class="headerlink" title="求100-200之间的所有的奇数的和(continue)"></a>求100-200之间的所有的奇数的和(continue)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum=<span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> i=<span class="number">100</span>;</div><div class="line"><span class="keyword">while</span>(i&lt;=<span class="number">200</span>)&#123;</div><div class="line"><span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">0</span>)&#123;<span class="comment">//判断是不是偶数，如果是偶数---&gt;跳过这个数字不加sum</span></div><div class="line">	i++;<span class="comment">//这行与continue所在的行不能反转，否则浏览器就会奔溃</span></div><div class="line">	<span class="keyword">continue</span>;</div><div class="line">&#125;</div><div class="line">sum+=i;</div><div class="line">i++;</div><div class="line">&#125;<span class="built_in">console</span>.log(<span class="string">"100-200之间的所有的奇数的和为"</span>+sum);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/04/js_break和continue的讲解/" data-id="cji0cknnl006b3ovp8hv0qrg6" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/04/js-数组实例/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">js_数组实例</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">Hexo</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>86</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>76</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>30</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://exacity.github.io" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
