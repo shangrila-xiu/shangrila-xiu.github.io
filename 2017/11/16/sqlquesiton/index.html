@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="shangrila-xiu">
 <meta property="og:description" content="sql 的一些问题的解决办法：1、报错如此：mysql #1062 –Duplicate entry ‘1’ for key ‘PRIMARY’">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-02T07:08:07.409Z">
+<meta property="og:updated_time" content="2018-06-28T12:07:33.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqlquesiton">
 <meta name="twitter:description" content="sql 的一些问题的解决办法：1、报错如此：mysql #1062 –Duplicate entry ‘1’ for key ‘PRIMARY’">
@@ -43,9 +43,9 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>97</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>87</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>28</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>98</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>88</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>30</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -110,11 +110,13 @@
 <p><a href="https://wenku.baidu.com/view/e2eb6cec6294dd88d0d26b45.html" target="_blank" rel="external">mysql_jdbc连接数据库-错误提示</a></p>
 <h3 id="3、下面的报错我完全没有看出来哪里出问题了：哈哈"><a href="#3、下面的报错我完全没有看出来哪里出问题了：哈哈" class="headerlink" title="3、下面的报错我完全没有看出来哪里出问题了：哈哈"></a>3、下面的报错我完全没有看出来哪里出问题了：哈哈</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">java.lang.ClassNotFoundException: com.mysql.jdbc.Driver</div><div class="line">	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)</div><div class="line">	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)</div><div class="line">	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)</div><div class="line">	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)</div><div class="line">	at java.lang.Class.forName0(Native Method)</div><div class="line">	at java.lang.Class.forName(Class.java:264)</div><div class="line">	at DBH.db.getConn(db.java:19)</div><div class="line">	at DBH.db.getAll(db.java:28)</div><div class="line">	at DBH.db.main(db.java:53)</div><div class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException</div><div class="line">	at DBH.db.getAll(db.java:32)</div><div class="line">	at DBH.db.main(db.java:53)</div></pre></td></tr></table></figure>
 <h4 id="你看出来了吗？"><a href="#你看出来了吗？" class="headerlink" title="你看出来了吗？"></a>你看出来了吗？</h4><h1 id="解答：其实是我没有导入连接数据库的jar包啊，遇到问题很正常，这种低级的错误希望没有下次了！！！！！"><a href="#解答：其实是我没有导入连接数据库的jar包啊，遇到问题很正常，这种低级的错误希望没有下次了！！！！！" class="headerlink" title="解答：其实是我没有导入连接数据库的jar包啊，遇到问题很正常，这种低级的错误希望没有下次了！！！！！"></a>解答：<u>其实是我没有导入连接数据库的jar包啊，遇到问题很正常，这种低级的错误希望没有下次了！！！！！</u></h1><h3 id="4、1045-access-denied-for-user-‘root’-’localhost’-using-password-YES-原因是很多。我很清楚这次是我因为在使用xampp的时候设置了密码之类的东西。我找了解决办法。只针对windows"><a href="#4、1045-access-denied-for-user-‘root’-’localhost’-using-password-YES-原因是很多。我很清楚这次是我因为在使用xampp的时候设置了密码之类的东西。我找了解决办法。只针对windows" class="headerlink" title="4、1045 access denied for user ‘root’@’localhost’(using password: YES)   原因是很多。我很清楚这次是我因为在使用xampp的时候设置了密码之类的东西。我找了解决办法。只针对windows"></a>4、1045 access denied for user ‘root’@’localhost’(using password: YES)   原因是很多。我很清楚这次是我因为在使用xampp的时候设置了密码之类的东西。我找了解决办法。只针对windows</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1：打开cmd窗口，进入mysql的bin目录;</div><div class="line"></div><div class="line">2：停止mysql服务，运行net stop mysql;</div><div class="line"></div><div class="line">3:：关闭mysql的权限检查，运行mysqld -nt --skip-grant-tables;</div><div class="line"></div><div class="line">4：重新设置密码 ,mysqladmin -u root flush-privileges password &quot;newpassword&quot;;</div><div class="line"></div><div class="line">5：重新启动mysql服务，运行 net start mysql;</div></pre></td></tr></table></figure>
-<h4 id="我没有在注册服务器上改，就按照上面的这个改了。然而我的xampp的数据库也能正常的启动。"><a href="#我没有在注册服务器上改，就按照上面的这个改了。然而我的xampp的数据库也能正常的启动。" class="headerlink" title="我没有在注册服务器上改，就按照上面的这个改了。然而我的xampp的数据库也能正常的启动。"></a>我没有在注册服务器上改，就按照上面的这个改了。然而我的xampp的数据库也能正常的启动。</h4><h2 id="我直接在cmd终端进入到mysql的安装目录下：运行-mysql-u-root-p-之后输入了一个密码，数据库就连接成功了！"><a href="#我直接在cmd终端进入到mysql的安装目录下：运行-mysql-u-root-p-之后输入了一个密码，数据库就连接成功了！" class="headerlink" title="我直接在cmd终端进入到mysql的安装目录下：运行   mysql -u root -p 之后输入了一个密码，数据库就连接成功了！"></a>我直接在cmd终端进入到mysql的安装目录下：运行   mysql -u root -p 之后输入了一个密码，数据库就连接成功了！</h2>
+<h4 id="我没有在注册服务器上改，就按照上面的这个改了。然而我的xampp的数据库也能正常的启动。"><a href="#我没有在注册服务器上改，就按照上面的这个改了。然而我的xampp的数据库也能正常的启动。" class="headerlink" title="我没有在注册服务器上改，就按照上面的这个改了。然而我的xampp的数据库也能正常的启动。"></a>我没有在注册服务器上改，就按照上面的这个改了。然而我的xampp的数据库也能正常的启动。</h4><h2 id="我直接在cmd终端进入到mysql的安装目录下：运行-mysql-u-root-p-之后输入了一个密码，数据库就连接成功了！"><a href="#我直接在cmd终端进入到mysql的安装目录下：运行-mysql-u-root-p-之后输入了一个密码，数据库就连接成功了！" class="headerlink" title="我直接在cmd终端进入到mysql的安装目录下：运行   mysql -u root -p 之后输入了一个密码，数据库就连接成功了！"></a>我直接在cmd终端进入到mysql的安装目录下：运行   mysql -u root -p 之后输入了一个密码，数据库就连接成功了！</h2><h2 id="把mysql卸载干净"><a href="#把mysql卸载干净" class="headerlink" title="把mysql卸载干净"></a><a href="https://zhinan.sogou.com/guide/detail/?id=1610044972" target="_blank" rel="external">把mysql卸载干净</a></h2><h3 id="重新下载mysql了；安装教程"><a href="#重新下载mysql了；安装教程" class="headerlink" title="重新下载mysql了；安装教程"></a>重新下载mysql了；<a href="https://jingyan.baidu.com/article/414eccf6b41e6b6b431f0aec.html" target="_blank" rel="external">安装教程</a></h3><h3 id="在连接navicate-mysql的时候报了1251-client-dose-not-support-authentication-protocol-requested-by-server-consider-upgrading-MYSQL-client"><a href="#在连接navicate-mysql的时候报了1251-client-dose-not-support-authentication-protocol-requested-by-server-consider-upgrading-MYSQL-client" class="headerlink" title="在连接navicate mysql的时候报了1251-client dose not support authentication protocol requested by server;consider upgrading MYSQL client;"></a>在连接navicate mysql的时候报了1251-client dose not support authentication protocol requested by server;consider upgrading MYSQL client;</h3><h5 id="百度上的解法我试了用户：qq-41737921的方法"><a href="#百度上的解法我试了用户：qq-41737921的方法" class="headerlink" title="百度上的解法我试了用户：qq_41737921的方法"></a>百度上的解法我试了用户：qq_41737921的方法</h5><p><a href="https://ask.csdn.net/questions/687292" target="_blank" rel="external">解决1251错误的连接成功了</a>，</p>
+<p><a href="https://www.jb51.net/article/127627.htm" target="_blank" rel="external">配置data</a></p>
+<h3 id="配置my-ini"><a href="#配置my-ini" class="headerlink" title="配置my.ini"></a><a href="https://www.cnblogs.com/xiongzaiqiren/p/8970203.html" target="_blank" rel="external">配置my.ini</a></h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/sqlquesiton/" data-id="cjimfwp27005y18vp4e9b3kg1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/sqlquesiton/" data-id="cjj5evq4h006icwvpnwqdx4ac" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
@@ -126,7 +128,7 @@
 <nav id="article-nav">
   
     <a href="/2017/11/23/xampp/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
           xampp
@@ -136,7 +138,7 @@
   
   
     <a href="/2017/11/12/jsp-neizhiduixiang/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">jsp_neizhiduixiang</div>
     </a>
   
@@ -186,9 +188,9 @@
     <h2 class="author">shangrila-xiu</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>97</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>87</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>28</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>98</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>88</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>30</strong><br>标签</div></a>
     </div>
 
 

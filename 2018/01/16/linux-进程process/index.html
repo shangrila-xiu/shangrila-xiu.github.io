@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>process | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="进程进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="process">
+<meta property="og:url" content="http://yoursite.com/2018/01/16/linux-进程process/index.html">
+<meta property="og:site_name" content="shangrila-xiu">
+<meta property="og:description" content="进程进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-06T13:13:12.412Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="process">
+<meta name="twitter:description" content="进程进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的">
+  
+    <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>98</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>88</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>30</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-linux-进程process" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/16/linux-进程process/" class="article-date">
+  <time class="post-time" datetime="2018-01-16T12:55:56.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
+    <span class="post-day">16</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      process
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/进程/">进程</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><h2 id="进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的"><a href="#进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的" class="headerlink" title="进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的"></a>进程的一些知识点，进程与程序的区别，进程的信息这几个方面来讲述的</h2><a id="more"></a>
+<h2 id="1、进程的概念：是一个程序的一次执行的过程"><a href="#1、进程的概念：是一个程序的一次执行的过程" class="headerlink" title="1、进程的概念：是一个程序的一次执行的过程"></a>1、进程的概念：是一个程序的一次执行的过程</h2><h2 id="2、进程和程序的区别："><a href="#2、进程和程序的区别：" class="headerlink" title="2、进程和程序的区别："></a>2、进程和程序的区别：</h2><h3 id="程序：是静态的，它是一些保存在磁盘上的指令的有序集合，没有任何执行的概念。"><a href="#程序：是静态的，它是一些保存在磁盘上的指令的有序集合，没有任何执行的概念。" class="headerlink" title="程序：是静态的，它是一些保存在磁盘上的指令的有序集合，没有任何执行的概念。"></a>程序：是静态的，它是一些保存在磁盘上的指令的有序集合，没有任何执行的概念。</h3><pre><code>### 进程：是一个动态的概念，它是程序执行的过程，包括创建、调度和消亡。
+</code></pre><p>a、调度：时间片轮转</p>
+<p>​       时间片：进程在某一时刻获取CPU控制的时间的</p>
+<p>b、退出：进程退出，将该进程获取的有限资源全部释放</p>
+<p>c、静态查看进程的信息：ps aux或者ps axj</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">PPID（parent peocess ID）	父进程ID</div><div class="line">PID(process ID)	进程ID</div><div class="line">PGID（process group ID）	进程组ID</div><div class="line">SID	会话组ID号</div><div class="line">TTY终端 ?	表示后台进程</div><div class="line">TPGID	终端进程组ID</div><div class="line">STAT	进程的状态(就绪、挂起、关机)</div><div class="line">UID	当前用户的ID</div><div class="line">TIME	进程获取到控制CPU的总时间</div><div class="line">COMMAND	进程的名称</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">CTRL+c  将进程退出</div><div class="line"></div><div class="line">CTRL+z   将进程停止</div><div class="line"></div><div class="line">bg     将程序放到后台运行</div><div class="line"></div><div class="line">fg     放到前台</div></pre></td></tr></table></figure>
+<p>​    进程号是进程的标识，由系统进行定义；</p>
+<p>​    进程号为1，称之为init进程，是所有进程的祖先；</p>
+<p>​    进程号为0，称之为调度进程，有内核开启；</p>
+<h2 id="3、进程的种类"><a href="#3、进程的种类" class="headerlink" title="3、进程的种类"></a>3、进程的种类</h2><p>1）交互进程：该类进程是由shell控制和运行的。交互进程既可以在前台运行，也可以在后台运行，可以与用户直接交互，且受终端的控制。</p>
+<p>2）批处理进程该是一个进程序列，负责按照顺序启动，该类进程不属于某个终端，不与用户进行交互，在后台运行，称之为进程的集合。</p>
+<p>3）守护进程：长期运行在后台做某些服务。本身属于后台进程, 不受终端控制。自己做为会话组组长。</p>
+<p>4)僵尸进程：如果子进程先退出，而父进程并没有对子进程的资源进行回收。则子进程称之为僵死进程。</p>
+<p>5)孤儿进程：父进程先退出，而它的子进程还在运行，那么该子进程被称为孤儿进程。孤儿进程将被1号进程(init)收养，并最终由1号进程对其资源回收。不论子进程处于运行态、睡眠态、僵尸态、暂停态对会被1号进程收养。</p>
+<h2 id="4、进程的命令"><a href="#4、进程的命令" class="headerlink" title="4、进程的命令"></a>4、进程的命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">命令	          作用</div><div class="line">top     	动态显示系统中的进程</div><div class="line">ps  -ajx	查看当前系统当中的进程的详细信息</div><div class="line">pstree  	以树形的方式显示所有进程的名字</div></pre></td></tr></table></figure>
+<h2 id="5、进程的状态"><a href="#5、进程的状态" class="headerlink" title="5、进程的状态"></a>5、进程的状态</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">状态  	作用</div><div class="line">R  		正在执行中</div><div class="line">S  		阻塞状态</div><div class="line">T  		暂停执行</div><div class="line">Z  		僵尸态</div><div class="line">&lt;  		高优先级的进程 </div><div class="line">N  		低优先级的进程</div><div class="line">l		多线程</div><div class="line">s		会话组组长</div></pre></td></tr></table></figure>
+<h2 id="6、进程的相关函数"><a href="#6、进程的相关函数" class="headerlink" title="6、进程的相关函数"></a>6、进程的相关函数</h2><p>1）进程的创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#include &lt;unistd.h&gt;</div><div class="line">	pid_t fork(void);</div><div class="line">	功能：创建一个子进程</div><div class="line">	参数：</div><div class="line">		无</div><div class="line">	返回值：</div><div class="line">		&gt;0 子进程的进程号，父进程的代码区</div><div class="line">		=0 子进程的代码区</div><div class="line">		&lt;0 出错</div></pre></td></tr></table></figure>
+<p><strong><em>getpid(void) 获取当前进程的进程号</em></strong></p>
+<p><strong><em>getppid(void) 获取当前进程的父进程的进程号</em></strong></p>
+<p>2）退出一个进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdlib.h&gt;</div><div class="line">       void exit(int status);</div><div class="line">	  功能：退出一个进程</div><div class="line">	  参数：</div><div class="line">		 0   正确退出</div><div class="line">		 非0 错误退出</div><div class="line">	  返回值:</div><div class="line">		  无</div></pre></td></tr></table></figure>
+<p>注意：<u>不管exit在哪使用，都代表结束一个进程；而return，在子函数里面使用代码退出这个函数，而在main函数里面，代表结束程序。</u></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/16/linux-进程process/" data-id="cjj5evq410069cwvpr5zsg2h9" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/16/linux-系统移植/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          sysmovelive
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/16/linux-data-fun-struct/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">data_fun_struct</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>98</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>88</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>30</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

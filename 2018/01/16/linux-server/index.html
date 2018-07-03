@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>server | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一">
+<meta name="keywords" content="nfs,tftp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="server">
+<meta property="og:url" content="http://yoursite.com/2018/01/16/linux-server/index.html">
+<meta property="og:site_name" content="shangrila-xiu">
+<meta property="og:description" content="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/wiredconnection.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/ip1.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/portforcomputer.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/portchage.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/ubootfs4412.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/setorige.png">
+<meta property="og:updated_time" content="2018-01-16T14:04:38.076Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="server">
+<meta name="twitter:description" content="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一">
+<meta name="twitter:image" content="https://github.com/shangrila-xiu/IMG/raw/master/wiredconnection.png">
+  
+    <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>98</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>88</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>30</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-linux-server" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/16/linux-server/" class="article-date">
+  <time class="post-time" datetime="2018-01-16T13:25:51.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
+    <span class="post-day">16</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      server
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tftp服务器和nfs服务器的知识点/">tftp服务器和nfs服务器的知识点</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一"><a href="#tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一" class="headerlink" title="tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一"></a>tftp服务器和nfs服务器的讲解，在之后的读取速度可以通过开启它们两个来尽量避免T出现的方法之一</h1><a id="more"></a>
+<h2 id="1、tftp服务器"><a href="#1、tftp服务器" class="headerlink" title="1、tftp服务器"></a>1、tftp服务器</h2><p>a、检测：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo dpkg –s tftpd-hpa</div></pre></td></tr></table></figure>
+<p>b、配置TFTP的服务器端：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo vi /ect/default/tftpd-hpa</div></pre></td></tr></table></figure>
+<p>c、存放与内核相关的内容，包括内核镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">TFTP_USERNAME=”tftp”</div><div class="line">TFTP_DIRECTORY=”tftpboot”   //传输目录</div></pre></td></tr></table></figure>
+<p><em>自行创建：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo mkdir /tftpboot</div></pre></td></tr></table></figure>
+<p><em>修改权限赋予最高权限</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo chmod 777 /tftpboot</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">TFTP_ADDRESS=”0.0.0.0:69”   端口号</div><div class="line">TFTP_OPTIONS=”-c  -s  -l”    配置参数</div></pre></td></tr></table></figure>
+<p>讲解：-c  create   可上传新文件        </p>
+<p>​    -s  server    uboot默认tftpboot目录为传输目录    </p>
+<p>​    -l  listen     监听</p>
+<p>d、启动tftp服务器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:~#  service tftpd-hpa restart</div></pre></td></tr></table></figure>
+<p>e、编辑/etc/exports</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">在第10行加上 “#”</div><div class="line">/source/rootfs/ *(rw,sync,no_subtree_check,no_root_squash)</div></pre></td></tr></table></figure>
+<p>解释：</p>
+<pre><code>/source    共享目录       自行创建
+rw      读写
+sync 文件系统中的文件可以同步到内存与硬盘
+no_subtree_check 如果子目录可以被访问，不检测父目录权限
+no_root_squash 如果以root用户进入到文件系统
+</code></pre><h2 id="2、nfs服务器"><a href="#2、nfs服务器" class="headerlink" title="2、nfs服务器"></a>2、nfs服务器</h2><p>a、启动服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:~# /etc/init.d/nfs-kernel-server restart</div></pre></td></tr></table></figure>
+<p>b、配置wired connection</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/wiredconnection.png" alt="wiredconnection的配置图"></p>
+<p>c、查看ip地址是否配置成功：</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/ip1.png" alt="配置后的IP地址的显示图"></p>
+<p>d、查看本机的端口号和接入开发板后的端口号的变化</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/portforcomputer.png" alt="本机端口号的变化"></p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/portchage.png" alt="端口号改变后"></p>
+<p>e、拷贝sdfuse_q到ubuntu的目录中</p>
+<p>f、将如下的文件名拷贝到SD卡中</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/ubootfs4412.png" alt="ubootfs4412的文件"></p>
+<p>g、在打开工具PUTTY之后，对它的如下参数进行配置：可以使用pri命令查看配置的结果</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/setorige.png" alt="配置的原理和方法"></p>
+<p>解释：</p>
+<p>​    setenv设置新的环境变量</p>
+<p>​    bootcmd自启动命令</p>
+<p>​    pri显示配置的环境变量</p>
+<p>​    saveenv保存配置的命令</p>
+<p>​    tftp      远程传输    tftp + address + file（二进制）</p>
+<p>​    CPU是硬件，作用是取址（虚拟的物理地址）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/16/linux-server/" data-id="cjj5evq45006bcwvp3e0dfq96" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nfs/">nfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tftp/">tftp</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/06/linux-EMMCAddcorelandfileSystem/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          EMMCAddcorelandfileSystem
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/16/linux-系统移植/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">sysmovelive</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>98</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>88</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>30</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
