@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/04/vue-news毕设笔记整理/" data-id="cju3o8irm00cmhog0geyxc65v" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2019/04/04/vue-news毕设笔记整理/" data-id="cju3obhgj00cnkwg0k5udr6is" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -162,39 +162,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="vue图书馆管理学习笔记"><a href="#vue图书馆管理学习笔记" class="headerlink" title="vue图书馆管理学习笔记"></a>vue图书馆管理学习笔记</h1><h2 id="vue基础"><a href="#vue基础" class="headerlink" title="vue基础"></a>vue基础</h2><h3 id="vue-js是什么？"><a href="#vue-js是什么？" class="headerlink" title="vue.js是什么？"></a>vue.js是什么？</h3><h4 id="vue（是法语），同view（英语）"><a href="#vue（是法语），同view（英语）" class="headerlink" title="vue（是法语），同view（英语）"></a>vue（是法语），同view（英语）</h4><h4 id="Vue-js是一套构建用户界面（view）的MVVM框架。Vue-js的核心库只关注视图层，并且非常容易学习，非常容易与其他库或已有的项目结合。"><a href="#Vue-js是一套构建用户界面（view）的MVVM框架。Vue-js的核心库只关注视图层，并且非常容易学习，非常容易与其他库或已有的项目结合。" class="headerlink" title="Vue.js是一套构建用户界面（view）的MVVM框架。Vue.js的核心库只关注视图层，并且非常容易学习，非常容易与其他库或已有的项目结合。"></a>Vue.js是一套构建用户界面（view）的MVVM框架。Vue.js的核心库只关注视图层，并且非常容易学习，非常容易与其他库或已有的项目结合。</h4><h3 id="vue-js的目的"><a href="#vue-js的目的" class="headerlink" title="vue.js的目的"></a>vue.js的目的</h3><h3 id="Vue-js的产生核心是为了解决如下三个问题："><a href="#Vue-js的产生核心是为了解决如下三个问题：" class="headerlink" title="Vue.js的产生核心是为了解决如下三个问题："></a>Vue.js的产生核心是为了解决如下三个问题：</h3><p>1.解决数据绑定的问题：</p>
-<p>2.vue.js框架产生的主要目的是为了开发大型单页面应用（SPA：Sigla Page Application）</p>
-<p>​    angular.js对PC端良好，移动端一般。而vue支持移动端，也支持PC端</p>
-<p>3.支持组件化：也就是将页面封装成多个组件，采用积木式编程。页面的复用度达到最高</p>
-<h3 id="vue-js的特性"><a href="#vue-js的特性" class="headerlink" title="vue.js的特性"></a>vue.js的特性</h3><h4 id="1、MVVM模式"><a href="#1、MVVM模式" class="headerlink" title="1、MVVM模式"></a>1、MVVM模式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">M: model 业务模型，用处：处理数据，提供数据</div><div class="line">V：view  用户界面、用户视图</div><div class="line"> MV：业务模型model中的数据发生改变的时候，用户视图view也会改变。</div><div class="line"> VM：用户视图view改变的时候，业务模型model中的数据发生改变（也可不改变）</div></pre></td></tr></table></figure>
-<h4 id="2、组件化"><a href="#2、组件化" class="headerlink" title="2、组件化"></a>2、组件化</h4><h4 id="3、指令系统"><a href="#3、指令系统" class="headerlink" title="3、指令系统"></a>3、指令系统</h4><h4 id="4、Vue2-0开始支持虚拟DOM（vue1-0操作真实的DOM）"><a href="#4、Vue2-0开始支持虚拟DOM（vue1-0操作真实的DOM）" class="headerlink" title="4、Vue2.0开始支持虚拟DOM（vue1.0操作真实的DOM）"></a>4、Vue2.0开始支持虚拟DOM（vue1.0操作真实的DOM）</h4><h5 id="虚拟DOM可以提升页面的刷新速度。"><a href="#虚拟DOM可以提升页面的刷新速度。" class="headerlink" title="虚拟DOM可以提升页面的刷新速度。"></a>虚拟DOM可以提升页面的刷新速度。</h5><h2 id="vue入门"><a href="#vue入门" class="headerlink" title="vue入门"></a>vue入门</h2><h5 id="引入vue文件的方式：内嵌、外部引用"><a href="#引入vue文件的方式：内嵌、外部引用" class="headerlink" title="引入vue文件的方式：内嵌、外部引用"></a>引入vue文件的方式：内嵌、外部引用</h5><h3 id="使用步骤："><a href="#使用步骤：" class="headerlink" title="使用步骤："></a>使用步骤：</h3><ul>
-<li><p>在页面中引入vue文件</p>
-<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/vueyinru.png" alt="vue引入方式"></p>
-</li>
-<li><p>Vue.js提供了一个Vue，使用Vue创建一个对象：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">new  Vue(&#123;</div><div class="line">  el:&apos;&apos;,</div><div class="line">  data:&#123;&#125;,//data核心作用是存放显示在页面中的数据，需要是一个对象</div><div class="line">  methods:&#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h4 id="el-明Vue-js管理的边界"><a href="#el-明Vue-js管理的边界" class="headerlink" title="el:明Vue.js管理的边界"></a>el:明Vue.js管理的边界</h4><h4 id="data-核心作用是存放显示在页面中的数据，需要是一个对象"><a href="#data-核心作用是存放显示在页面中的数据，需要是一个对象" class="headerlink" title="data:核心作用是存放显示在页面中的数据，需要是一个对象"></a>data:核心作用是存放显示在页面中的数据，需要是一个对象</h4></li>
-<li><p>第三步：在用户界面，通过“两个大括号”形式将data中的键值显示在页面；“两个大括号”代码中的data的key值，而在页面中显示的是data的value。</p>
-<p>Vue.js对获取data与页面中“两个大括号”的产生一个映射关系。</p>
-<h6 id="我们要实现前后台交互，只要将后台得到的数据，放到data中即可。页面就会自动绑定，这样就实现model-gt-view的映射。"><a href="#我们要实现前后台交互，只要将后台得到的数据，放到data中即可。页面就会自动绑定，这样就实现model-gt-view的映射。" class="headerlink" title="我们要实现前后台交互，只要将后台得到的数据，放到data中即可。页面就会自动绑定，这样就实现model-&gt;view的映射。"></a>我们要实现前后台交互，只要将后台得到的数据，放到data中即可。页面就会自动绑定，这样就实现model-&gt;view的映射。</h6><h2 id="vue指令"><a href="#vue指令" class="headerlink" title="vue指令"></a>vue指令</h2><p>指令指的是以v-开头的自定义属性。每个不同的属性有不同的功能和意义。</p>
-<h3 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- &lt;h1 id="demo"&gt;今年是&#123;&#123;year&#125;&#125;年&#123;&#123;month&#125;&#125;月&#123;&#123;date&#125;&#125;日&lt;/h1&gt; --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"demo"</span> <span class="attr">v-text</span>=<span class="string">"'今年是'+year+'年'+month+'月'+date+'日'"</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">		el:<span class="string">'#demo'</span>,</span></div><div class="line"><span class="undefined">		data:&#123;</span></div><div class="line"><span class="javascript">			year:<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear(),</span></div><div class="line"><span class="javascript">			month:<span class="keyword">new</span> <span class="built_in">Date</span>().getMonth()+<span class="number">1</span>,</span></div><div class="line"><span class="javascript">			date:<span class="keyword">new</span> <span class="built_in">Date</span>().getDate()</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h3><p>作用：操作元素的HTML元素</p>
-<h3 id="v-bind-操作HTML的标签元素属性，如img标签的src、alt、title；a标签的href属性"><a href="#v-bind-操作HTML的标签元素属性，如img标签的src、alt、title；a标签的href属性" class="headerlink" title="v-bind   操作HTML的标签元素属性，如img标签的src、alt、title；a标签的href属性"></a>v-bind   操作HTML的标签元素属性，如img标签的src、alt、title；a标签的href属性</h3><h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"aa"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">"hrefValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">      el:<span class="string">'#aa'</span>,</span></div><div class="line"><span class="undefined">      data:&#123;</span></div><div class="line"><span class="javascript">        hrefValue:<span class="string">'http://www.baidu.com'</span></span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="vue控制css"><a href="#vue控制css" class="headerlink" title="vue控制css"></a>vue控制css</h3><p>style</p>
-<h3 id="vue控制js"><a href="#vue控制js" class="headerlink" title="vue控制js"></a>vue控制js</h3><p>在vue的模板中，可以使用简单的js</p>
-<h3 id="vue中写js控制显示和隐藏-v-show"><a href="#vue中写js控制显示和隐藏-v-show" class="headerlink" title="vue中写js控制显示和隐藏  v-show"></a>vue中写js控制显示和隐藏  v-show</h3><p>通过判断是否显示，如果值为true，则显示，为false，则隐藏</p>
-<p>v-show=”判断表达式”</p>
-<p>语法：</p>
-<p>​</p>
-<p>​</p>
-<p>​</p>
-</li>
-</ul>
-
+        <h1 id="vue图书馆管理学习笔记"><a href="#vue图书馆管理学习笔记" class="headerlink" title="vue图书馆管理学习笔记"></a>vue图书馆管理学习笔记</h1><h2 id="vue基础"><a href="#vue基础" class="headerlink" title="vue基础"></a>vue基础</h2><h3 id="vue-js是什么？"><a href="#vue-js是什么？" class="headerlink" title="vue.js是什么？"></a>vue.js是什么？</h3>
+        
+          <p class="article-more-link">
+            <a href="/2019/03/04/vue-library/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/04/vue-library/" data-id="cju3o8ine007phog04cc0fhta" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2019/03/04/vue-library/" data-id="cju3obhd10085kwg05116vmjc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -253,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/vue-devtools的使用/" data-id="cju3o8imt006uhog0dt281miw" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/08/22/vue-devtools的使用/" data-id="cju3obhcs007wkwg0317da4h3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -312,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/03/xampp和myeclipse的配置/" data-id="cju3o8inu008ahog0fbwkrelm" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/07/03/xampp和myeclipse的配置/" data-id="cju3obhdz0097kwg0jllga042" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/myeclipse/">myeclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xampp/">xampp</a></li></ul>
@@ -371,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/20/hbuilderAnd海马玩模拟器的连接/" data-id="cju3o8igv001ahog0crpky3fj" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/06/20/hbuilderAnd海马玩模拟器的连接/" data-id="cju3obh7c001ekwg06puam2dj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hbuilder/">hbuilder</a></li></ul>
@@ -430,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/19/js-结点/" data-id="cju3o8il4004vhog0xckbda62" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/06/19/js-结点/" data-id="cju3obh8r0034kwg0qoy2hx7n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -489,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/14/js-实例/" data-id="cju3o8irc00cehog00lt3aede" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/06/14/js-实例/" data-id="cju3obhg900cgkwg02z9nhtfw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -550,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/13/如何上传本地项目到GitHub上/" data-id="cju3o8inw008dhog0ab5oh0yb" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/06/13/如何上传本地项目到GitHub上/" data-id="cju3obhe1009akwg0jz05mw7a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li></ul>
@@ -609,7 +586,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/13/js-调试代码/" data-id="cju3o8il9004yhog00ps0sv2n" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/06/13/js-调试代码/" data-id="cju3obh8t0037kwg0dzzp41ui" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -668,7 +645,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/12/js-作用域/" data-id="cju3o8iki0042hog0b7ntcmbn" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/06/12/js-作用域/" data-id="cju3obh89002gkwg0h184yrkz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
