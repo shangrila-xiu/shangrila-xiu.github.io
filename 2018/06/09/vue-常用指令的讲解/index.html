@@ -1,38 +1,373 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vue-常用指令的讲解 | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue的常用指令的讲解v-model数据绑定，通常与input一起使用">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-常用指令的讲解">
+<meta property="og:url" content="http://yoursite.com/2018/06/09/vue-常用指令的讲解/index.html">
+<meta property="og:site_name" content="shangrila-xiu">
+<meta property="og:description" content="vue的常用指令的讲解v-model数据绑定，通常与input一起使用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-10T09:32:35.086Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-常用指令的讲解">
+<meta name="twitter:description" content="vue的常用指令的讲解v-model数据绑定，通常与input一起使用">
+  
+    <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
 
-block content
-    article#post
-        .post-header
-            .title= page.title
-            .container
-                time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.posted')] #[=date(page['date'], config.date_format)] | #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                //time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                .button-hover.categories
-                    each categories,index in page.categories.data
-                        i.fa.fa-inbox.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(categories.path)) #[=categories.name]
-                        if(index < page.categories.data.length - 1)
-                            i.fa.fa-angle-right(style="margin: 0 8px;")
-                .button-hover.tags
-                    each tags,index in page.tags.data
-                        i.fa.fa-tag.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(tags.path)) #[=tags.name]
-                        if(index < page.tags.data.length - 1)
-                            span &nbsp;|&nbsp;
-        .main-content!= page.content
-        if (theme.post_copyright && theme.post_copyright.enable)
-            .post-copyright
-                .post-copyright-author
-                    span.post-copyright-meta= _p('post.copyright.author') + ": "
-                    span.post-copyright-info
-                        - let mailto = `mailto:${config.email}`
-                        a(href=mailto) #[=config.author]
-                .post-copyright-type
-                    span.post-copyright-meta= _p('post.copyright.link') + ": "
-                    span.post-copyright-info
-                        a(href=url_for(page.permalink)) #[=page.permalink]
-                .post-copyright-notice
-                    span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
-                    span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
-    include includes/pagination.pug
-    //div!= paginator()
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-vue-常用指令的讲解" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/09/vue-常用指令的讲解/" class="article-date">
+  <time class="post-time" datetime="2018-06-09T08:09:22.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">09</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue-常用指令的讲解
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue常用指令的讲解/">vue常用指令的讲解</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vue的常用指令的讲解"><a href="#vue的常用指令的讲解" class="headerlink" title="vue的常用指令的讲解"></a>vue的常用指令的讲解</h1><h2 id="v-model数据绑定，通常与input一起使用"><a href="#v-model数据绑定，通常与input一起使用" class="headerlink" title="v-model数据绑定，通常与input一起使用"></a>v-model数据绑定，通常与input一起使用</h2><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">		&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body id=&quot;box1&quot;&gt;</div><div class="line">		&lt;!--数据更新，模板变化--&gt;</div><div class="line">		&lt;div&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;</div><div class="line">      &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">       window.onload=function()&#123;</div><div class="line">				new Vue(&#123;</div><div class="line">					el:&apos;#box1&apos;,//选择器</div><div class="line">					data:&#123;</div><div class="line">						msg:&apos;Welcome to study!&apos;,//数据</div><div class="line">					&#125;</div><div class="line">				&#125;);</div><div class="line">			&#125;;</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h3 id="（数据只绑定一次，之后将不再改变）"><a href="#（数据只绑定一次，之后将不再改变）" class="headerlink" title="（数据只绑定一次，之后将不再改变）"></a>（数据只绑定一次，之后将不再改变）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">		&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body id=&quot;box1&quot;&gt;</div><div class="line">		&lt;!--只绑定一次--&gt;</div><div class="line">		&lt;div &gt;&#123;&#123;*msg&#125;&#125;&lt;/div&gt;</div><div class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">			window.onload=function()&#123;</div><div class="line">				new Vue(&#123;</div><div class="line">					el:&apos;#box1&apos;,</div><div class="line">					data:&#123;</div><div class="line">						msg:&apos;Welcome to study!&apos;</div><div class="line">					&#125;</div><div class="line">				&#125;);</div><div class="line">			&#125;;</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h3 id="HTML转义输出"><a href="#HTML转义输出" class="headerlink" title="HTML转义输出"></a>HTML转义输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">		&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body id=&quot;box1&quot;&gt;</div><div class="line">		&lt;!--HTML转意输出--&gt;</div><div class="line">		&lt;div&gt;&#123;&#123;&#123;msg&#125;&#125;&#125;&lt;/div&gt;</div><div class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">			window.onload=function()&#123;</div><div class="line">				new Vue(&#123;</div><div class="line">					el:&apos;#box1&apos;,</div><div class="line">					data:&#123;</div><div class="line">						msg:&apos;Welcome to study!&apos;</div><div class="line">					&#125;</div><div class="line">				&#125;);</div><div class="line">			&#125;;</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h1 id="综合上述的方法讲解：模板"><a href="#综合上述的方法讲解：模板" class="headerlink" title="综合上述的方法讲解：模板"></a>综合上述的方法讲解：模板</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">		&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body id=&quot;box1&quot;&gt;</div><div class="line">		&lt;!--数据更新，模板变化--&gt;</div><div class="line">		&lt;div&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;</div><div class="line">		&lt;input type=&quot;text&quot; v-model=&quot;msg&quot;/&gt;</div><div class="line">		&lt;!--只绑定一次--&gt;</div><div class="line">		&lt;div &gt;&#123;&#123;*msg&#125;&#125;&lt;/div&gt;</div><div class="line">		&lt;!--HTML转意输出--&gt;</div><div class="line">		&lt;div&gt;&#123;&#123;&#123;msg&#125;&#125;&#125;&lt;/div&gt;</div><div class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">			window.onload=function()&#123;</div><div class="line">				new Vue(&#123;</div><div class="line">					el:&apos;#box1&apos;,</div><div class="line">					data:&#123;</div><div class="line">						msg:&apos;Welcome to study!&apos;</div><div class="line">					&#125;</div><div class="line">				&#125;);</div><div class="line">			&#125;;</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h2 id="for-in循环的讲解"><a href="#for-in循环的讲解" class="headerlink" title="for-in循环的讲解"></a>for-in循环的讲解</h2><h4 id="语法：v-for-”key-in-数组名或者json名”"><a href="#语法：v-for-”key-in-数组名或者json名”" class="headerlink" title="语法：v-for=”key in 数组名或者json名”"></a>语法：v-for=”key in 数组名或者json名”</h4><h4 id="值的显示："><a href="#值的显示：" class="headerlink" title="值的显示："></a>值的显示：</h4><h5 id="在数组中：，也可以包含索引，写法为：-；"><a href="#在数组中：，也可以包含索引，写法为：-；" class="headerlink" title="在数组中：，也可以包含索引，写法为： ；"></a>在数组中：，也可以包含索引，写法为： ；</h5><h5 id="在json中：除了上面的写法，还有一个值：来获取键的名称"><a href="#在json中：除了上面的写法，还有一个值：来获取键的名称" class="headerlink" title="在json中：除了上面的写法，还有一个值：来获取键的名称"></a>在json中：除了上面的写法，还有一个值：来获取键的名称</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;div id=&quot;box&quot;&gt;</div><div class="line">			&lt;ul&gt;</div><div class="line">				&lt;li v-for=&quot;key in arr&quot;&gt;</div><div class="line">					&#123;&#123;key &#125;&#125; &#123;&#123;$index&#125;&#125;</div><div class="line">				&lt;/li&gt;</div><div class="line">				&lt;li v-for=&quot;value in json&quot;&gt;</div><div class="line">					&#123;&#123;value&#125;&#125;</div><div class="line">				&lt;/li&gt;</div><div class="line">			&lt;/ul&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;script&gt;</div><div class="line">			window.onload=function()&#123;</div><div class="line">				new Vue(&#123;</div><div class="line">					el:&apos;#box&apos;,</div><div class="line">					data:&#123;</div><div class="line">						arr:[&quot;apple&quot;,&quot;banana&quot;,&quot;pear&quot;,&quot;orange&quot;],</div><div class="line">						json:&#123;a:&apos;I&apos;,b:&apos;love&apos;,c:&apos;you&apos;&#125;</div><div class="line">					&#125;,</div><div class="line">				&#125;);</div><div class="line">			&#125;;</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h3 id="在json中还可以这样写循环："><a href="#在json中还可以这样写循环：" class="headerlink" title="在json中还可以这样写循环："></a>在json中还可以这样写循环：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">v-for=&quot;(k,v) in json&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;div id=&quot;box&quot;&gt;</div><div class="line">			&lt;ul&gt;</div><div class="line">				&lt;li v-for=&quot;(k,v) in json&quot;&gt;</div><div class="line">					&#123;&#123;k&#125;&#125; &#123;&#123;v&#125;&#125; &#123;&#123;$index&#125;&#125; &#123;&#123;$key&#125;&#125;</div><div class="line">				&lt;/li&gt;</div><div class="line">			&lt;/ul&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;script&gt;</div><div class="line">			window.onload=function()&#123;</div><div class="line">				new Vue(&#123;</div><div class="line">					el:&apos;#box&apos;,</div><div class="line">					data:&#123;</div><div class="line">						json:&#123;a:&apos;I&apos;,b:&apos;love&apos;,c:&apos;you&apos;&#125;</div><div class="line">					&#125;,</div><div class="line">				&#125;);</div><div class="line">			&#125;;</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h2 id="vue事件"><a href="#vue事件" class="headerlink" title="vue事件"></a>vue事件</h2><h3 id="v-on-click-”函数-”——–-gt-可以有参数，也可以没有参数"><a href="#v-on-click-”函数-”——–-gt-可以有参数，也可以没有参数" class="headerlink" title="v-on:click=”函数()”——–&gt;可以有参数，也可以没有参数"></a>v-on:click=”函数()”——–&gt;可以有参数，也可以没有参数</h3><h4 id="除了v-on-click，还有很多的鼠标键盘事件"><a href="#除了v-on-click，还有很多的鼠标键盘事件" class="headerlink" title="除了v-on:click，还有很多的鼠标键盘事件"></a>除了v-on:click，还有很多的鼠标键盘事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">v-on:mouseover</div><div class="line">v-on:dblclick</div><div class="line">v-on:mouseout</div><div class="line">v-on:mousedown</div><div class="line">v-on:mouseup</div><div class="line">v-on:keyup</div><div class="line">v-on:keydown........</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;键盘事件&lt;/title&gt;</div><div class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;div id=&quot;btn&quot;&gt;</div><div class="line">			&lt;input type=&quot;button&quot; v-on:click=&quot;add()&quot; value=&quot;按钮&quot;/&gt;</div><div class="line">			&lt;ul&gt;</div><div class="line">				&lt;li v-for=&quot;value in arr&quot;&gt;</div><div class="line">					&#123;&#123;value&#125;&#125;</div><div class="line">				&lt;/li&gt;</div><div class="line">			&lt;/ul&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">				window.onload=function()&#123;</div><div class="line">					new Vue(&#123;</div><div class="line">						el:&apos;#btn&apos;,</div><div class="line">						data:&#123;//数据</div><div class="line">							arr:[&quot;apple&quot;,&quot;banana&quot;,&quot;pear&quot;,&quot;orange&quot;],</div><div class="line">						&#125;,</div><div class="line">						methods:&#123;//方法和函数</div><div class="line">							add:function()&#123;</div><div class="line">								this.arr.push(&quot;tomoto&quot;);</div><div class="line">							&#125;</div><div class="line">						&#125;,</div><div class="line">					&#125;);</div><div class="line">				&#125;;</div><div class="line">			&lt;/script&gt;	</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h2 id="vue显示和隐藏"><a href="#vue显示和隐藏" class="headerlink" title="vue显示和隐藏"></a>vue显示和隐藏</h2><h3 id="v-show-”true-false”"><a href="#v-show-”true-false”" class="headerlink" title="v-show=”true/false”"></a>v-show=”true/false”</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;div id=&quot;box&quot;&gt;</div><div class="line">			&lt;div style=&quot;background: #FFB800;width: 100px;height: 200px;&quot; v-show=&quot;true&quot;&gt;&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;script&gt;</div><div class="line">			new Vue(&#123;</div><div class="line">				el:&apos;#box&apos;,</div><div class="line">			</div><div class="line">			&#125;);</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h4 id="或者也可以是下面的方法，但是在vue中建议使用data"><a href="#或者也可以是下面的方法，但是在vue中建议使用data" class="headerlink" title="或者也可以是下面的方法，但是在vue中建议使用data"></a>或者也可以是下面的方法，但是在vue中建议使用data</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;div id=&quot;box&quot;&gt;</div><div class="line">		&lt;div style=&quot;background: #FFB800;width: 100px;height: 200px;&quot; v-show=&quot;a&quot;&gt;&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;script&gt;</div><div class="line">			new Vue(&#123;</div><div class="line">				el:&apos;#box&apos;,</div><div class="line">				data:&#123;</div><div class="line">					a:true,</div><div class="line">				&#125;,</div><div class="line">				</div><div class="line">			&#125;);</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h3 id="点击按钮使div消失"><a href="#点击按钮使div消失" class="headerlink" title="点击按钮使div消失"></a>点击按钮使div消失</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;div id=&quot;box&quot;&gt;</div><div class="line">			&lt;input type=&quot;button&quot; value=&quot;点击按钮下面的DIV消失&quot; v-on:click=&quot;a=false&quot; /&gt;</div><div class="line">		&lt;div style=&quot;background: #FFB800;width: 100px;height: 200px;&quot; v-show=&quot;a&quot;&gt;&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;script&gt;</div><div class="line">			new Vue(&#123;</div><div class="line">				el:&apos;#box&apos;,</div><div class="line">				data:&#123;</div><div class="line">					a:true</div><div class="line">				&#125;,</div><div class="line">			&#125;);</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/09/vue-常用指令的讲解/" data-id="cjuwmevhu006p44g0zorx7x47" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/11/js-内置对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          js-内置对象
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/09/vue-data中的数据/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue-data中的数据</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_28/MtTaAg4sNzU0NC1ibG9n.html" target="_blank" title="vue实现h5移动端项目参考文献">
+          vue实现h5移动端项目参考文献
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/zhouheblog/archive/2018/01/12/8275781.html" target="_blank" title="vue请求java服务端并返回数据">
+          vue请求java服务端并返回数据
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_2c/MtTaAg4sMDg3OS1ibG9n.html" target="_blank" title="vue与java数据交互">
+          vue与java数据交互
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

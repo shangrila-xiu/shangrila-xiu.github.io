@@ -1,38 +1,361 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hexo-problems | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="hexo在执行命令的过程刚发现的错误警告">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo-problems">
+<meta property="og:url" content="http://yoursite.com/2017/10/07/hexo-problems/index.html">
+<meta property="og:site_name" content="shangrila-xiu">
+<meta property="og:description" content="hexo在执行命令的过程刚发现的错误警告">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-07T12:45:17.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo-problems">
+<meta name="twitter:description" content="hexo在执行命令的过程刚发现的错误警告">
+  
+    <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
 
-block content
-    article#post
-        .post-header
-            .title= page.title
-            .container
-                time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.posted')] #[=date(page['date'], config.date_format)] | #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                //time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                .button-hover.categories
-                    each categories,index in page.categories.data
-                        i.fa.fa-inbox.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(categories.path)) #[=categories.name]
-                        if(index < page.categories.data.length - 1)
-                            i.fa.fa-angle-right(style="margin: 0 8px;")
-                .button-hover.tags
-                    each tags,index in page.tags.data
-                        i.fa.fa-tag.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(tags.path)) #[=tags.name]
-                        if(index < page.tags.data.length - 1)
-                            span &nbsp;|&nbsp;
-        .main-content!= page.content
-        if (theme.post_copyright && theme.post_copyright.enable)
-            .post-copyright
-                .post-copyright-author
-                    span.post-copyright-meta= _p('post.copyright.author') + ": "
-                    span.post-copyright-info
-                        - let mailto = `mailto:${config.email}`
-                        a(href=mailto) #[=config.author]
-                .post-copyright-type
-                    span.post-copyright-meta= _p('post.copyright.link') + ": "
-                    span.post-copyright-info
-                        a(href=url_for(page.permalink)) #[=page.permalink]
-                .post-copyright-notice
-                    span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
-                    span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
-    include includes/pagination.pug
-    //div!= paginator()
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-hexo-problems" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/07/hexo-problems/" class="article-date">
+  <time class="post-time" datetime="2017-10-07T12:12:21.000Z" itemprop="datePublished">
+    <span class="post-month">10月</span><br/>
+    <span class="post-day">07</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo-problems
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo在执行命令的时候出现的一些问题/">hexo在执行命令的时候出现的一些问题</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1><h2 id="在执行命令的过程刚发现的错误警告"><a href="#在执行命令的过程刚发现的错误警告" class="headerlink" title="在执行命令的过程刚发现的错误警告"></a>在执行命令的过程刚发现的错误警告</h2><a id="more"></a>
+<h3 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure>
+<h3 id="运行时出现的警告"><a href="#运行时出现的警告" class="headerlink" title="运行时出现的警告"></a>运行时出现的警告</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div></pre></td><td class="code"><pre><div class="line">INFO  Deploying: git</div><div class="line">INFO  Clearing .deploy_git folder...</div><div class="line">INFO  Copying files from public folder...</div><div class="line">INFO  Copying files from extend dirs...</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/01/hello-First/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/01/hello-world/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/03/Vue-second/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/03/vue-first/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/19/bubble/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/19/default/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/19/todolist/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/20/keyboard/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/20/v-bindProperty/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/23/classAndStyle/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/23/model/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/25/filt/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/27/interaction/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/09/30/ex-teraction/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in archives/2017/09/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in archives/2017/09/page/2/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in archives/2017/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in archives/2017/page/2/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in archives/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in archives/page/2/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/class和style的讲解/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/hexo/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/vue-js/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/举出一个交互的例子/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/交互的一些讲解/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/关于键盘事件的问题/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/模板的绑定/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/系统默认行为的一些问题/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/阻止冒泡的问题/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in css/fontawesome/font-awesome-ie7.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in css/fontawesome/font-awesome-ie7.min.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in css/fontawesome/font-awesome.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in css/fontawesome/font-awesome.min.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in css/plugin/animate.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in css/plugin/hover.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in css/style.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in js/script.js.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in page/2/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in plugin/bganimation/bg.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in plugin/fancybox/helpers/jquery.fancybox-buttons.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in plugin/fancybox/helpers/jquery.fancybox-buttons.js.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in plugin/fancybox/helpers/jquery.fancybox-media.js.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in plugin/fancybox/helpers/jquery.fancybox-thumbs.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in plugin/fancybox/helpers/jquery.fancybox-thumbs.js.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in plugin/fancybox/jquery.fancybox.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in plugin/fancybox/jquery.fancybox.js.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in plugin/fancybox/jquery.fancybox.pack.js.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in plugin/galmenu/GalMenu.css.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in plugin/galmenu/GalMenu.js.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/css/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/hexo安装和使用/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/html/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/html/page/2/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/javascript/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/php/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/vue-js/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/vue-js基础讲/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/vue-js常用命令/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/vue/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in tags/vuejs/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in 2017/10/07/vue-problems/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in archives/2017/10/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/vue运行过程中遇到的一些问题/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">[master 16c2a93] Site updated: 2017-10-07 19:38:41</div><div class="line"> 47 files changed, 1442 insertions(+), 357 deletions(-)</div><div class="line"> create mode 100644 2017/10/07/vue-problems/index.html</div><div class="line"> create mode 100644 archives/2017/10/index.html</div><div class="line"> create mode 100644 &quot;categories/vue\350\277\220\350\241\214\350\277\207\347\250\213\344\270\255\351\201\207\345\210\260\347\232\204\344\270\200\344\272\233\351\227\256\351\242\230/index.html&quot;</div><div class="line">Branch master set up to track remote branch master from https://github.com/shangrila-xiu/shangrila-xiu.github.io.git.</div><div class="line">To https://github.com/shangrila-xiu/shangrila-xiu.github.io.git</div><div class="line">   4f60a26..16c2a93  HEAD -&gt; master</div><div class="line">INFO  Deploy done: git</div></pre></td></tr></table></figure>
+<h4 id="对于它的解决办法有两种：一、当做没有发生，在网上查看，也没有问题发生，写的内容已经成功的上传了。"><a href="#对于它的解决办法有两种：一、当做没有发生，在网上查看，也没有问题发生，写的内容已经成功的上传了。" class="headerlink" title="对于它的解决办法有两种：一、当做没有发生，在网上查看，也没有问题发生，写的内容已经成功的上传了。"></a>对于它的解决办法有两种：一、当做没有发生，在网上查看，也没有问题发生，写的内容已经成功的上传了。</h4><h4 id="二、打开命令行，设置就可以了"><a href="#二、打开命令行，设置就可以了" class="headerlink" title="二、打开命令行，设置就可以了"></a>二、打开命令行，设置就可以了</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">最近在使用GitHub，发现不时没有修改过的文件要提交，对比发现文件全部修改，但找不到不一样的地方。</div><div class="line">想可能是换行符的问题，因为Windows和Linux的换行符不一样，而Git默认应该是Linux的，今天Bing了下，果然是这个问题。</div><div class="line"></div><div class="line">CR回车 LF换行Windows/Dos CRLF \r\n</div><div class="line">Linux/Unix LF \n</div><div class="line">MacOS CR \r</div><div class="line"></div><div class="line">解决方法是：打开命令行，进行设置，如果你是在Windows下开发，建议设置autocrlf为true。</div><div class="line">2014/08/20 补充：如果你文件编码是UTF8并且包含中文文字，那还是把autocrlf设置为false，并且把所有文件转换为Linux编码（即LF\n），开启safecrlf检查。</div><div class="line"></div><div class="line"></div><div class="line">一、AutoCRLF</div><div class="line"></div><div class="line">#提交时转换为LF，检出时转换为CRLF</div><div class="line">git config --global core.autocrlf true   </div><div class="line"></div><div class="line">#提交时转换为LF，检出时不转换</div><div class="line">git config --global core.autocrlf input   </div><div class="line"></div><div class="line">#提交检出均不转换</div><div class="line">git config --global core.autocrlf false</div><div class="line"></div><div class="line">二、SafeCRLF</div><div class="line"></div><div class="line">#拒绝提交包含混合换行符的文件</div><div class="line">git config --global core.safecrlf true   </div><div class="line"></div><div class="line">#允许提交包含混合换行符的文件</div><div class="line">git config --global core.safecrlf false   </div><div class="line"></div><div class="line">#提交包含混合换行符的文件时给出警告</div><div class="line">git config --global core.safecrlf warn</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/07/hexo-problems/" data-id="cjuwmew3a00c044g0fm2dgvl5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/04/vue-messageBoard/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          messageBoard
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/07/vue-problems/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue-problems</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_28/MtTaAg4sNzU0NC1ibG9n.html" target="_blank" title="vue实现h5移动端项目参考文献">
+          vue实现h5移动端项目参考文献
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/zhouheblog/archive/2018/01/12/8275781.html" target="_blank" title="vue请求java服务端并返回数据">
+          vue请求java服务端并返回数据
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_2c/MtTaAg4sMDg3OS1ibG9n.html" target="_blank" title="vue与java数据交互">
+          vue与java数据交互
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

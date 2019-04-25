@@ -1,38 +1,370 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>h5_yingyin | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="html5的影音功能html5最大的突破是新增了video和audio元素，以及相关的API进而赋予浏览器原生能力来播放视频和音频。不在依赖插件">
+<meta name="keywords" content="html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="h5_yingyin">
+<meta property="og:url" content="http://yoursite.com/2018/05/01/h5-yingyin/index.html">
+<meta property="og:site_name" content="shangrila-xiu">
+<meta property="og:description" content="html5的影音功能html5最大的突破是新增了video和audio元素，以及相关的API进而赋予浏览器原生能力来播放视频和音频。不在依赖插件">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-01T13:47:09.113Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="h5_yingyin">
+<meta name="twitter:description" content="html5的影音功能html5最大的突破是新增了video和audio元素，以及相关的API进而赋予浏览器原生能力来播放视频和音频。不在依赖插件">
+  
+    <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
 
-block content
-    article#post
-        .post-header
-            .title= page.title
-            .container
-                time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.posted')] #[=date(page['date'], config.date_format)] | #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                //time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                .button-hover.categories
-                    each categories,index in page.categories.data
-                        i.fa.fa-inbox.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(categories.path)) #[=categories.name]
-                        if(index < page.categories.data.length - 1)
-                            i.fa.fa-angle-right(style="margin: 0 8px;")
-                .button-hover.tags
-                    each tags,index in page.tags.data
-                        i.fa.fa-tag.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(tags.path)) #[=tags.name]
-                        if(index < page.tags.data.length - 1)
-                            span &nbsp;|&nbsp;
-        .main-content!= page.content
-        if (theme.post_copyright && theme.post_copyright.enable)
-            .post-copyright
-                .post-copyright-author
-                    span.post-copyright-meta= _p('post.copyright.author') + ": "
-                    span.post-copyright-info
-                        - let mailto = `mailto:${config.email}`
-                        a(href=mailto) #[=config.author]
-                .post-copyright-type
-                    span.post-copyright-meta= _p('post.copyright.link') + ": "
-                    span.post-copyright-info
-                        a(href=url_for(page.permalink)) #[=page.permalink]
-                .post-copyright-notice
-                    span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
-                    span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
-    include includes/pagination.pug
-    //div!= paginator()
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-h5-yingyin" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/01/h5-yingyin/" class="article-date">
+  <time class="post-time" datetime="2018-05-01T12:24:49.000Z" itemprop="datePublished">
+    <span class="post-month">5月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      h5_yingyin
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/html5的影音功能/">html5的影音功能</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="html5的影音功能"><a href="#html5的影音功能" class="headerlink" title="html5的影音功能"></a>html5的影音功能</h1><h2 id="html5最大的突破是新增了video和audio元素，以及相关的API"><a href="#html5最大的突破是新增了video和audio元素，以及相关的API" class="headerlink" title="html5最大的突破是新增了video和audio元素，以及相关的API"></a>html5最大的突破是新增了video和audio元素，以及相关的API</h2><p><strong><em>进而赋予浏览器原生能力来播放视频和音频。不在依赖插件</em></strong></p>
+<a id="more"></a>
+<h2 id="为何要新增这两个元素？"><a href="#为何要新增这两个元素？" class="headerlink" title="为何要新增这两个元素？"></a>为何要新增这两个元素？</h2><h4 id="答：1、为了播放视频和音频，各大浏览器自定义专用的元素，彼此的支持程度不同。audio和video元素题供了在网页上嵌入视频和音频的标准方式；"><a href="#答：1、为了播放视频和音频，各大浏览器自定义专用的元素，彼此的支持程度不同。audio和video元素题供了在网页上嵌入视频和音频的标准方式；" class="headerlink" title="答：1、为了播放视频和音频，各大浏览器自定义专用的元素，彼此的支持程度不同。audio和video元素题供了在网页上嵌入视频和音频的标准方式；"></a>答：1、为了播放视频和音频，各大浏览器自定义专用的元素，彼此的支持程度不同。audio和video元素题供了在网页上嵌入视频和音频的标准方式；</h4><h4 id="2、由于视频与音频的格式众多，所需的插件也不尽相同，但用户也不一定安装了正确的插件，导致无法播放；"><a href="#2、由于视频与音频的格式众多，所需的插件也不尽相同，但用户也不一定安装了正确的插件，导致无法播放；" class="headerlink" title="2、由于视频与音频的格式众多，所需的插件也不尽相同，但用户也不一定安装了正确的插件，导致无法播放；"></a>2、由于视频与音频的格式众多，所需的插件也不尽相同，但用户也不一定安装了正确的插件，导致无法播放；</h4><h4 id="3-对于必须依赖插件来播放的视频，浏览器的做法通常是在网页上保留一个区块给插件，然后就不去解析该区块，然而若有其他元素刚好也用到了该区块，可能会导致浏览器无法正确显示网页。"><a href="#3-对于必须依赖插件来播放的视频，浏览器的做法通常是在网页上保留一个区块给插件，然后就不去解析该区块，然而若有其他元素刚好也用到了该区块，可能会导致浏览器无法正确显示网页。" class="headerlink" title="3.对于必须依赖插件来播放的视频，浏览器的做法通常是在网页上保留一个区块给插件，然后就不去解析该区块，然而若有其他元素刚好也用到了该区块，可能会导致浏览器无法正确显示网页。"></a>3.对于必须依赖插件来播放的视频，浏览器的做法通常是在网页上保留一个区块给插件，然后就不去解析该区块，然而若有其他元素刚好也用到了该区块，可能会导致浏览器无法正确显示网页。</h4><h2 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h2><h4 id="1、video元素和audio元素的用法和嵌入图片的img元素类似，也是通过src属性指定视频的来源。"><a href="#1、video元素和audio元素的用法和嵌入图片的img元素类似，也是通过src属性指定视频的来源。" class="headerlink" title="1、video元素和audio元素的用法和嵌入图片的img元素类似，也是通过src属性指定视频的来源。"></a>1、video元素和audio元素的用法和嵌入图片的img元素类似，也是通过src属性指定视频的来源。</h4><h4 id="2、若要在网页中自动播放视频，只需要加上autoplay属性；设置的loop属性，就会使视频或者音频循环播放；可以加上controls-属性来显示控制面板；可以设置width和height"><a href="#2、若要在网页中自动播放视频，只需要加上autoplay属性；设置的loop属性，就会使视频或者音频循环播放；可以加上controls-属性来显示控制面板；可以设置width和height" class="headerlink" title="2、若要在网页中自动播放视频，只需要加上autoplay属性；设置的loop属性，就会使视频或者音频循环播放；可以加上controls 属性来显示控制面板；可以设置width和height"></a>2、若要在网页中自动播放视频，只需要加上<b>autoplay</b>属性；设置的<b>loop</b>属性，就会使视频或者音频循环播放；可以加上<b>controls</b> 属性来显示控制面板；可以设置width和height</h4><h4 id="3、poster-属性：在视频加载完毕之前或开始播放之前，默认会显示第一个画格，但该画格却不见得具有任何的意义；"><a href="#3、poster-属性：在视频加载完毕之前或开始播放之前，默认会显示第一个画格，但该画格却不见得具有任何的意义；" class="headerlink" title="3、poster 属性：在视频加载完毕之前或开始播放之前，默认会显示第一个画格，但该画格却不见得具有任何的意义；"></a>3、poster 属性：在视频加载完毕之前或开始播放之前，默认会显示第一个画格，但该画格却不见得具有任何的意义；</h4><h4 id="4、preload属性：用来告诉用户代理程序，是否要在加载网页的同时将视频预先下载到缓冲区，方便用户在想看的时候可以立刻开始播放。无论它的值为多少，只要有autoplay属性，就会自动开始播放视频。"><a href="#4、preload属性：用来告诉用户代理程序，是否要在加载网页的同时将视频预先下载到缓冲区，方便用户在想看的时候可以立刻开始播放。无论它的值为多少，只要有autoplay属性，就会自动开始播放视频。" class="headerlink" title="4、preload属性：用来告诉用户代理程序，是否要在加载网页的同时将视频预先下载到缓冲区，方便用户在想看的时候可以立刻开始播放。无论它的值为多少，只要有autoplay属性，就会自动开始播放视频。"></a>4、preload属性：用来告诉用户代理程序，是否要在加载网页的同时将视频预先下载到缓冲区，方便用户在想看的时候可以立刻开始播放。无论它的值为多少，只要有autoplay属性，就会自动开始播放视频。</h4><h5 id="preload属性的值有一下三种："><a href="#preload属性的值有一下三种：" class="headerlink" title="preload属性的值有一下三种："></a>preload属性的值有一下三种：</h5><h6 id="none-这个值是告诉用户代理程序不要预先下载视频，除非用户有通过控制接口明确指示要播放视频"><a href="#none-这个值是告诉用户代理程序不要预先下载视频，除非用户有通过控制接口明确指示要播放视频" class="headerlink" title="none:这个值是告诉用户代理程序不要预先下载视频，除非用户有通过控制接口明确指示要播放视频"></a>none:这个值是告诉用户代理程序不要预先下载视频，除非用户有通过控制接口明确指示要播放视频</h6><h6 id="metadata：代理程序先获取视频的metadata（如画格尺寸、片长、目录列表、第一个画格等），不要预先下载"><a href="#metadata：代理程序先获取视频的metadata（如画格尺寸、片长、目录列表、第一个画格等），不要预先下载" class="headerlink" title="metadata：代理程序先获取视频的metadata（如画格尺寸、片长、目录列表、第一个画格等），不要预先下载"></a>metadata：代理程序先获取视频的metadata（如画格尺寸、片长、目录列表、第一个画格等），不要预先下载</h6><h6 id="auto：由用户代理程序决定是否要预先下载视频。"><a href="#auto：由用户代理程序决定是否要预先下载视频。" class="headerlink" title="auto：由用户代理程序决定是否要预先下载视频。"></a>auto：由用户代理程序决定是否要预先下载视频。</h6><h4 id="5、width和height属性：来指定视频显示范围的宽度和高度"><a href="#5、width和height属性：来指定视频显示范围的宽度和高度" class="headerlink" title="5、width和height属性：来指定视频显示范围的宽度和高度"></a>5、width和height属性：来指定视频显示范围的宽度和高度</h4><h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><h6 id="1、若没有指定width属性，将使用视频原本的宽度、poster属性指定之画面的宽度为300像素；"><a href="#1、若没有指定width属性，将使用视频原本的宽度、poster属性指定之画面的宽度为300像素；" class="headerlink" title="1、若没有指定width属性，将使用视频原本的宽度、poster属性指定之画面的宽度为300像素；"></a>1、若没有指定width属性，将使用视频原本的宽度、poster属性指定之画面的宽度为300像素；</h6><h6 id="2、若没有height属性，将使用，，，，，，，，，，，，，，高度为150像素；"><a href="#2、若没有height属性，将使用，，，，，，，，，，，，，，高度为150像素；" class="headerlink" title="2、若没有height属性，将使用，，，，，，，，，，，，，，高度为150像素；"></a>2、若没有height属性，将使用，，，，，，，，，，，，，，高度为150像素；</h6><h6 id="3、若视频的长宽比例和width、height属性所指定的长宽比例不同，将维持硬盘的长度比例，不会造成视频的变形；"><a href="#3、若视频的长宽比例和width、height属性所指定的长宽比例不同，将维持硬盘的长度比例，不会造成视频的变形；" class="headerlink" title="3、若视频的长宽比例和width、height属性所指定的长宽比例不同，将维持硬盘的长度比例，不会造成视频的变形；"></a>3、若视频的长宽比例和width、height属性所指定的长宽比例不同，将维持硬盘的长度比例，不会造成视频的变形；</h6><h6 id="4、audio元素的属性大多和video元素的相同。不过audio元素没有width、height属性，也没有poster属性。"><a href="#4、audio元素的属性大多和video元素的相同。不过audio元素没有width、height属性，也没有poster属性。" class="headerlink" title="4、audio元素的属性大多和video元素的相同。不过audio元素没有width、height属性，也没有poster属性。"></a>4、audio元素的属性大多和video元素的相同。不过audio元素没有width、height属性，也没有poster属性。</h6><h1 id="影音文件的来源———–source元素"><a href="#影音文件的来源———–source元素" class="headerlink" title="影音文件的来源———–source元素"></a>影音文件的来源———–source元素</h1><h3 id="html5新增的source元素指定影音文件的uri与mime-类型。其属性如下"><a href="#html5新增的source元素指定影音文件的uri与mime-类型。其属性如下" class="headerlink" title="html5新增的source元素指定影音文件的uri与mime 类型。其属性如下"></a>html5新增的source元素指定影音文件的uri与mime 类型。其属性如下</h3><h4 id="src-”uri”-指定影音文件的相对或绝对地址"><a href="#src-”uri”-指定影音文件的相对或绝对地址" class="headerlink" title="src=”uri”;   指定影音文件的相对或绝对地址"></a>src=”uri”;   指定影音文件的相对或绝对地址</h4><h4 id="type-”content-type”-：指定影音文件的mime类型"><a href="#type-”content-type”-：指定影音文件的mime类型" class="headerlink" title="type=”content-type” ：指定影音文件的mime类型"></a>type=”content-type” ：指定影音文件的mime类型</h4><h4 id="media-”-screen-print-projection-braille-speech-tv-handheld-all-”-指定目的媒体类型（屏幕，打印机，投影仪，盲文点字机，音频合成器，电视，便携设备、全部），省略不写的话，默认是all。"><a href="#media-”-screen-print-projection-braille-speech-tv-handheld-all-”-指定目的媒体类型（屏幕，打印机，投影仪，盲文点字机，音频合成器，电视，便携设备、全部），省略不写的话，默认是all。" class="headerlink" title="media=”{screen,print,projection,braille,speech,tv,handheld,all}”;指定目的媒体类型（屏幕，打印机，投影仪，盲文点字机，音频合成器，电视，便携设备、全部），省略不写的话，默认是all。"></a>media=”{screen,print,projection,braille,speech,tv,handheld,all}”;指定目的媒体类型（屏幕，打印机，投影仪，盲文点字机，音频合成器，电视，便携设备、全部），省略不写的话，默认是all。</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span> <span class="attr">autoplay</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"bird.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"bird.ogv"</span> <span class="attr">type</span>=<span class="string">"video/ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--浏览器会由上至下按序解析source元素--&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h5><h6 id="source元素的type属性是很重要的，若遗漏type属性，浏览器就只好下载各个视频文件的部分内容，确认自己究竟支持哪个视频文件，若都不支持，不仅不会播放视频，还会拜拜浪费带宽。"><a href="#source元素的type属性是很重要的，若遗漏type属性，浏览器就只好下载各个视频文件的部分内容，确认自己究竟支持哪个视频文件，若都不支持，不仅不会播放视频，还会拜拜浪费带宽。" class="headerlink" title="source元素的type属性是很重要的，若遗漏type属性，浏览器就只好下载各个视频文件的部分内容，确认自己究竟支持哪个视频文件，若都不支持，不仅不会播放视频，还会拜拜浪费带宽。"></a>source元素的type属性是很重要的，若遗漏type属性，浏览器就只好下载各个视频文件的部分内容，确认自己究竟支持哪个视频文件，若都不支持，不仅不会播放视频，还会拜拜浪费带宽。</h6><h6 id="上面的type属性的值-“video-mp4”和”video-ogg”-都只是指定了容器的类型，并没有说明容器里面的影音数据是采用的那种编码方式，以至于有些浏览器无法正确的判断出自己究竟能否播放该视频文件：比较好的做法是在type属性中加入codecs参数指定编解码器。不同的编解码器有不同的设置值。codecs参数的设置"><a href="#上面的type属性的值-“video-mp4”和”video-ogg”-都只是指定了容器的类型，并没有说明容器里面的影音数据是采用的那种编码方式，以至于有些浏览器无法正确的判断出自己究竟能否播放该视频文件：比较好的做法是在type属性中加入codecs参数指定编解码器。不同的编解码器有不同的设置值。codecs参数的设置" class="headerlink" title="上面的type属性的值 “video/mp4”和”video/ogg” 都只是指定了容器的类型，并没有说明容器里面的影音数据是采用的那种编码方式，以至于有些浏览器无法正确的判断出自己究竟能否播放该视频文件：比较好的做法是在type属性中加入codecs参数指定编解码器。不同的编解码器有不同的设置值。codecs参数的设置"></a>上面的type属性的值 “video/mp4”和”video/ogg” 都只是指定了容器的类型，并没有说明容器里面的影音数据是采用的那种编码方式，以至于有些浏览器无法正确的判断出自己究竟能否播放该视频文件：比较好的做法是在type属性中加入codecs参数指定编解码器。不同的编解码器有不同的设置值。<a href="http://www.w3.org/TR/html5" target="_blank" rel="external">codecs参数的设置</a></h6><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span> <span class="attr">autoplay</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"bird.mp4"</span> <span class="attr">type</span>=<span class="string">'video/mp4;codecs="avc1.42E01E,mp4a.402"'</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"bird.ogv"</span> <span class="attr">type</span>=<span class="string">'video/ogg;codecs=theora,vorbis"'</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></div></pre></td></tr></table></figure>
+<h6 id="video元素还有下列两个只读属性："><a href="#video元素还有下列两个只读属性：" class="headerlink" title="video元素还有下列两个只读属性："></a>video元素还有下列两个只读属性：</h6><h6 id="videoWidth-”n”：返回视频的原始宽度（n为像素数）"><a href="#videoWidth-”n”：返回视频的原始宽度（n为像素数）" class="headerlink" title="videoWidth=”n”：返回视频的原始宽度（n为像素数）"></a>videoWidth=”n”：返回视频的原始宽度（n为像素数）</h6><h6 id="videoHeight-”n”：返回视频的原始高度（n为像素数）"><a href="#videoHeight-”n”：返回视频的原始高度（n为像素数）" class="headerlink" title="videoHeight=”n”：返回视频的原始高度（n为像素数）"></a>videoHeight=”n”：返回视频的原始高度（n为像素数）</h6><h1 id="嵌入资源文件——–embed元素"><a href="#嵌入资源文件——–embed元素" class="headerlink" title="嵌入资源文件——–embed元素"></a>嵌入资源文件——–embed元素</h1><h2 id="当希望浏览器播放的视频文件需要借助插件时，就可以使用embed元素。注意embed元素没有结束标签。"><a href="#当希望浏览器播放的视频文件需要借助插件时，就可以使用embed元素。注意embed元素没有结束标签。" class="headerlink" title="当希望浏览器播放的视频文件需要借助插件时，就可以使用embed元素。注意embed元素没有结束标签。"></a>当希望浏览器播放的视频文件需要借助插件时，就可以使用embed元素。注意embed元素没有结束标签。</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">src</span>=<span class="string">"butterflies2.swf"</span> <span class="attr">type</span>=<span class="string">"application/x-shockwave-flash"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="嵌入对象———object元素"><a href="#嵌入对象———object元素" class="headerlink" title="嵌入对象———object元素"></a>嵌入对象———object元素</h1><h3 id="object元素在html文件中嵌入图片、音频、QuickTime视频、ActiveX-Controls、Java-Applets、Flash动画或浏览器所支持的其他对象。"><a href="#object元素在html文件中嵌入图片、音频、QuickTime视频、ActiveX-Controls、Java-Applets、Flash动画或浏览器所支持的其他对象。" class="headerlink" title="object元素在html文件中嵌入图片、音频、QuickTime视频、ActiveX Controls、Java Applets、Flash动画或浏览器所支持的其他对象。"></a>object元素在html文件中嵌入图片、音频、QuickTime视频、ActiveX Controls、Java Applets、Flash动画或浏览器所支持的其他对象。</h3><h4 id="嵌入视频和音频的用法一样"><a href="#嵌入视频和音频的用法一样" class="headerlink" title="嵌入视频和音频的用法一样"></a>嵌入视频和音频的用法一样</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">object</span> <span class="attr">data</span>=<span class="string">"wildlife.wmv"</span>&gt;</span><span class="tag">&lt;/<span class="name">object</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="object元素里面加上width和height属性，因此，浏览器画面会显示控制面板；若不要显示控制面板，而是要让用户一开启网页，就会自动播放音乐，那么可以将object元素的width和height属性指定为0"><a href="#object元素里面加上width和height属性，因此，浏览器画面会显示控制面板；若不要显示控制面板，而是要让用户一开启网页，就会自动播放音乐，那么可以将object元素的width和height属性指定为0" class="headerlink" title="object元素里面加上width和height属性，因此，浏览器画面会显示控制面板；若不要显示控制面板，而是要让用户一开启网页，就会自动播放音乐，那么可以将object元素的width和height属性指定为0"></a>object元素里面加上width和height属性，因此，浏览器画面会显示控制面板；若不要显示控制面板，而是要让用户一开启网页，就会自动播放音乐，那么可以将object元素的width和height属性指定为0</h4><h1 id="嵌入ActiveX-Controls"><a href="#嵌入ActiveX-Controls" class="headerlink" title="嵌入ActiveX Controls"></a>嵌入ActiveX Controls</h1><h5 id="注意：ActiveX-Controls的classid是唯一的，不能随便填写，而且它有各自的参数，可以使用param元素的name和value属性指定参数的名称和值。如"><a href="#注意：ActiveX-Controls的classid是唯一的，不能随便填写，而且它有各自的参数，可以使用param元素的name和value属性指定参数的名称和值。如" class="headerlink" title="注意：ActiveX Controls的classid是唯一的，不能随便填写，而且它有各自的参数，可以使用param元素的name和value属性指定参数的名称和值。如"></a>注意：ActiveX Controls的classid是唯一的，不能随便填写，而且它有各自的参数，可以使用param元素的name和value属性指定参数的名称和值。如</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"AutoStart"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span><span class="comment">&lt;!--表示参数autoStart的值为1，即它会自动播放--&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">object</span> <span class="attr">classid</span>=<span class="string">""</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"Filename"</span> <span class="attr">value</span>=<span class="string">"wildlife.wmv"</span>&gt;</span><span class="comment">&lt;!--指定要播放此文件--&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">object</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="使用object来替代applet"><a href="#使用object来替代applet" class="headerlink" title="使用object来替代applet"></a>使用object来替代applet</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">applet</span> <span class="attr">code</span>=<span class="string">"bubbles.class"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span></div><div class="line">  	...</div><div class="line"><span class="tag">&lt;/<span class="name">applet</span>&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="转为object"><a href="#转为object" class="headerlink" title="转为object"></a>转为object</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">object</span> <span class="attr">classid</span>=<span class="string">"java:bubbles.class"</span> <span class="attr">codetype</span>=<span class="string">"application/java"</span><span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span></div><div class="line">  	...</div><div class="line"><span class="tag">&lt;/<span class="name">object</span>&gt;</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/01/h5-yingyin/" data-id="cjuwmevce000s44g0j4o67ram" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/01/js-paomadeng/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          js_paomadeng
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/04/23/html-practice/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">practice_HTML</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_28/MtTaAg4sNzU0NC1ibG9n.html" target="_blank" title="vue实现h5移动端项目参考文献">
+          vue实现h5移动端项目参考文献
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/zhouheblog/archive/2018/01/12/8275781.html" target="_blank" title="vue请求java服务端并返回数据">
+          vue请求java服务端并返回数据
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_2c/MtTaAg4sMDg3OS1ibG9n.html" target="_blank" title="vue与java数据交互">
+          vue与java数据交互
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

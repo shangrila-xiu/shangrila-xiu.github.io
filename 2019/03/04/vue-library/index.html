@@ -1,38 +1,391 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vue_library | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue图书馆管理学习笔记vue基础vue.js是什么？">
+<meta name="keywords" content="vue,html,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue_library">
+<meta property="og:url" content="http://yoursite.com/2019/03/04/vue-library/index.html">
+<meta property="og:site_name" content="shangrila-xiu">
+<meta property="og:description" content="vue图书馆管理学习笔记vue基础vue.js是什么？">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/vueyinru.png">
+<meta property="og:updated_time" content="2019-04-05T06:13:14.270Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue_library">
+<meta name="twitter:description" content="vue图书馆管理学习笔记vue基础vue.js是什么？">
+<meta name="twitter:image" content="https://github.com/shangrila-xiu/IMG/raw/master/vueyinru.png">
+  
+    <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
 
-block content
-    article#post
-        .post-header
-            .title= page.title
-            .container
-                time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.posted')] #[=date(page['date'], config.date_format)] | #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                //time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                .button-hover.categories
-                    each categories,index in page.categories.data
-                        i.fa.fa-inbox.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(categories.path)) #[=categories.name]
-                        if(index < page.categories.data.length - 1)
-                            i.fa.fa-angle-right(style="margin: 0 8px;")
-                .button-hover.tags
-                    each tags,index in page.tags.data
-                        i.fa.fa-tag.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(tags.path)) #[=tags.name]
-                        if(index < page.tags.data.length - 1)
-                            span &nbsp;|&nbsp;
-        .main-content!= page.content
-        if (theme.post_copyright && theme.post_copyright.enable)
-            .post-copyright
-                .post-copyright-author
-                    span.post-copyright-meta= _p('post.copyright.author') + ": "
-                    span.post-copyright-info
-                        - let mailto = `mailto:${config.email}`
-                        a(href=mailto) #[=config.author]
-                .post-copyright-type
-                    span.post-copyright-meta= _p('post.copyright.link') + ": "
-                    span.post-copyright-info
-                        a(href=url_for(page.permalink)) #[=page.permalink]
-                .post-copyright-notice
-                    span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
-                    span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
-    include includes/pagination.pug
-    //div!= paginator()
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-vue-library" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/04/vue-library/" class="article-date">
+  <time class="post-time" datetime="2019-03-04T13:18:54.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">04</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue_library
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue图书馆管理实现视频学习笔记/">vue图书馆管理实现视频学习笔记</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vue图书馆管理学习笔记"><a href="#vue图书馆管理学习笔记" class="headerlink" title="vue图书馆管理学习笔记"></a>vue图书馆管理学习笔记</h1><h2 id="vue基础"><a href="#vue基础" class="headerlink" title="vue基础"></a>vue基础</h2><h3 id="vue-js是什么？"><a href="#vue-js是什么？" class="headerlink" title="vue.js是什么？"></a>vue.js是什么？</h3><a id="more"></a>
+<h4 id="vue（是法语），同view（英语）"><a href="#vue（是法语），同view（英语）" class="headerlink" title="vue（是法语），同view（英语）"></a>vue（是法语），同view（英语）</h4><h4 id="Vue-js是一套构建用户界面（view）的MVVM框架。Vue-js的核心库只关注视图层，并且非常容易学习，非常容易与其他库或已有的项目结合。"><a href="#Vue-js是一套构建用户界面（view）的MVVM框架。Vue-js的核心库只关注视图层，并且非常容易学习，非常容易与其他库或已有的项目结合。" class="headerlink" title="Vue.js是一套构建用户界面（view）的MVVM框架。Vue.js的核心库只关注视图层，并且非常容易学习，非常容易与其他库或已有的项目结合。"></a>Vue.js是一套构建用户界面（view）的MVVM框架。Vue.js的核心库只关注视图层，并且非常容易学习，非常容易与其他库或已有的项目结合。</h4><h3 id="vue-js的目的"><a href="#vue-js的目的" class="headerlink" title="vue.js的目的"></a>vue.js的目的</h3><h3 id="Vue-js的产生核心是为了解决如下三个问题："><a href="#Vue-js的产生核心是为了解决如下三个问题：" class="headerlink" title="Vue.js的产生核心是为了解决如下三个问题："></a>Vue.js的产生核心是为了解决如下三个问题：</h3><p>1.解决数据绑定的问题：</p>
+<p>2.vue.js框架产生的主要目的是为了开发大型单页面应用（SPA：Sigla Page Application）</p>
+<p>​    angular.js对PC端良好，移动端一般。而vue支持移动端，也支持PC端</p>
+<p>3.支持组件化：也就是将页面封装成多个组件，采用积木式编程。页面的复用度达到最高</p>
+<h3 id="vue-js的特性"><a href="#vue-js的特性" class="headerlink" title="vue.js的特性"></a>vue.js的特性</h3><h4 id="1、MVVM模式"><a href="#1、MVVM模式" class="headerlink" title="1、MVVM模式"></a>1、MVVM模式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">M: model 业务模型，用处：处理数据，提供数据</div><div class="line">V：view  用户界面、用户视图</div><div class="line"> MV：业务模型model中的数据发生改变的时候，用户视图view也会改变。</div><div class="line"> VM：用户视图view改变的时候，业务模型model中的数据发生改变（也可不改变）</div></pre></td></tr></table></figure>
+<h4 id="2、组件化"><a href="#2、组件化" class="headerlink" title="2、组件化"></a>2、组件化</h4><h4 id="3、指令系统"><a href="#3、指令系统" class="headerlink" title="3、指令系统"></a>3、指令系统</h4><h4 id="4、Vue2-0开始支持虚拟DOM（vue1-0操作真实的DOM）"><a href="#4、Vue2-0开始支持虚拟DOM（vue1-0操作真实的DOM）" class="headerlink" title="4、Vue2.0开始支持虚拟DOM（vue1.0操作真实的DOM）"></a>4、Vue2.0开始支持虚拟DOM（vue1.0操作真实的DOM）</h4><h5 id="虚拟DOM可以提升页面的刷新速度。"><a href="#虚拟DOM可以提升页面的刷新速度。" class="headerlink" title="虚拟DOM可以提升页面的刷新速度。"></a>虚拟DOM可以提升页面的刷新速度。</h5><h2 id="vue入门"><a href="#vue入门" class="headerlink" title="vue入门"></a>vue入门</h2><h5 id="引入vue文件的方式：内嵌、外部引用"><a href="#引入vue文件的方式：内嵌、外部引用" class="headerlink" title="引入vue文件的方式：内嵌、外部引用"></a>引入vue文件的方式：内嵌、外部引用</h5><h3 id="使用步骤："><a href="#使用步骤：" class="headerlink" title="使用步骤："></a>使用步骤：</h3><ul>
+<li><p>在页面中引入vue文件</p>
+<p><img src="https://github.com/shangrila-xiu/IMG/raw/master/vueyinru.png" alt="vue引入方式"></p>
+</li>
+<li><p>Vue.js提供了一个Vue，使用Vue创建一个对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">new  Vue(&#123;</div><div class="line">  el:&apos;&apos;,</div><div class="line">  data:&#123;&#125;,//data核心作用是存放显示在页面中的数据，需要是一个对象</div><div class="line">  methods:&#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="el-明Vue-js管理的边界"><a href="#el-明Vue-js管理的边界" class="headerlink" title="el:明Vue.js管理的边界"></a>el:明Vue.js管理的边界</h4><h4 id="data-核心作用是存放显示在页面中的数据，需要是一个对象"><a href="#data-核心作用是存放显示在页面中的数据，需要是一个对象" class="headerlink" title="data:核心作用是存放显示在页面中的数据，需要是一个对象"></a>data:核心作用是存放显示在页面中的数据，需要是一个对象</h4></li>
+<li><p>第三步：在用户界面，通过“两个大括号”形式将data中的键值显示在页面；“两个大括号”代码中的data的key值，而在页面中显示的是data的value。</p>
+<p>Vue.js对获取data与页面中“两个大括号”的产生一个映射关系。</p>
+<h6 id="我们要实现前后台交互，只要将后台得到的数据，放到data中即可。页面就会自动绑定，这样就实现model-gt-view的映射。"><a href="#我们要实现前后台交互，只要将后台得到的数据，放到data中即可。页面就会自动绑定，这样就实现model-gt-view的映射。" class="headerlink" title="我们要实现前后台交互，只要将后台得到的数据，放到data中即可。页面就会自动绑定，这样就实现model-&gt;view的映射。"></a>我们要实现前后台交互，只要将后台得到的数据，放到data中即可。页面就会自动绑定，这样就实现model-&gt;view的映射。</h6><h2 id="vue指令"><a href="#vue指令" class="headerlink" title="vue指令"></a>vue指令</h2><p>指令指的是以v-开头的自定义属性。每个不同的属性有不同的功能和意义。</p>
+<h3 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- &lt;h1 id="demo"&gt;今年是&#123;&#123;year&#125;&#125;年&#123;&#123;month&#125;&#125;月&#123;&#123;date&#125;&#125;日&lt;/h1&gt; --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"demo"</span> <span class="attr">v-text</span>=<span class="string">"'今年是'+year+'年'+month+'月'+date+'日'"</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">		el:<span class="string">'#demo'</span>,</span></div><div class="line"><span class="undefined">		data:&#123;</span></div><div class="line"><span class="javascript">			year:<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear(),</span></div><div class="line"><span class="javascript">			month:<span class="keyword">new</span> <span class="built_in">Date</span>().getMonth()+<span class="number">1</span>,</span></div><div class="line"><span class="javascript">			date:<span class="keyword">new</span> <span class="built_in">Date</span>().getDate()</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h3><p>作用：操作元素的HTML元素</p>
+<h3 id="v-bind-操作HTML的标签元素属性，如img标签的src、alt、title；a标签的href属性"><a href="#v-bind-操作HTML的标签元素属性，如img标签的src、alt、title；a标签的href属性" class="headerlink" title="v-bind   操作HTML的标签元素属性，如img标签的src、alt、title；a标签的href属性"></a>v-bind   操作HTML的标签元素属性，如img标签的src、alt、title；a标签的href属性</h3><h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"aa"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">"hrefValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">      el:<span class="string">'#aa'</span>,</span></div><div class="line"><span class="undefined">      data:&#123;</span></div><div class="line"><span class="javascript">        hrefValue:<span class="string">'http://www.baidu.com'</span></span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="vue控制css"><a href="#vue控制css" class="headerlink" title="vue控制css"></a>vue控制css</h3><p>style</p>
+<h3 id="vue控制js"><a href="#vue控制js" class="headerlink" title="vue控制js"></a>vue控制js</h3><p>在vue的模板中，可以使用简单的js</p>
+<h3 id="vue中写js控制显示和隐藏-v-show"><a href="#vue中写js控制显示和隐藏-v-show" class="headerlink" title="vue中写js控制显示和隐藏  v-show"></a>vue中写js控制显示和隐藏  v-show</h3><p>通过判断是否显示，如果值为true，则显示，为false，则隐藏</p>
+<p>v-show=”判断表达式”</p>
+<p>语法：</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/04/vue-library/" data-id="cjuwmevhe006844g0167na1k0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/04/vue-news毕设笔记整理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vue-news毕设笔记整理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/22/vue-devtools的使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue-devtools的使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_28/MtTaAg4sNzU0NC1ibG9n.html" target="_blank" title="vue实现h5移动端项目参考文献">
+          vue实现h5移动端项目参考文献
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/zhouheblog/archive/2018/01/12/8275781.html" target="_blank" title="vue请求java服务端并返回数据">
+          vue请求java服务端并返回数据
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_2c/MtTaAg4sMDg3OS1ibG9n.html" target="_blank" title="vue与java数据交互">
+          vue与java数据交互
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

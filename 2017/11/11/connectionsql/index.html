@@ -1,38 +1,375 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>connectionsql | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SQL的一些问题">
+<meta name="keywords" content="sql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="connectionsql">
+<meta property="og:url" content="http://yoursite.com/2017/11/11/connectionsql/index.html">
+<meta property="og:site_name" content="shangrila-xiu">
+<meta property="og:description" content="SQL的一些问题">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-11T12:59:34.049Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="connectionsql">
+<meta name="twitter:description" content="SQL的一些问题">
+  
+    <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
 
-block content
-    article#post
-        .post-header
-            .title= page.title
-            .container
-                time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.posted')] #[=date(page['date'], config.date_format)] | #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                //time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                .button-hover.categories
-                    each categories,index in page.categories.data
-                        i.fa.fa-inbox.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(categories.path)) #[=categories.name]
-                        if(index < page.categories.data.length - 1)
-                            i.fa.fa-angle-right(style="margin: 0 8px;")
-                .button-hover.tags
-                    each tags,index in page.tags.data
-                        i.fa.fa-tag.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(tags.path)) #[=tags.name]
-                        if(index < page.tags.data.length - 1)
-                            span &nbsp;|&nbsp;
-        .main-content!= page.content
-        if (theme.post_copyright && theme.post_copyright.enable)
-            .post-copyright
-                .post-copyright-author
-                    span.post-copyright-meta= _p('post.copyright.author') + ": "
-                    span.post-copyright-info
-                        - let mailto = `mailto:${config.email}`
-                        a(href=mailto) #[=config.author]
-                .post-copyright-type
-                    span.post-copyright-meta= _p('post.copyright.link') + ": "
-                    span.post-copyright-info
-                        a(href=url_for(page.permalink)) #[=page.permalink]
-                .post-copyright-notice
-                    span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
-                    span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
-    include includes/pagination.pug
-    //div!= paginator()
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-connectionsql" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/11/connectionsql/" class="article-date">
+  <time class="post-time" datetime="2017-11-11T09:00:13.000Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">11</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      connectionsql
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/关于数据库的一些问题/">关于数据库的一些问题</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SQL的一些问题"><a href="#SQL的一些问题" class="headerlink" title="SQL的一些问题"></a>SQL的一些问题</h1><a id="more"></a>
+<h2 id="1-连接数据库使用的代码"><a href="#1-连接数据库使用的代码" class="headerlink" title="1.连接数据库使用的代码"></a>1.连接数据库使用的代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; contentType=&quot;text/html; charset=utf-8&quot;%&gt;</div><div class="line">&lt;%</div><div class="line">String path = request.getContextPath();</div><div class="line">String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&quot;:&quot;+request.getServerPort()+path+&quot;/&quot;;</div><div class="line">%&gt;</div><div class="line">&lt;%@page import=&quot;com.mysql.jdbc.Driver&quot;%&gt; </div><div class="line"></div><div class="line">&lt;%@page import=&quot;java.sql.*&quot;%&gt;</div><div class="line">&lt;%</div><div class="line">        // 注册jdbc驱动</div><div class="line">        Class.forName(&quot;com.mysql.jdbc.Driver&quot;).newInstance();</div><div class="line">        // 设置连接字符串（包括主机名，端口，数据库名，用户名，密码等）</div><div class="line">        String uri = &quot;jdbc:mysql://localhost:3306/checkmysql?user=root&amp;password=123123&quot;;</div><div class="line">        // 建立数据库连接</div><div class="line">        Connection connection = DriverManager.getConnection(uri);</div><div class="line">        // 创建语句</div><div class="line">        Statement statement = connection.createStatement();</div><div class="line">        // 执行查询语句，并将结果保存在resultSet对象中</div><div class="line">        ResultSet resultSet = statement.executeQuery(&quot;SELECT * FROM emp&quot;);</div><div class="line">        // 循环读取表</div><div class="line">        while(resultSet.next())&#123;</div><div class="line">            out.print(resultSet.getString(1)+&quot;&amp;&amp;&quot;+resultSet.getString(2)+&quot;&lt;br&gt;&quot;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line">    %&gt;</div></pre></td></tr></table></figure>
+<h2 id="在这之前，需要在项目中引入mysql-connector-java-5-1-13-bin-jar这样的一个jar包"><a href="#在这之前，需要在项目中引入mysql-connector-java-5-1-13-bin-jar这样的一个jar包" class="headerlink" title="在这之前，需要在项目中引入mysql-connector-java-5.1.13-bin.jar这样的一个jar包"></a>在这之前，需要在项目中引入mysql-connector-java-5.1.13-bin.jar这样的一个jar包</h2><h2 id="2、项目启动成功却报错了，具体应该是：java-web-项目-无法找到com-mysql-jdbc-Driver。我的初步的解决方法是在Tomcat的lib目录下，把mysql-connector-java-5-1-13-bin-jar这个jar包放进去，之后运行就成功了！！"><a href="#2、项目启动成功却报错了，具体应该是：java-web-项目-无法找到com-mysql-jdbc-Driver。我的初步的解决方法是在Tomcat的lib目录下，把mysql-connector-java-5-1-13-bin-jar这个jar包放进去，之后运行就成功了！！" class="headerlink" title="2、项目启动成功却报错了，具体应该是：java web 项目 无法找到com.mysql.jdbc.Driver。我的初步的解决方法是在Tomcat的lib目录下，把mysql-connector-java-5.1.13-bin.jar这个jar包放进去，之后运行就成功了！！"></a>2、<u>项目启动成功却报错了，具体应该是：java web 项目 无法找到com.mysql.jdbc.Driver。我的初步的解决方法是在Tomcat的lib目录下，把mysql-connector-java-5.1.13-bin.jar这个jar包放进去，之后运行就成功了！！</u></h2><p>报错的部分代码是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">Exception report</div><div class="line"></div><div class="line">message</div><div class="line"></div><div class="line">description The server encountered an internal error () that prevented it from fulfilling this request.</div><div class="line"></div><div class="line">exception</div><div class="line"></div><div class="line">org.apache.jasper.JasperException: Unable to compile class for JSP:</div><div class="line"></div><div class="line">An error occurred at line: 19 in E:\aboutmyeclipse\apache-tomcat-7.0.42\work\Catalina\localhost\testsql\org\apache\jsp\index_jsp.java/</div><div class="line"></div><div class="line">Stacktrace:</div><div class="line">org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)</div><div class="line">org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)</div><div class="line">org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)</div><div class="line">org.apache.jasper.compiler.Compiler.compile(Compiler.java:308)</div><div class="line">org.apache.jasper.compiler.Compiler.compile(Compiler.java:286)</div><div class="line">org.apache.jasper.compiler.Compiler.compile(Compiler.java:273)</div><div class="line">org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)</div><div class="line">org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)</div><div class="line">org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:320)</div><div class="line">org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)</div><div class="line">javax.servlet.http.HttpServlet.service(HttpServlet.java:803)</div><div class="line">com.xj.mobile.filter.EncodingFilter.doFilter(EncodingFilter.java:27)</div></pre></td></tr></table></figure>
+<h4 id="对于上面的那个的详细解决方法是："><a href="#对于上面的那个的详细解决方法是：" class="headerlink" title="对于上面的那个的详细解决方法是："></a>对于上面的那个的详细解决方法是：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1：下载mysql-connector-java-x.x.x-bin.jar，目前最新版为mysql-connector-java-5.1.22-bin.jar。</div><div class="line">在Eclipse中，选择 项目-&gt;属性-&gt;Java构建路径，在“库”选项卡中，选择“添加外部JAR”，找到下载的mysql-connector-java-5.1.22-bin.jar文件，将其添加进项目。</div><div class="line"></div><div class="line">2： 在web项目中还需要把jar 文件放入tomcat 的lib 目录中</div></pre></td></tr></table></figure>
+<h2 id="3、引入的外部的jar包为啥进不去WEB-INF的lib"><a href="#3、引入的外部的jar包为啥进不去WEB-INF的lib" class="headerlink" title="3、引入的外部的jar包为啥进不去WEB-INF的lib"></a>3、引入的外部的jar包为啥进不去WEB-INF的lib</h2><p>解决方法：直接找到mysql-connector-java-5.1.22-bin.jar，然后复制，并粘贴到web项目的WEB_INF的lib目录下面即可。</p>
+<h2 id="4、访问出错："><a href="#4、访问出错：" class="headerlink" title="4、访问出错："></a>4、访问出错：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">org.apache.jasper.JasperException: java.lang.NullPointerException	org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:549)	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:470)	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)	javax.servlet.http.HttpServlet.service(HttpServlet.java:728)</div></pre></td></tr></table></figure>
+<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><p><u>你的工程/WEB-INF/lib下面看有没有servlet-api.jar、jsp-api.jar 等在Apache Software Foundation/Tomcat6.0/lib 下面已经存在的jar包， 如果有则删除。重启后，问题解决。</u></p>
+<p>但是我的问题并没有解决：</p>
+<p>报错如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Stacktrace:</div><div class="line">	org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:568)</div><div class="line">	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:470)</div><div class="line">	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)</div><div class="line">	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)</div><div class="line">	javax.servlet.http.HttpServlet.service(HttpServlet.java:728)</div><div class="line"></div><div class="line">root cause</div><div class="line"></div><div class="line">java.lang.NullPointerException</div><div class="line">	org.apache.jsp.check_005flogin_jsp._jspService(check_005flogin_jsp.java:90)</div><div class="line">	org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)</div><div class="line">	javax.servlet.http.HttpServlet.service(HttpServlet.java:728)</div><div class="line">	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)</div><div class="line">	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)</div><div class="line">	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)</div><div class="line">	javax.servlet.http.HttpServlet.service(HttpServlet.java:728)</div></pre></td></tr></table></figure>
+<p>对于上述的解决办法是：（在程序中，我的表名写错了！）</p>
+<p>一：是在你的SQL语句上做修改，产生NULL的原因有可能是你数据库里的值就是NULL，这种情况可以用ORACLE的NVL函数来解决，例如：NVL(NULL, 0)；</p>
+<p> 二：是在jsp页面做修改，虽然传到前台的值是NULL，可以在jsp页面把NULL转换成你所需要的值。例如：可以通过if语句判断后把你要显示在jsp页面的值赋予你想要的值（0）。</p>
+<p><strong>我改 表名之后就没有报错了</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/11/connectionsql/" data-id="cjuwmevbs000f44g0ggruys5e" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/12/jsp-connectsql/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          jsp_connectsql
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/04/vue-生命周期/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">生命周期</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_28/MtTaAg4sNzU0NC1ibG9n.html" target="_blank" title="vue实现h5移动端项目参考文献">
+          vue实现h5移动端项目参考文献
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/zhouheblog/archive/2018/01/12/8275781.html" target="_blank" title="vue请求java服务端并返回数据">
+          vue请求java服务端并返回数据
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_2c/MtTaAg4sMDg3OS1ibG9n.html" target="_blank" title="vue与java数据交互">
+          vue与java数据交互
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

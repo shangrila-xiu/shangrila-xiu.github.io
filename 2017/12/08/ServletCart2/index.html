@@ -1,38 +1,388 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ServletCart2 | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="下面继续学习购物车的servlet层的一些设计准备工作是：在刚才创建的购物车的web工程点击new、servlet就可以创建一个servlet了。创建好之后，那就开始吧">
+<meta name="keywords" content="jsp,servlet,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ServletCart2">
+<meta property="og:url" content="http://yoursite.com/2017/12/08/ServletCart2/index.html">
+<meta property="og:site_name" content="shangrila-xiu">
+<meta property="og:description" content="下面继续学习购物车的servlet层的一些设计准备工作是：在刚才创建的购物车的web工程点击new、servlet就可以创建一个servlet了。创建好之后，那就开始吧">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/image/001.jpg">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/image/002.jpg">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/image/003.jpg">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/image/006.jpg">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/images/add_cart_success.jpg">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/images/buy_now.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/images/go_shopping.jpg">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/images/in_cart.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/images/view_cart.jpg">
+<meta property="og:updated_time" content="2017-12-08T14:43:56.061Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ServletCart2">
+<meta name="twitter:description" content="下面继续学习购物车的servlet层的一些设计准备工作是：在刚才创建的购物车的web工程点击new、servlet就可以创建一个servlet了。创建好之后，那就开始吧">
+<meta name="twitter:image" content="c:/Users/Administrator/Desktop/image/001.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
 
-block content
-    article#post
-        .post-header
-            .title= page.title
-            .container
-                time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.posted')] #[=date(page['date'], config.date_format)] | #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                //time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                .button-hover.categories
-                    each categories,index in page.categories.data
-                        i.fa.fa-inbox.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(categories.path)) #[=categories.name]
-                        if(index < page.categories.data.length - 1)
-                            i.fa.fa-angle-right(style="margin: 0 8px;")
-                .button-hover.tags
-                    each tags,index in page.tags.data
-                        i.fa.fa-tag.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(tags.path)) #[=tags.name]
-                        if(index < page.tags.data.length - 1)
-                            span &nbsp;|&nbsp;
-        .main-content!= page.content
-        if (theme.post_copyright && theme.post_copyright.enable)
-            .post-copyright
-                .post-copyright-author
-                    span.post-copyright-meta= _p('post.copyright.author') + ": "
-                    span.post-copyright-info
-                        - let mailto = `mailto:${config.email}`
-                        a(href=mailto) #[=config.author]
-                .post-copyright-type
-                    span.post-copyright-meta= _p('post.copyright.link') + ": "
-                    span.post-copyright-info
-                        a(href=url_for(page.permalink)) #[=page.permalink]
-                .post-copyright-notice
-                    span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
-                    span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
-    include includes/pagination.pug
-    //div!= paginator()
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-ServletCart2" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/08/ServletCart2/" class="article-date">
+  <time class="post-time" datetime="2017-12-08T13:21:15.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">08</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ServletCart2
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/刚才学习了购物车类。下面来写一下购物车的servlet层/">刚才学习了购物车类。下面来写一下购物车的servlet层</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="下面继续学习购物车的servlet层的一些设计"><a href="#下面继续学习购物车的servlet层的一些设计" class="headerlink" title="下面继续学习购物车的servlet层的一些设计"></a>下面继续学习购物车的servlet层的一些设计</h1><h3 id="准备工作是：在刚才创建的购物车的web工程点击new、servlet就可以创建一个servlet了。创建好之后，那就开始吧"><a href="#准备工作是：在刚才创建的购物车的web工程点击new、servlet就可以创建一个servlet了。创建好之后，那就开始吧" class="headerlink" title="准备工作是：在刚才创建的购物车的web工程点击new、servlet就可以创建一个servlet了。创建好之后，那就开始吧"></a>准备工作是：在刚才创建的购物车的web工程点击new、servlet就可以创建一个servlet了。创建好之后，那就开始吧</h3><a id="more"></a>
+<h2 id="1、先给出ItemsDAO-java的代码吧"><a href="#1、先给出ItemsDAO-java的代码吧" class="headerlink" title="1、先给出ItemsDAO.java的代码吧"></a>1、先给出ItemsDAO.java的代码吧</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> dao;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.sql.*;</div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"></div><div class="line"><span class="keyword">import</span> cn.itcast.DB.DBHelper;</div><div class="line"><span class="keyword">import</span> entity.Items;</div><div class="line"></div><div class="line"><span class="comment">//商品的业务逻辑类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ItemsDao</span> </span>&#123;</div><div class="line"><span class="comment">//获得所有的商品信息</span></div><div class="line">	<span class="function"><span class="keyword">public</span> ArrayList&lt;Items&gt; <span class="title">getAllItems</span><span class="params">()</span> </span>&#123;</div><div class="line">		Connection conn=<span class="keyword">null</span>;<span class="comment">//不可以释放</span></div><div class="line">		PreparedStatement stmt=<span class="keyword">null</span>;<span class="comment">//其次释放</span></div><div class="line">		ResultSet rs=<span class="keyword">null</span>;<span class="comment">//最先释放</span></div><div class="line">		ArrayList&lt;Items&gt; list = <span class="keyword">new</span> ArrayList&lt;Items&gt;();<span class="comment">//商品集合</span></div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">			conn=DBHelper.getConnection();</div><div class="line">			String sql=<span class="string">"select * from Items;"</span>;</div><div class="line">			stmt=conn.prepareStatement(sql);<span class="comment">//获取数据</span></div><div class="line">			rs=stmt.executeQuery();<span class="comment">//直接执行</span></div><div class="line">			<span class="keyword">while</span>(rs.next())&#123;</div><div class="line">				Items item = <span class="keyword">new</span> Items();</div><div class="line">				item.setId(rs.getInt(<span class="string">"id"</span>));</div><div class="line">				item.setName(rs.getString(<span class="string">"name"</span>));</div><div class="line">				item.setCity(rs.getString(<span class="string">"city"</span>));</div><div class="line">				item.setPrice(rs.getInt(<span class="string">"price"</span>));</div><div class="line">				item.setNumber(rs.getInt(<span class="string">"number"</span>));</div><div class="line">				item.setPicture(rs.getString(<span class="string">"picture"</span>));</div><div class="line">				list.add(item);<span class="comment">//把商品加到集合</span></div><div class="line">			&#125;</div><div class="line">			<span class="keyword">return</span> list;<span class="comment">//返回集合</span></div><div class="line">		&#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">			ex.printStackTrace();</div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		&#125;<span class="keyword">finally</span>&#123;</div><div class="line">			<span class="comment">//释放数据集对象</span></div><div class="line">			<span class="keyword">if</span>(rs!=<span class="keyword">null</span>)&#123;</div><div class="line">				<span class="keyword">try</span>&#123;</div><div class="line">					rs.close();<span class="comment">//会抛出异常</span></div><div class="line">					rs=<span class="keyword">null</span>;</div><div class="line">				&#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">					ex.printStackTrace();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="comment">//释放语句对象</span></div><div class="line">			<span class="keyword">if</span>(stmt!=<span class="keyword">null</span>)&#123;</div><div class="line">				<span class="keyword">try</span>&#123;</div><div class="line">					stmt.close();<span class="comment">//会抛出异常</span></div><div class="line">					stmt=<span class="keyword">null</span>;</div><div class="line">				&#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">					ex.printStackTrace();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">		<span class="comment">//根据商品编号获得商品资料</span></div><div class="line">	<span class="function"><span class="keyword">public</span> Items <span class="title">getItermsById</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</div><div class="line">		Connection conn=<span class="keyword">null</span>;<span class="comment">//不可以释放</span></div><div class="line">		PreparedStatement stmt=<span class="keyword">null</span>;<span class="comment">//其次释放</span></div><div class="line">		ResultSet rs=<span class="keyword">null</span>;<span class="comment">//最先释放</span></div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">			conn=DBHelper.getConnection();</div><div class="line">			String sql=<span class="string">"select * from Items where id=?;"</span>;</div><div class="line">			stmt=conn.prepareStatement(sql);<span class="comment">//获取数据</span></div><div class="line">			stmt.setInt(<span class="number">1</span>,id);</div><div class="line">			rs=stmt.executeQuery();<span class="comment">//直接执行</span></div><div class="line">			<span class="keyword">if</span>(rs.next())&#123;</div><div class="line">				Items item = <span class="keyword">new</span> Items();</div><div class="line">				item.setId(rs.getInt(<span class="string">"id"</span>));</div><div class="line">				item.setName(rs.getString(<span class="string">"name"</span>));</div><div class="line">				item.setCity(rs.getString(<span class="string">"city"</span>));</div><div class="line">				item.setPrice(rs.getInt(<span class="string">"price"</span>));</div><div class="line">				item.setNumber(rs.getInt(<span class="string">"number"</span>));</div><div class="line">				item.setPicture(rs.getString(<span class="string">"picture"</span>));</div><div class="line">				<span class="keyword">return</span> item;</div><div class="line">			&#125;<span class="keyword">else</span></div><div class="line">			&#123;</div><div class="line">				<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">			ex.printStackTrace();</div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		&#125;<span class="keyword">finally</span>&#123;</div><div class="line">			<span class="comment">//释放数据集对象</span></div><div class="line">			<span class="keyword">if</span>(rs!=<span class="keyword">null</span>)&#123;</div><div class="line">				<span class="keyword">try</span>&#123;</div><div class="line">					rs.close();<span class="comment">//会抛出异常</span></div><div class="line">					rs=<span class="keyword">null</span>;</div><div class="line">				&#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">					ex.printStackTrace();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="comment">//释放语句对象</span></div><div class="line">			<span class="keyword">if</span>(stmt!=<span class="keyword">null</span>)&#123;</div><div class="line">				<span class="keyword">try</span>&#123;</div><div class="line">					stmt.close();<span class="comment">//会抛出异常</span></div><div class="line">					stmt=<span class="keyword">null</span>;</div><div class="line">				&#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">					ex.printStackTrace();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">//获取最近浏览的钱五条信息</span></div><div class="line">	<span class="function"><span class="keyword">public</span> ArrayList&lt;Items&gt; <span class="title">getViewList</span><span class="params">(String list)</span></span>&#123;</div><div class="line">		ArrayList&lt;Items&gt; itemlist =<span class="keyword">new</span> ArrayList&lt;Items&gt;();</div><div class="line">		<span class="keyword">int</span> iCount=<span class="number">5</span>;<span class="comment">//每次返回前五条</span></div><div class="line">		<span class="keyword">if</span>(list!=<span class="keyword">null</span>&amp;&amp;list.length()&gt;<span class="number">0</span>)&#123;</div><div class="line">			String[] arr=list.split(<span class="string">","</span>);<span class="comment">//分隔成字符数组</span></div><div class="line">			<span class="comment">//如果商品记录大于等于五条，就倒叙输出</span></div><div class="line">			<span class="keyword">if</span>(arr.length&gt;=<span class="number">5</span>)&#123;</div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> i=arr.length-<span class="number">1</span>;i&gt;=arr.length-iCount;i--)</div><div class="line">				&#123;</div><div class="line">					itemlist.add(getItermsById(Integer.parseInt(arr[i])));</div><div class="line">				&#125;</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> i=arr.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)</div><div class="line">				&#123;</div><div class="line">					itemlist.add(getItermsById(Integer.parseInt(arr[i])));</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">return</span> itemlist;</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="2、还没有完。还得把cn-itcast-DB包下面的DBHelper-java写一下。否则上面的代码会报错哦！"><a href="#2、还没有完。还得把cn-itcast-DB包下面的DBHelper-java写一下。否则上面的代码会报错哦！" class="headerlink" title="2、还没有完。还得把cn.itcast.DB包下面的DBHelper.java写一下。否则上面的代码会报错哦！"></a>2、还没有完。还得把cn.itcast.DB包下面的DBHelper.java写一下。否则上面的代码会报错哦！</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.itcast.DB;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.DriverManager;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DBHelper</span> </span>&#123;</div><div class="line">  <span class="comment">//我用的是mysql，这个是看用的啥了。</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String driver = <span class="string">"com.mysql.jdbc.Driver"</span>;</div><div class="line">  <span class="comment">//定义一个静态类型的变量url，看是要连接哪个数据库并指定了字符编码</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String url=<span class="string">"jdbc:mysql://localhost:3306/checkmysql?useUnicode=true&amp;characterEncoding=UTF-8"</span>;</div><div class="line">  <span class="comment">//连接数据库所使用的用户，一般情况下是root</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String username=<span class="string">"root"</span>;</div><div class="line">  <span class="comment">//下面就是个人使用数据库的密码了。每个人的可能不同</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String password=<span class="string">"xxxxx"</span>;</div><div class="line">	<span class="comment">//定义一个连接数据库的变量</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Connection conn=<span class="keyword">null</span>;</div><div class="line">	</div><div class="line">	<span class="comment">//静态代码快，负责加载驱动</span></div><div class="line">	<span class="keyword">static</span></div><div class="line">	&#123;</div><div class="line">      <span class="comment">//对数据库的操作容易抛出异常</span></div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">			Class.forName(driver);</div><div class="line">		  &#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">			ex.printStackTrace();</div><div class="line">		   &#125;</div><div class="line">		&#125;</div><div class="line">	<span class="comment">//单例模式返回数据库</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">	</span>&#123;</div><div class="line">		<span class="keyword">if</span>(conn==<span class="keyword">null</span>)&#123;</div><div class="line">			conn =DriverManager.getConnection(url, username, password);</div><div class="line">			<span class="keyword">return</span> conn;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> conn;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">		Connection conn =DBHelper.getConnection();</div><div class="line">		<span class="keyword">if</span>(conn!=<span class="keyword">null</span>)&#123;</div><div class="line">			System.out.println(<span class="string">"数据库连接正常"</span>);</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			System.out.println(<span class="string">"数据库连接异常"</span>);</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		&#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">			ex.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3、对上面准备的时候创建的servletCart-java进行编写。"><a href="#3、对上面准备的时候创建的servletCart-java进行编写。" class="headerlink" title="3、对上面准备的时候创建的servletCart.java进行编写。"></a>3、对上面准备的时候创建的servletCart.java进行编写。</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> Servlet;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.io.PrintWriter;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.servlet.ServletException;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"></div><div class="line"><span class="keyword">import</span> dao.ItemsDAO;</div><div class="line"><span class="keyword">import</span> entity.Cart;</div><div class="line"><span class="keyword">import</span> entity.Items;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CartServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> String action;<span class="comment">//显示购物车动作</span></div><div class="line">	<span class="comment">//商品业务逻辑类的对象</span></div><div class="line">	<span class="keyword">private</span> ItemsDAO idao =<span class="keyword">new</span> ItemsDAO();</div><div class="line">	</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * Constructor of the object.</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">CartServlet</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * Destruction of the servlet. &lt;br&gt;</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>.destroy(); <span class="comment">// Just puts "destroy" string in log</span></div><div class="line">		<span class="comment">// Put your code here</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * The doGet method of the servlet. &lt;br&gt;</span></div><div class="line"><span class="comment">	 *</span></div><div class="line"><span class="comment">	 * This method is called when a form has its tag value method equals to get.</span></div><div class="line"><span class="comment">	 * </span></div><div class="line"><span class="comment">	 * <span class="doctag">@param</span> request the request send by the client to the server</span></div><div class="line"><span class="comment">	 * <span class="doctag">@param</span> response the response send by the server to the client</span></div><div class="line"><span class="comment">	 * <span class="doctag">@throws</span> ServletException if an error occurred</span></div><div class="line"><span class="comment">	 * <span class="doctag">@throws</span> IOException if an error occurred</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></div><div class="line"><span class="function">			<span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line"></div><div class="line">		doPost(request,response);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * The doPost method of the servlet. &lt;br&gt;</span></div><div class="line"><span class="comment">	 *</span></div><div class="line"><span class="comment">	 * This method is called when a form has its tag value method equals to post.</span></div><div class="line"><span class="comment">	 * </span></div><div class="line"><span class="comment">	 * <span class="doctag">@param</span> request the request send by the client to the server</span></div><div class="line"><span class="comment">	 * <span class="doctag">@param</span> response the response send by the server to the client</span></div><div class="line"><span class="comment">	 * <span class="doctag">@throws</span> ServletException if an error occurred</span></div><div class="line"><span class="comment">	 * <span class="doctag">@throws</span> IOException if an error occurred</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></div><div class="line"><span class="function">			<span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line"></div><div class="line">		response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</div><div class="line">		PrintWriter out = response.getWriter();</div><div class="line">		<span class="keyword">if</span>(request.getParameter(<span class="string">"action"</span>)!=<span class="keyword">null</span>)&#123;<span class="comment">//判断动作类型</span></div><div class="line">			<span class="keyword">this</span>.action=request.getParameter(<span class="string">"action"</span>);</div><div class="line">			<span class="keyword">if</span>(action.equals(<span class="string">"add"</span>))&#123;<span class="comment">//如果是添加商品进购物车</span></div><div class="line">			<span class="comment">//	addToCart(request,response);</span></div><div class="line">				<span class="keyword">if</span>(addToCart(request,response))&#123;</div><div class="line">					<span class="comment">//服务器跳转</span></div><div class="line">					request.getRequestDispatcher(<span class="string">"/success.jsp"</span>).forward(request, response);</div><div class="line">				&#125;<span class="keyword">else</span>&#123;</div><div class="line">					request.getRequestDispatcher(<span class="string">"/faliure.jsp"</span>).forward(request, response);</div><div class="line">				&#125;</div><div class="line">				addToCart(request,response);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span>(action.equals(<span class="string">"show"</span>))&#123;<span class="comment">//如果是显示购物车</span></div><div class="line">				</div><div class="line">					<span class="comment">//服务器跳转</span></div><div class="line">					request.getRequestDispatcher(<span class="string">"/cart.jsp"</span>).forward(request, response);</div><div class="line">				<span class="comment">//showCart(request,response);</span></div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//添加商品进购物车</span></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">addToCart</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span>&#123;</div><div class="line">		String id=request.getParameter(<span class="string">"id"</span>);<span class="comment">//获得商品的id</span></div><div class="line">		String number =request.getParameter(<span class="string">"num"</span>);<span class="comment">//获得商品的数量</span></div><div class="line">		<span class="comment">//获得商品的资料。id是整型的，需要进行转换成整型</span></div><div class="line">		Items item=idao.getItemsById(Integer.parseInt(id));</div><div class="line">		<span class="comment">//判断是不是第一次给狗驱车添加商品,需要给session中创建新的购物车对象</span></div><div class="line">		<span class="keyword">if</span>(request.getSession().getAttribute(<span class="string">"cart"</span>)==<span class="keyword">null</span>)&#123;</div><div class="line">			Cart cart =<span class="keyword">new</span> Cart(); </div><div class="line">			<span class="comment">//典型的session保存</span></div><div class="line">			request.getSession().setAttribute(<span class="string">"cart"</span>, cart);</div><div class="line">		&#125;</div><div class="line">		<span class="comment">//获得session保存的购物车对象，这里也用到了强制类型转换</span></div><div class="line">		Cart cart =(Cart)request.getSession().getAttribute(<span class="string">"cart"</span>);</div><div class="line">		<span class="comment">//调用添加商品进购物车的方法</span></div><div class="line">		<span class="keyword">if</span>(cart.addGoodsInCart(item, Integer.parseInt(number)))&#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//添加成功</span></div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;<span class="comment">//添加失败</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * Initialization of the servlet. &lt;br&gt;</span></div><div class="line"><span class="comment">	 *</span></div><div class="line"><span class="comment">	 * <span class="doctag">@throws</span> ServletException if an error occurs</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</div><div class="line">		<span class="comment">// Put your code here</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="4、编写的details-jsp代码如下："><a href="#4、编写的details-jsp代码如下：" class="headerlink" title="4、编写的details.jsp代码如下："></a>4、编写的details.jsp代码如下：</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> contentType=<span class="string">"text/html; charset=utf-8"</span> %&gt;</div><div class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"entity.Items"</span>%&gt;</div><div class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"dao.ItemsDAO"</span>%&gt;</div><div class="line">&lt;%</div><div class="line">	String path = request.getContextPath();</div><div class="line">String basePath = request.getScheme()+<span class="string">"://"</span>+request.getServerName()+<span class="string">":"</span>+request.getServerPort()+path+<span class="string">"/"</span>;</div><div class="line">%&gt;</div><div class="line"></div><div class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span>&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;base href=<span class="string">"&lt;%=basePath%&gt;"</span>&gt;</div><div class="line">    </div><div class="line">    &lt;title&gt;My JSP 'details.jsp' starting page&lt;/title&gt;</div><div class="line">    </div><div class="line">	&lt;meta http-equiv=<span class="string">"pragma"</span> content=<span class="string">"no-cache"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"cache-control"</span> content=<span class="string">"no-cache"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"expires"</span> content=<span class="string">"0"</span>&gt;    </div><div class="line">	&lt;meta http-equiv=<span class="string">"keywords"</span> content=<span class="string">"keyword1,keyword2,keyword3"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"description"</span> content=<span class="string">"This is my page"</span>&gt;</div><div class="line">	&lt;!--</div><div class="line">	&lt;link rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span> href=<span class="string">"styles.css"</span>&gt;</div><div class="line">	--&gt;</div><div class="line">	&lt;link href=<span class="string">"css/main.css"</span> rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span>&gt;</div><div class="line">	&lt;script type="text/javascript" src="js/lhgcore.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script type="text/javascript" src="js/lhgdialog.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">      <span class="function">function <span class="title">selflog_show</span><span class="params">(id)</span></span></div><div class="line"><span class="function">      </span>&#123; </div><div class="line">         var num =  document.getElementById(<span class="string">"number"</span>).value; </div><div class="line">         J.dialog.get(&#123;id: <span class="string">'haoyue_creat'</span>,title: <span class="string">'购物成功'</span>,width: <span class="number">600</span>,height:<span class="number">400</span>, link: <span class="string">'&lt;%=path%&gt;/servlet/CartServlet?id='</span>+id+<span class="string">'&amp;num='</span>+num+<span class="string">'&amp;action=add'</span>, cover:<span class="keyword">true</span>&#125;);</div><div class="line">      &#125;</div><div class="line">      <span class="function">function <span class="title">add</span><span class="params">()</span></span></div><div class="line"><span class="function">      </span>&#123;</div><div class="line">         var num = parseInt(document.getElementById(<span class="string">"number"</span>).value);</div><div class="line">         <span class="keyword">if</span>(num&lt;<span class="number">100</span>)</div><div class="line">         &#123;</div><div class="line">            document.getElementById(<span class="string">"number"</span>).value = ++num;</div><div class="line">         &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="function">function <span class="title">sub</span><span class="params">()</span></span></div><div class="line"><span class="function">      </span>&#123;</div><div class="line">         var num = parseInt(document.getElementById(<span class="string">"number"</span>).value);</div><div class="line">         <span class="keyword">if</span>(num&gt;<span class="number">1</span>)</div><div class="line">         &#123;</div><div class="line">            document.getElementById(<span class="string">"number"</span>).value = --num;</div><div class="line">         &#125;</div><div class="line">      &#125;</div><div class="line">     </div><div class="line">    &lt;/script&gt;</div><div class="line">	</div><div class="line">    &lt;style type=<span class="string">"text/css"</span>&gt;</div><div class="line">	   hr&#123;</div><div class="line">	     </div><div class="line">	     border-color:FF7F00; </div><div class="line">	   &#125;</div><div class="line">	   </div><div class="line">	   div&#123;</div><div class="line">	      <span class="keyword">float</span>:left;</div><div class="line">	      margin-left: <span class="number">30</span>px;</div><div class="line">	      margin-right:<span class="number">30</span>px;</div><div class="line">	      margin-top: <span class="number">5</span>px;</div><div class="line">	      margin-bottom: <span class="number">5</span>px;</div><div class="line">	     </div><div class="line">	   &#125;</div><div class="line">	   div dd&#123;</div><div class="line">	      margin:<span class="number">0</span>px;</div><div class="line">	      font-size:<span class="number">10</span>pt;</div><div class="line">	   &#125;</div><div class="line">	   div dd.dd_name</div><div class="line">	   &#123;</div><div class="line">	      color:blue;</div><div class="line">	   &#125;</div><div class="line">	   div dd.dd_city</div><div class="line">	   &#123;</div><div class="line">	      color:#000;</div><div class="line">	   &#125;</div><div class="line">	   div #cart</div><div class="line">	   &#123;</div><div class="line">	     margin:<span class="number">0</span>px auto;</div><div class="line">	     text-align:right; </div><div class="line">	   &#125;</div><div class="line">	   span&#123;</div><div class="line">	     padding:0 2px;border:1px #c0c0c0 solid;cursor:pointer;</div><div class="line">	   &#125;</div><div class="line">	   a&#123;</div><div class="line">	      text-decoration: none; </div><div class="line">	   &#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  </div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;h1&gt;商品详情&lt;/h1&gt;</div><div class="line">    &lt;a href="index.jsp"&gt;首页&lt;/a&gt; &gt;&gt; &lt;a href="index.jsp"&gt;商品列表&lt;/a&gt;</div><div class="line">    &lt;hr&gt;</div><div class="line">    &lt;center&gt;</div><div class="line">      &lt;table width=<span class="string">"750"</span> height=<span class="string">"60"</span> cellpadding=<span class="string">"0"</span> cellspacing=<span class="string">"0"</span> border=<span class="string">"0"</span>&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">          &lt;!-- 商品详情 --&gt;</div><div class="line">          &lt;%</div><div class="line">          	ItemsDAO itemDao = <span class="keyword">new</span> ItemsDAO();</div><div class="line">                       Items item = itemDao.getItemsById(Integer.parseInt(request.getParameter(<span class="string">"id"</span>)));</div><div class="line">                       <span class="keyword">if</span>(item!=<span class="keyword">null</span>)</div><div class="line">                       &#123;</div><div class="line">          %&gt;</div><div class="line">          &lt;td width=<span class="string">"70%"</span> valign=<span class="string">"top"</span>&gt;</div><div class="line">             &lt;table&gt;</div><div class="line">               &lt;tr&gt;</div><div class="line">                 &lt;td rowspan="5"&gt;&lt;img src="image/&lt;%=item.getPicture()%&gt;" width="200" height="160"/&gt;&lt;/td&gt;</div><div class="line">               &lt;/tr&gt;</div><div class="line">               &lt;tr&gt;</div><div class="line">                 &lt;td&gt;&lt;B&gt;&lt;%=item.getName()%&gt;&lt;/B&gt;&lt;/td&gt; </div><div class="line">               &lt;/tr&gt;</div><div class="line">               &lt;tr&gt;</div><div class="line">                 &lt;td&gt;产地：&lt;%=item.getCity()%&gt;&lt;/td&gt;</div><div class="line">               &lt;/tr&gt;</div><div class="line">               &lt;tr&gt;</div><div class="line">                 &lt;td&gt;价格：&lt;%=item.getPrice()%&gt;￥&lt;/td&gt;</div><div class="line">               &lt;/tr&gt;</div><div class="line">               &lt;tr&gt;</div><div class="line">                 &lt;td&gt;购买数量：&lt;span id="sub" onclick="sub();"&gt;-&lt;/span&gt;&lt;input type="text" id="number" name="number" value="1" size="2"/&gt;&lt;span id="add" onclick="add();"&gt;+&lt;/span&gt;&lt;/td&gt;</div><div class="line">               &lt;/tr&gt; </div><div class="line">             &lt;/table&gt;</div><div class="line">             &lt;div id=<span class="string">"cart"</span>&gt;</div><div class="line">               &lt;img src="images/buy_now.png"&gt;&lt;a href="javascript:selflog_show(&lt;%=item.getId()%&gt;)"&gt;&lt;img src="images/in_cart.png"&gt;&lt;/a&gt;&lt;a href="servlet/CartServlet?action=show"&gt;&lt;img src="images/view_cart.jpg"/&gt;&lt;/a&gt;</div><div class="line">             &lt;/div&gt;</div><div class="line">          &lt;/td&gt;</div><div class="line">          &lt;%</div><div class="line">          	&#125;</div><div class="line">          %&gt;</div><div class="line">          &lt;%</div><div class="line">          	String list =<span class="string">""</span>;</div><div class="line">                        <span class="comment">//从客户端获得Cookies集合</span></div><div class="line">                        Cookie[] cookies = request.getCookies();</div><div class="line">                        <span class="comment">//遍历这个Cookies集合</span></div><div class="line">                        <span class="keyword">if</span>(cookies!=<span class="keyword">null</span>&amp;&amp;cookies.length&gt;<span class="number">0</span>)</div><div class="line">                        &#123;</div><div class="line">          	              <span class="keyword">for</span>(Cookie c:cookies)</div><div class="line">          	              &#123;</div><div class="line">          	                  <span class="keyword">if</span>(c.getName().equals(<span class="string">"ListViewCookie"</span>))</div><div class="line">          	                  &#123;</div><div class="line">          	                     list = c.getValue();</div><div class="line">          	                  &#125;</div><div class="line">          	              &#125;</div><div class="line">          	          &#125;</div><div class="line">                        </div><div class="line">                        list+=request.getParameter(<span class="string">"id"</span>)+<span class="string">","</span>;</div><div class="line">                        <span class="comment">//如果浏览记录超过1000条，清零.</span></div><div class="line">                        String[] arr = list.split(<span class="string">","</span>);</div><div class="line">                        <span class="keyword">if</span>(arr!=<span class="keyword">null</span>&amp;&amp;arr.length&gt;<span class="number">0</span>)</div><div class="line">                        &#123;</div><div class="line">                            <span class="keyword">if</span>(arr.length&gt;=<span class="number">1000</span>)</div><div class="line">                            &#123;</div><div class="line">                                list=<span class="string">""</span>;</div><div class="line">                            &#125;</div><div class="line">                        &#125;</div><div class="line">                        Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"ListViewCookie"</span>,list);</div><div class="line">                        response.addCookie(cookie);</div><div class="line">          %&gt;</div><div class="line">          &lt;!-- 浏览过的商品 --&gt;</div><div class="line">          &lt;td width=<span class="string">"30%"</span> bgcolor=<span class="string">"#EEE"</span> align=<span class="string">"center"</span>&gt;</div><div class="line">             &lt;br&gt;</div><div class="line">             &lt;b&gt;&lt;font color="#FF7F00"&gt;您浏览过的商品&lt;/font&gt;&lt;/b&gt;&lt;br&gt;</div><div class="line">             &lt;!-- 循环开始 --&gt;</div><div class="line">             &lt;%</div><div class="line">             	ArrayList&lt;Items&gt; itemlist = itemDao.getViewList(list);</div><div class="line">                             <span class="keyword">if</span>(itemlist!=<span class="keyword">null</span>&amp;&amp;itemlist.size()&gt;<span class="number">0</span> )</div><div class="line">                             &#123;</div><div class="line">                                System.out.println(<span class="string">"itemlist.size="</span>+itemlist.size());</div><div class="line">                                <span class="keyword">for</span>(Items i:itemlist)</div><div class="line">                                &#123;</div><div class="line">             %&gt;</div><div class="line">             &lt;div&gt;</div><div class="line">             &lt;dl&gt;</div><div class="line">               &lt;dt&gt;</div><div class="line">                 &lt;a href="details.jsp?id=&lt;%=i.getId()%&gt;"&gt;&lt;img src="image/&lt;%=i.getPicture() %&gt;" width="120" height="90" border="1"/&gt;&lt;/a&gt;</div><div class="line">               &lt;/dt&gt;</div><div class="line">               &lt;dd class="dd_name"&gt;&lt;%=i.getName() %&gt;&lt;/dd&gt; </div><div class="line">               &lt;dd class="dd_city"&gt;产地:&lt;%=i.getCity() %&gt;&amp;nbsp;&amp;nbsp;价格:&lt;%=i.getPrice() %&gt; ￥ &lt;/dd&gt; </div><div class="line">             &lt;/dl&gt;</div><div class="line">             &lt;/div&gt;</div><div class="line">             &lt;% </div><div class="line">                   &#125;</div><div class="line">                &#125;</div><div class="line">             %&gt;</div><div class="line">             &lt;!-- 循环结束 --&gt;</div><div class="line">          &lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">      &lt;/table&gt;</div><div class="line">    &lt;/center&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h2 id="5、跳转成功的success-jsp。只给出了关键的代码"><a href="#5、跳转成功的success-jsp。只给出了关键的代码" class="headerlink" title="5、跳转成功的success.jsp。只给出了关键的代码"></a>5、跳转成功的success.jsp。只给出了关键的代码</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;center&gt;</div><div class="line">     &lt;img src=<span class="string">"images/add_cart_success.jpg"</span>/&gt;</div><div class="line">     &lt;hr&gt;</div><div class="line">     &lt;% </div><div class="line">        String id = request.getParameter(<span class="string">"id"</span>);</div><div class="line">        String num = request.getParameter(<span class="string">"num"</span>);</div><div class="line">     %&gt;</div><div class="line">            您成功购买了&lt;%=num%&gt;件商品编号为&lt;%=id%&gt;的商品&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</div><div class="line">     &lt;br&gt;</div><div class="line">     &lt;br&gt;</div><div class="line">     &lt;br&gt;</div><div class="line">     </div><div class="line">   &lt;/center&gt;</div></pre></td></tr></table></figure>
+<h2 id="6、failure-jsp的关键的代码如下"><a href="#6、failure-jsp的关键的代码如下" class="headerlink" title="6、failure.jsp的关键的代码如下"></a>6、failure.jsp的关键的代码如下</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;center&gt;</div><div class="line">     &lt;img src=<span class="string">"images/add_cart_failure.jpg"</span>/&gt;</div><div class="line">     &lt;hr&gt;</div><div class="line">     </div><div class="line">     &lt;br&gt;</div><div class="line">     &lt;br&gt;![add_cart_failure](C:\Users\Administrator\Desktop\images\add_cart_failure.jpg)</div><div class="line">     &lt;br&gt;</div><div class="line">     </div><div class="line">   &lt;/center&gt;</div></pre></td></tr></table></figure>
+<h2 id="7、index-jsp的代码"><a href="#7、index-jsp的代码" class="headerlink" title="7、index.jsp的代码"></a>7、index.jsp的代码</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</div><div class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"entity.Items"</span>%&gt;</div><div class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"dao.ItemsDAO"</span>%&gt;</div><div class="line">&lt;%</div><div class="line">	String path = request.getContextPath();</div><div class="line">String basePath = request.getScheme()+<span class="string">"://"</span>+request.getServerName()+<span class="string">":"</span>+request.getServerPort()+path+<span class="string">"/"</span>;</div><div class="line">%&gt;</div><div class="line"></div><div class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span>&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;base href=<span class="string">"&lt;%=basePath%&gt;"</span>&gt;</div><div class="line">    </div><div class="line">    &lt;title&gt;My JSP 'index.jsp' starting page&lt;/title&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"pragma"</span> content=<span class="string">"no-cache"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"cache-control"</span> content=<span class="string">"no-cache"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"expires"</span> content=<span class="string">"0"</span>&gt;    </div><div class="line">	&lt;meta http-equiv=<span class="string">"keywords"</span> content=<span class="string">"keyword1,keyword2,keyword3"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"description"</span> content=<span class="string">"This is my page"</span>&gt;</div><div class="line">	&lt;!--</div><div class="line">	&lt;link rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span> href=<span class="string">"styles.css"</span>&gt;</div><div class="line">	--&gt;</div><div class="line">	&lt;style type=<span class="string">"text/css"</span>&gt;</div><div class="line">	   hr&#123;</div><div class="line">	    border-color:FF7F00; </div><div class="line">	   &#125;</div><div class="line">	   div&#123;</div><div class="line">	      <span class="keyword">float</span>:left;</div><div class="line">	      margin: <span class="number">10</span>px;</div><div class="line">	   &#125;</div><div class="line">	   div dd&#123;</div><div class="line">	      margin:<span class="number">0</span>px;</div><div class="line">	      font-size:<span class="number">10</span>pt;</div><div class="line">	   &#125;</div><div class="line">	   div dd.dd_name</div><div class="line">	   &#123;</div><div class="line">	      color:blue;</div><div class="line">	   &#125;</div><div class="line">	   div dd.dd_city</div><div class="line">	   &#123;</div><div class="line">	      color:#000;</div><div class="line">	   &#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  </div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;h1&gt;商品展示&lt;/h1&gt;</div><div class="line">    &lt;hr&gt;</div><div class="line">  </div><div class="line">    &lt;center&gt;</div><div class="line">    &lt;table width=<span class="string">"750"</span> height=<span class="string">"60"</span> cellpadding=<span class="string">"0"</span> cellspacing=<span class="string">"0"</span> border=<span class="string">"0"</span>&gt;</div><div class="line">      &lt;tr&gt;</div><div class="line">        &lt;td&gt;</div><div class="line">          </div><div class="line">          &lt;!-- 商品循环开始 --&gt;</div><div class="line">           &lt;%</div><div class="line">           	ItemsDAO itemsDao = <span class="keyword">new</span> ItemsDAO(); </div><div class="line">                          ArrayList&lt;Items&gt; list = itemsDao.getAllItems();</div><div class="line">                          <span class="keyword">if</span>(list!=<span class="keyword">null</span>&amp;&amp;list.size()&gt;<span class="number">0</span>)</div><div class="line">                          &#123;</div><div class="line">           	               <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list.size();i++)</div><div class="line">           	               &#123;</div><div class="line">           	                  Items item = list.get(i);</div><div class="line">           %&gt;   </div><div class="line">          &lt;div&gt;</div><div class="line">             &lt;dl&gt;</div><div class="line">               &lt;dt&gt;</div><div class="line">                 &lt;a href="details.jsp?id=&lt;%=item.getId()%&gt;"&gt;&lt;img src="image/&lt;%=item.getPicture()%&gt;" width="120" height="90" border="1"/&gt;&lt;/a&gt;</div><div class="line">               &lt;/dt&gt;</div><div class="line">               &lt;dd class="dd_name"&gt;&lt;%=item.getName() %&gt;&lt;/dd&gt; </div><div class="line">               &lt;dd class="dd_city"&gt;产地:&lt;%=item.getCity() %&gt;&amp;nbsp;&amp;nbsp;价格:￥ &lt;%=item.getPrice() %&gt;&lt;/dd&gt; </div><div class="line">             &lt;/dl&gt;</div><div class="line">          &lt;/div&gt;</div><div class="line">          &lt;!-- 商品循环结束 --&gt;</div><div class="line">        </div><div class="line">          &lt;%</div><div class="line">                   &#125;</div><div class="line">              &#125; </div><div class="line">          %&gt;</div><div class="line">        &lt;/td&gt;</div><div class="line">      &lt;/tr&gt;</div><div class="line">    &lt;/table&gt;</div><div class="line">    &lt;/center&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>在上面使用到的图片大概就是下面这些。</p>
+<p><img src="C:\Users\Administrator\Desktop\image\001.jpg" alt="001"></p>
+<p><img src="C:\Users\Administrator\Desktop\image\002.jpg" alt="002"></p>
+<p><img src="C:\Users\Administrator\Desktop\image\003.jpg" alt="003"></p>
+<p><img src="C:\Users\Administrator\Desktop\image\006.jpg" alt="006"></p>
+<p><img src="C:\Users\Administrator\Desktop\images\add_cart_success.jpg" alt="add_cart_success"></p>
+<p><img src="C:\Users\Administrator\Desktop\images\buy_now.png" alt="buy_now"></p>
+<p><img src="C:\Users\Administrator\Desktop\images\go_shopping.jpg" alt="go_shopping"></p>
+<p><img src="C:\Users\Administrator\Desktop\images\in_cart.png" alt="in_cart"></p>
+<p><img src="C:\Users\Administrator\Desktop\images\view_cart.jpg" alt="view_cart"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/08/ServletCart2/" data-id="cjuwmewfy00cu44g0lgtszkk3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/08/ServletCart3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ServletCart3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/08/ServletCart1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ServletCart1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_28/MtTaAg4sNzU0NC1ibG9n.html" target="_blank" title="vue实现h5移动端项目参考文献">
+          vue实现h5移动端项目参考文献
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/zhouheblog/archive/2018/01/12/8275781.html" target="_blank" title="vue请求java服务端并返回数据">
+          vue请求java服务端并返回数据
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_2c/MtTaAg4sMDg3OS1ibG9n.html" target="_blank" title="vue与java数据交互">
+          vue与java数据交互
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

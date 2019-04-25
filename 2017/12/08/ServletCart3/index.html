@@ -1,38 +1,363 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ServletCart3 | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="接下来的代码有些少了。不像前面两次那样的长篇大论的。但是在实际的项目中，必须结合着三个才能正常的运行">
+<meta name="keywords" content="jsp,JAVA,JavaScript,Servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ServletCart3">
+<meta property="og:url" content="http://yoursite.com/2017/12/08/ServletCart3/index.html">
+<meta property="og:site_name" content="shangrila-xiu">
+<meta property="og:description" content="接下来的代码有些少了。不像前面两次那样的长篇大论的。但是在实际的项目中，必须结合着三个才能正常的运行">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-19T06:45:47.556Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ServletCart3">
+<meta name="twitter:description" content="接下来的代码有些少了。不像前面两次那样的长篇大论的。但是在实际的项目中，必须结合着三个才能正常的运行">
+  
+    <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
 
-block content
-    article#post
-        .post-header
-            .title= page.title
-            .container
-                time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.posted')] #[=date(page['date'], config.date_format)] | #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                //time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                .button-hover.categories
-                    each categories,index in page.categories.data
-                        i.fa.fa-inbox.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(categories.path)) #[=categories.name]
-                        if(index < page.categories.data.length - 1)
-                            i.fa.fa-angle-right(style="margin: 0 8px;")
-                .button-hover.tags
-                    each tags,index in page.tags.data
-                        i.fa.fa-tag.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(tags.path)) #[=tags.name]
-                        if(index < page.tags.data.length - 1)
-                            span &nbsp;|&nbsp;
-        .main-content!= page.content
-        if (theme.post_copyright && theme.post_copyright.enable)
-            .post-copyright
-                .post-copyright-author
-                    span.post-copyright-meta= _p('post.copyright.author') + ": "
-                    span.post-copyright-info
-                        - let mailto = `mailto:${config.email}`
-                        a(href=mailto) #[=config.author]
-                .post-copyright-type
-                    span.post-copyright-meta= _p('post.copyright.link') + ": "
-                    span.post-copyright-info
-                        a(href=url_for(page.permalink)) #[=page.permalink]
-                .post-copyright-notice
-                    span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
-                    span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
-    include includes/pagination.pug
-    //div!= paginator()
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-ServletCart3" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/08/ServletCart3/" class="article-date">
+  <time class="post-time" datetime="2017-12-08T14:56:04.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">08</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ServletCart3
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经过前面两次的编写，现在来实现显示购物车的功能/">经过前面两次的编写，现在来实现显示购物车的功能</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="接下来的代码有些少了。不像前面两次那样的长篇大论的。但是在实际的项目中，必须结合着三个才能正常的运行"><a href="#接下来的代码有些少了。不像前面两次那样的长篇大论的。但是在实际的项目中，必须结合着三个才能正常的运行" class="headerlink" title="接下来的代码有些少了。不像前面两次那样的长篇大论的。但是在实际的项目中，必须结合着三个才能正常的运行"></a>接下来的代码有些少了。不像前面两次那样的长篇大论的。但是在实际的项目中，必须结合着三个才能正常的运行</h1><a id="more"></a>
+<h2 id="1、在details-jsp中实现有个加号和减号的，实现这个功能"><a href="#1、在details-jsp中实现有个加号和减号的，实现这个功能" class="headerlink" title="1、在details.jsp中实现有个加号和减号的，实现这个功能"></a>1、在details.jsp中实现有个加号和减号的，实现这个功能</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">     </span>&#123;</div><div class="line">        <span class="keyword">var</span> num = <span class="built_in">parseInt</span>(<span class="built_in">document</span>.getElementById(<span class="string">"number"</span>).value);</div><div class="line">        <span class="keyword">if</span>(num&lt;<span class="number">100</span>)</div><div class="line">        &#123;</div><div class="line">           <span class="built_in">document</span>.getElementById(<span class="string">"number"</span>).value = ++num;</div><div class="line">        &#125;</div><div class="line">     &#125;</div><div class="line">     <span class="function"><span class="keyword">function</span> <span class="title">sub</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">     </span>&#123;</div><div class="line">        <span class="keyword">var</span> num = <span class="built_in">parseInt</span>(<span class="built_in">document</span>.getElementById(<span class="string">"number"</span>).value);</div><div class="line">        <span class="keyword">if</span>(num&gt;<span class="number">1</span>)</div><div class="line">        &#123;</div><div class="line">           <span class="built_in">document</span>.getElementById(<span class="string">"number"</span>).value = --num;</div><div class="line">        &#125;</div><div class="line">     &#125;</div><div class="line">    &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="2、cart-jsp的代码如下"><a href="#2、cart-jsp的代码如下" class="headerlink" title="2、cart.jsp的代码如下"></a>2、cart.jsp的代码如下</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</div><div class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"entity.Cart"</span> %&gt;</div><div class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"entity.Items"</span> %&gt;</div><div class="line">&lt;%</div><div class="line">	String path = request.getContextPath();</div><div class="line">String basePath = request.getScheme()+<span class="string">"://"</span>+request.getServerName()+<span class="string">":"</span>+request.getServerPort()+path+<span class="string">"/"</span>;</div><div class="line">%&gt;</div><div class="line"></div><div class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span>&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;base href=<span class="string">"&lt;%=basePath%&gt;"</span>&gt;</div><div class="line">    &lt;title&gt;My JSP 'cart.jsp' starting page&lt;/title&gt;</div><div class="line"> 	&lt;meta http-equiv=<span class="string">"pragma"</span> content=<span class="string">"no-cache"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"cache-control"</span> content=<span class="string">"no-cache"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"expires"</span> content=<span class="string">"0"</span>&gt;    </div><div class="line">	&lt;meta http-equiv=<span class="string">"keywords"</span> content=<span class="string">"keyword1,keyword2,keyword3"</span>&gt;</div><div class="line">	&lt;meta http-equiv=<span class="string">"description"</span> content=<span class="string">"This is my page"</span>&gt;</div><div class="line">	&lt;!--</div><div class="line">	&lt;link rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span> href=<span class="string">"styles.css"</span>&gt;</div><div class="line">	--&gt;</div><div class="line">    &lt;link type=<span class="string">"text/css"</span> rel=<span class="string">"stylesheet"</span> href=<span class="string">"css/style1.css"</span> /&gt;</div><div class="line">    &lt;script language=<span class="string">"javascript"</span>&gt;</div><div class="line">	    <span class="function">function <span class="title">delcfm</span><span class="params">()</span> </span>&#123;</div><div class="line">	        <span class="keyword">if</span> (!confirm(<span class="string">"确认要删除？"</span>)) &#123;</div><div class="line">	            window.event.returnValue = <span class="keyword">false</span>;</div><div class="line">	        &#125;</div><div class="line">	    &#125;</div><div class="line">   &lt;/script&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  </div><div class="line">  &lt;body&gt;</div><div class="line">   &lt;h1&gt;我的购物车&lt;/h1&gt;</div><div class="line">   &lt;a href="index.jsp"&gt;首页&lt;/a&gt; &gt;&gt; &lt;a href="index.jsp"&gt;商品列表&lt;/a&gt;</div><div class="line">   &lt;hr&gt; </div><div class="line">   &lt;div id=<span class="string">"shopping"</span>&gt;</div><div class="line">   &lt;form action=<span class="string">""</span> method=<span class="string">""</span>&gt;		</div><div class="line">			&lt;table&gt;</div><div class="line">				&lt;tr&gt;</div><div class="line">					&lt;th&gt;商品名称&lt;/th&gt;</div><div class="line">					&lt;th&gt;商品单价&lt;/th&gt;</div><div class="line">					&lt;th&gt;商品价格&lt;/th&gt;</div><div class="line">					&lt;th&gt;购买数量&lt;/th&gt;</div><div class="line">					&lt;th&gt;操作&lt;/th&gt;</div><div class="line">				&lt;/tr&gt;</div><div class="line">				&lt;%</div><div class="line">					<span class="comment">//首先判断session中是否有购物车对象</span></div><div class="line">						   <span class="keyword">if</span>(request.getSession().getAttribute(<span class="string">"cart"</span>)!=<span class="keyword">null</span>)</div><div class="line">						   &#123;</div><div class="line">				%&gt;</div><div class="line">				&lt;!-- 循环的开始 --&gt;</div><div class="line">				     &lt;%</div><div class="line">				     	Cart cart = (Cart)request.getSession().getAttribute(<span class="string">"cart"</span>);</div><div class="line">				     		         HashMap&lt;Items,Integer&gt; goods = cart.getGoods();</div><div class="line">				     		         Set&lt;Items&gt; items = goods.keySet();</div><div class="line">				     		         Iterator&lt;Items&gt; it = items.iterator();</div><div class="line">				     		         </div><div class="line">				     		         <span class="keyword">while</span>(it.hasNext())</div><div class="line">				     		         &#123;</div><div class="line">				     		            Items i = it.next();</div><div class="line">				     %&gt; </div><div class="line">				&lt;tr name=<span class="string">"products"</span> id=<span class="string">"product_id_1"</span>&gt;</div><div class="line">					&lt;td class="thumb"&gt;&lt;img src="images/&lt;%=i.getPicture()%&gt;" /&gt;&lt;a href=""&gt;&lt;%=i.getName()%&gt;&lt;/a&gt;&lt;/td&gt;</div><div class="line">					&lt;td class="number"&gt;&lt;%=i.getPrice() %&gt;&lt;/td&gt;</div><div class="line">					&lt;td <span class="class"><span class="keyword">class</span></span>=<span class="string">"price"</span> id=<span class="string">"price_id_1"</span>&gt;</div><div class="line">						&lt;span&gt;&lt;%=i.getPrice()*goods.get(i) %&gt;&lt;/span&gt;</div><div class="line">						&lt;input type=<span class="string">"hidden"</span> value=<span class="string">""</span> /&gt;</div><div class="line">					&lt;/td&gt;</div><div class="line">					&lt;td <span class="class"><span class="keyword">class</span></span>=<span class="string">"number"</span>&gt;</div><div class="line">                     	&lt;%=goods.get(i)%&gt;					</div><div class="line">					&lt;/td&gt;                        </div><div class="line">                    &lt;td <span class="class"><span class="keyword">class</span></span>=<span class="string">"delete"</span>&gt;</div><div class="line">					  &lt;a href="servlet/CartServlet?action=delete&amp;id=&lt;%=i.getId()%&gt;" onclick="delcfm();"&gt;删除&lt;/a&gt;					                  </div><div class="line">					&lt;/td&gt;</div><div class="line">				&lt;/tr&gt;</div><div class="line">				     &lt;% </div><div class="line">				         &#125;</div><div class="line">				     %&gt;</div><div class="line">				&lt;!--循环的结束--&gt;</div><div class="line">				</div><div class="line">			&lt;/table&gt;</div><div class="line">			 &lt;div class="total"&gt;&lt;span id="total"&gt;总计：&lt;%=cart.getTotalPrice() %&gt;￥&lt;/span&gt;&lt;/div&gt;</div><div class="line">			  &lt;% </div><div class="line">			    &#125;</div><div class="line">			 %&gt;</div><div class="line">			&lt;div class="button"&gt;&lt;input type="submit" value="" /&gt;&lt;/div&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/08/ServletCart3/" data-id="cjuwmevbk000944g0ufv2wqnh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/">Servlet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/15/linuxconcept1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          linuxconcept1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/08/ServletCart2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ServletCart2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_28/MtTaAg4sNzU0NC1ibG9n.html" target="_blank" title="vue实现h5移动端项目参考文献">
+          vue实现h5移动端项目参考文献
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/zhouheblog/archive/2018/01/12/8275781.html" target="_blank" title="vue请求java服务端并返回数据">
+          vue请求java服务端并返回数据
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_2c/MtTaAg4sMDg3OS1ibG9n.html" target="_blank" title="vue与java数据交互">
+          vue与java数据交互
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,38 +1,376 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javasSM框架 | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java之SSM框架1、SSM1.1、概念SSM框架是由Spring、Spring MVC、Mybatis组合而成，是一个标准的MVC模式。">
+<meta name="keywords" content="Java,SSM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javasSM框架">
+<meta property="og:url" content="http://yoursite.com/2019/04/22/javasSM框架/index.html">
+<meta property="og:site_name" content="shangrila-xiu">
+<meta property="og:description" content="Java之SSM框架1、SSM1.1、概念SSM框架是由Spring、Spring MVC、Mybatis组合而成，是一个标准的MVC模式。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/eclipseAndJre.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/tomcat.png">
+<meta property="og:image" content="https://github.com/shangrila-xiu/IMG/raw/master/mavenSQL.png">
+<meta property="og:updated_time" content="2019-04-22T06:26:50.463Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javasSM框架">
+<meta name="twitter:description" content="Java之SSM框架1、SSM1.1、概念SSM框架是由Spring、Spring MVC、Mybatis组合而成，是一个标准的MVC模式。">
+<meta name="twitter:image" content="https://github.com/shangrila-xiu/IMG/raw/master/eclipseAndJre.png">
+  
+    <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
 
-block content
-    article#post
-        .post-header
-            .title= page.title
-            .container
-                time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.posted')] #[=date(page['date'], config.date_format)] | #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                //time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
-                .button-hover.categories
-                    each categories,index in page.categories.data
-                        i.fa.fa-inbox.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(categories.path)) #[=categories.name]
-                        if(index < page.categories.data.length - 1)
-                            i.fa.fa-angle-right(style="margin: 0 8px;")
-                .button-hover.tags
-                    each tags,index in page.tags.data
-                        i.fa.fa-tag.article-icon(aria-hidden="true")
-                        a.link-a(href=url_for(tags.path)) #[=tags.name]
-                        if(index < page.tags.data.length - 1)
-                            span &nbsp;|&nbsp;
-        .main-content!= page.content
-        if (theme.post_copyright && theme.post_copyright.enable)
-            .post-copyright
-                .post-copyright-author
-                    span.post-copyright-meta= _p('post.copyright.author') + ": "
-                    span.post-copyright-info
-                        - let mailto = `mailto:${config.email}`
-                        a(href=mailto) #[=config.author]
-                .post-copyright-type
-                    span.post-copyright-meta= _p('post.copyright.link') + ": "
-                    span.post-copyright-info
-                        a(href=url_for(page.permalink)) #[=page.permalink]
-                .post-copyright-notice
-                    span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
-                    span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
-    include includes/pagination.pug
-    //div!= paginator()
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-javasSM框架" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/22/javasSM框架/" class="article-date">
+  <time class="post-time" datetime="2019-04-22T01:58:16.000Z" itemprop="datePublished">
+    <span class="post-month">4月</span><br/>
+    <span class="post-day">22</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javasSM框架
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java之SSM框架/">java之SSM框架</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java之SSM框架"><a href="#Java之SSM框架" class="headerlink" title="Java之SSM框架"></a>Java之SSM框架</h1><h2 id="1、SSM"><a href="#1、SSM" class="headerlink" title="1、SSM"></a>1、SSM</h2><h3 id="1-1、概念"><a href="#1-1、概念" class="headerlink" title="1.1、概念"></a>1.1、概念</h3><h4 id="SSM框架是由Spring、Spring-MVC、Mybatis组合而成，是一个标准的MVC模式。"><a href="#SSM框架是由Spring、Spring-MVC、Mybatis组合而成，是一个标准的MVC模式。" class="headerlink" title="SSM框架是由Spring、Spring MVC、Mybatis组合而成，是一个标准的MVC模式。"></a>SSM框架是由Spring、Spring MVC、Mybatis组合而成，是一个标准的MVC模式。</h4><a id="more"></a>
+<h3 id="1-2、Spring"><a href="#1-2、Spring" class="headerlink" title="1.2、Spring"></a>1.2、Spring</h3><h4 id="1、Spring是一个开源框架，Spring是于2003-年兴起的一个轻量级的Java-开发框架，由Rod-Johnson-在其著作Expert-One-On-One-J2EE-Development-and-Design中阐述的部分理念和原型衍生而来。"><a href="#1、Spring是一个开源框架，Spring是于2003-年兴起的一个轻量级的Java-开发框架，由Rod-Johnson-在其著作Expert-One-On-One-J2EE-Development-and-Design中阐述的部分理念和原型衍生而来。" class="headerlink" title="1、Spring是一个开源框架，Spring是于2003 年兴起的一个轻量级的Java 开发框架，由Rod Johnson 在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来。"></a>1、Spring是一个开源框架，Spring是于2003 年兴起的一个轻量级的Java 开发框架，由Rod Johnson 在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来。</h4><h4 id="2、目的："><a href="#2、目的：" class="headerlink" title="2、目的："></a>2、目的：</h4><h5 id="它是为了解决企业应用开发的复杂性而创建的。"><a href="#它是为了解决企业应用开发的复杂性而创建的。" class="headerlink" title="它是为了解决企业应用开发的复杂性而创建的。"></a>它是为了解决企业应用开发的复杂性而创建的。</h5><h4 id="3、Spring使用基本的JavaBean来完成以前只可能由EJB完成的事情。"><a href="#3、Spring使用基本的JavaBean来完成以前只可能由EJB完成的事情。" class="headerlink" title="3、Spring使用基本的JavaBean来完成以前只可能由EJB完成的事情。"></a>3、Spring使用基本的JavaBean来完成以前只可能由EJB完成的事情。</h4><h4 id="4、Spring的用途不仅限于服务器端的开发。"><a href="#4、Spring的用途不仅限于服务器端的开发。" class="headerlink" title="4、Spring的用途不仅限于服务器端的开发。"></a>4、Spring的用途不仅限于服务器端的开发。</h4><h4 id="5、从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。"><a href="#5、从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。" class="headerlink" title="5、从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。"></a>5、从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。</h4><h4 id="6、简单来说，Spring是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。"><a href="#6、简单来说，Spring是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。" class="headerlink" title="6、简单来说，Spring是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。"></a>6、简单来说，Spring是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。</h4><h5 id="IOC和AOP的理解"><a href="#IOC和AOP的理解" class="headerlink" title="IOC和AOP的理解"></a>IOC和AOP的理解</h5><h6 id="转载：https-www-cnblogs-com-huhuan123-p-6051557-html"><a href="#转载：https-www-cnblogs-com-huhuan123-p-6051557-html" class="headerlink" title="转载：https://www.cnblogs.com/huhuan123/p/6051557.html"></a>转载：<a href="https://www.cnblogs.com/huhuan123/p/6051557.html" target="_blank" rel="external">https://www.cnblogs.com/huhuan123/p/6051557.html</a></h6><p>IOC解释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1、控制反转，其包含两个内容：其一是控制，其二是反转。在程序中，被调用类的选择控制权从调用它的类中移除，转交给第三方裁决。这个第三方指的就是Spring的容器。</div><div class="line">2、另解：</div><div class="line">		依赖注入（Dependency Injection），调用类对被调用类的依赖关系由第三方注入，以移除调用类对被调用类的引用。</div></pre></td></tr></table></figure>
+<p>AOP解释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1、面向切面编程(也叫面向方面)：Aspect Oriented Programming(AOP),是目前软件开发中的一个热点，也是Spring框架中的一个重要内容。</div><div class="line">2、利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。 </div><div class="line">3、AOP是OOP的延续，是（Aspect Oriented Programming）的缩写，意思是面向切面（方面）编程。</div><div class="line">	主要的功能是：</div><div class="line">		日志记录，性能统计，安全控制，事务处理，异常处理等等。 　　</div><div class="line">	主要的意图是：</div><div class="line">		将日志记录，性能统计，安全控制，事务处理，异常处理等代码从业务逻辑代码中划分出来，</div><div class="line">		通过对这些行为的分离，我们希望可以将它们独立到非指导业务逻辑的方法中，进而改变这些行为的时候不影响业务逻辑的代码。</div></pre></td></tr></table></figure>
+<h3 id="1-3、Spring-MVC"><a href="#1-3、Spring-MVC" class="headerlink" title="1.3、Spring MVC"></a>1.3、Spring MVC</h3><h4 id="Spring-MVC属于SpringFrameWork的后续产品，已经融合在Spring-Web-Flow里面。"><a href="#Spring-MVC属于SpringFrameWork的后续产品，已经融合在Spring-Web-Flow里面。" class="headerlink" title="Spring MVC属于SpringFrameWork的后续产品，已经融合在Spring Web Flow里面。"></a>Spring MVC属于SpringFrameWork的后续产品，已经融合在Spring Web Flow里面。</h4><h4 id="Spring-MVC-分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制。"><a href="#Spring-MVC-分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制。" class="headerlink" title="Spring MVC 分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制。"></a>Spring MVC 分离了<strong><em>控制器</em></strong>、<em>模型对象</em>、<em>分派器</em>以及<em>处理程序对象的角色</em>，这种分离让它们更容易进行定制。</h4><h4 id="1-3-1-SpringFrameWork"><a href="#1-3-1-SpringFrameWork" class="headerlink" title="1.3.1  SpringFrameWork"></a>1.3.1  SpringFrameWork</h4><h5 id="转载：https-www-cnblogs-com-z941030-p-5879025-html"><a href="#转载：https-www-cnblogs-com-z941030-p-5879025-html" class="headerlink" title="转载：https://www.cnblogs.com/z941030/p/5879025.html"></a>转载：<a href="https://www.cnblogs.com/z941030/p/5879025.html" target="_blank" rel="external">https://www.cnblogs.com/z941030/p/5879025.html</a></h5><h4 id="1-3-2-Spring-Web-Flow"><a href="#1-3-2-Spring-Web-Flow" class="headerlink" title="1.3.2 Spring Web Flow"></a>1.3.2 Spring Web Flow</h4><h5 id="转载：https-www-cnblogs-com-lvjianwei-p-7943604-html"><a href="#转载：https-www-cnblogs-com-lvjianwei-p-7943604-html" class="headerlink" title="转载：https://www.cnblogs.com/lvjianwei/p/7943604.html"></a>转载：<a href="https://www.cnblogs.com/lvjianwei/p/7943604.html" target="_blank" rel="external">https://www.cnblogs.com/lvjianwei/p/7943604.html</a></h5><h3 id="1-4、MyBatis"><a href="#1-4、MyBatis" class="headerlink" title="1.4、MyBatis"></a>1.4、MyBatis</h3><h4 id="1-4-1-历史背景："><a href="#1-4-1-历史背景：" class="headerlink" title="1.4.1 历史背景："></a>1.4.1 历史背景：</h4><h5 id="MyBatis-本是apache的一个开源项目iBatis-2010年这个项目由apache-software-foundation-迁移到了google-code，并且改名为MyBatis-。"><a href="#MyBatis-本是apache的一个开源项目iBatis-2010年这个项目由apache-software-foundation-迁移到了google-code，并且改名为MyBatis-。" class="headerlink" title="MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis 。"></a>MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis 。</h5><h4 id="1-4-2-概念"><a href="#1-4-2-概念" class="headerlink" title="1.4.2 概念"></a>1.4.2 概念</h4><h5 id="MyBatis是一个基于Java的持久层框架。"><a href="#MyBatis是一个基于Java的持久层框架。" class="headerlink" title="MyBatis是一个基于Java的持久层框架。"></a>MyBatis是一个基于Java的持久层框架。</h5><h4 id="1-4-3-比较iBATIS和MyBatis"><a href="#1-4-3-比较iBATIS和MyBatis" class="headerlink" title="1.4.3 比较iBATIS和MyBatis"></a>1.4.3 比较iBATIS和MyBatis</h4><h5 id="iBATIS提供的持久层框架-包括SQL-Maps和Data-Access-Objects（DAO）。"><a href="#iBATIS提供的持久层框架-包括SQL-Maps和Data-Access-Objects（DAO）。" class="headerlink" title="iBATIS提供的持久层框架   包括SQL Maps和Data Access Objects（DAO）。"></a>iBATIS提供的持久层框架   包括SQL Maps和Data Access Objects（DAO）。</h5><h5 id="MyBatis-消除了几乎所有的JDBC代码和参数的手工设置以及结果集的检索。"><a href="#MyBatis-消除了几乎所有的JDBC代码和参数的手工设置以及结果集的检索。" class="headerlink" title="MyBatis 消除了几乎所有的JDBC代码和参数的手工设置以及结果集的检索。"></a>MyBatis 消除了几乎所有的JDBC代码和参数的手工设置以及结果集的检索。</h5><h5 id="MyBatis-使用简单的-XML或注解用于配置和原始映射，将接口和-Java-的POJOs（Plain-Old-Java-Objects，普通的-Java对象）映射成数据库中的记录。"><a href="#MyBatis-使用简单的-XML或注解用于配置和原始映射，将接口和-Java-的POJOs（Plain-Old-Java-Objects，普通的-Java对象）映射成数据库中的记录。" class="headerlink" title="MyBatis 使用简单的 XML或注解用于配置和原始映射，将接口和 Java 的POJOs（Plain Old Java Objects，普通的 Java对象）映射成数据库中的记录。"></a>MyBatis 使用简单的 XML或注解用于配置和原始映射，将接口和 Java 的POJOs（Plain Old Java Objects，普通的 Java对象）映射成数据库中的记录。</h5><h2 id="2、开发环境搭建以及创建Maven-Web项目"><a href="#2、开发环境搭建以及创建Maven-Web项目" class="headerlink" title="2、开发环境搭建以及创建Maven Web项目"></a>2、开发环境搭建以及创建Maven Web项目</h2><h3 id="2-1-JDK的安装"><a href="#2-1-JDK的安装" class="headerlink" title="2.1 JDK的安装"></a>2.1 JDK的安装</h3><h4 id="首先下载JDK，这个从sun公司官网可以下载，根据自己的系统选择64位还是32位，安装过程就是next一路到底。安装完成之后当然要配置环境变量了。"><a href="#首先下载JDK，这个从sun公司官网可以下载，根据自己的系统选择64位还是32位，安装过程就是next一路到底。安装完成之后当然要配置环境变量了。" class="headerlink" title="首先下载JDK，这个从sun公司官网可以下载，根据自己的系统选择64位还是32位，安装过程就是next一路到底。安装完成之后当然要配置环境变量了。"></a>首先下载JDK，这个从sun公司官网可以下载，根据自己的系统选择64位还是32位，安装过程就是next一路到底。安装完成之后当然要配置环境变量了。</h4><h4 id="配置高级环境变量"><a href="#配置高级环境变量" class="headerlink" title="配置高级环境变量"></a>配置高级环境变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1.1新建变量名：JAVA_HOME   变量值：E:\Java\jdk1.6.0_43（这是我的jdk安装路径）</div><div class="line"></div><div class="line">1.2编辑变量名：Path  在后面加上：%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</div><div class="line"></div><div class="line">1.3 新建变量名：CLASSPATH 变量值： .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</div><div class="line"></div><div class="line">（注意：在设置变量的末尾时不要加上“；”）</div></pre></td></tr></table></figure>
+<h3 id="2-2-Eclipse的安装"><a href="#2-2-Eclipse的安装" class="headerlink" title="2.2 Eclipse的安装"></a>2.2 Eclipse的安装</h3><h4 id="下载地址：http-www-eclipse-org-downloads-版本自行选择"><a href="#下载地址：http-www-eclipse-org-downloads-版本自行选择" class="headerlink" title="下载地址：http://www.eclipse.org/downloads/   版本自行选择"></a>下载地址：<a href="http://www.eclipse.org/downloads/" target="_blank" rel="external">http://www.eclipse.org/downloads/</a>   版本自行选择</h4><h4 id="我们打开window–-gt-preference输入jre"><a href="#我们打开window–-gt-preference输入jre" class="headerlink" title="我们打开window–&gt;preference输入jre"></a>我们打开window–&gt;preference输入jre</h4><p><img src="https://github.com/shangrila-xiu/IMG/raw/master/eclipseAndJre.png" alt="https://github.com/shangrila-xiu/IMG/blob/master/eclipseAndJre.png"></p>
+<h3 id="2-33-Tomcat8的安装"><a href="#2-33-Tomcat8的安装" class="headerlink" title="2.33  Tomcat8的安装"></a>2.33  Tomcat8的安装</h3><h4 id="Tomcat我使用的版本是8，大家可以到apache的官网上去下载，http-tomcat-apache-org，下载直接解压就行"><a href="#Tomcat我使用的版本是8，大家可以到apache的官网上去下载，http-tomcat-apache-org，下载直接解压就行" class="headerlink" title="Tomcat我使用的版本是8，大家可以到apache的官网上去下载，http://tomcat.apache.org，下载直接解压就行"></a>Tomcat我使用的版本是8，大家可以到apache的官网上去下载，<a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="external">http://tomcat.apache.org</a>，下载直接解压就行</h4><p><img src="https://github.com/shangrila-xiu/IMG/raw/master/tomcat.png" alt="https://github.com/shangrila-xiu/IMG/blob/master/tomcat.png"></p>
+<h3 id="2-4-Maven安装配置"><a href="#2-4-Maven安装配置" class="headerlink" title="2.4  Maven安装配置"></a>2.4  Maven安装配置</h3><h4 id="下载maven，就是一个包：apache-maven，解压到一个路径，然后配置环境变量："><a href="#下载maven，就是一个包：apache-maven，解压到一个路径，然后配置环境变量：" class="headerlink" title="下载maven，就是一个包：apache-maven，解压到一个路径，然后配置环境变量："></a>下载maven，就是一个包：apache-maven，解压到一个路径，然后配置环境变量：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">5.1 新建变量名：MAVEN_HOME  变量值：D:\server\apache-maven-3.2.1（这是我的MAVEN路径）</div><div class="line"></div><div class="line">    5.2 编辑变量名：Path  在最前面加上：%MAVEN_HOME%\bin;（注意，最后要有个&quot;;&quot;作为分隔符）</div></pre></td></tr></table></figure>
+<h5 id="完成之后，在命令行输入：mvn-version查看是否有以下内容，如果有表示配置成功。"><a href="#完成之后，在命令行输入：mvn-version查看是否有以下内容，如果有表示配置成功。" class="headerlink" title="完成之后，在命令行输入：mvn -version查看是否有以下内容，如果有表示配置成功。"></a>完成之后，在命令行输入：mvn -version查看是否有以下内容，如果有表示配置成功。</h5><h4 id="2-4-1-Maven数据仓库的配置"><a href="#2-4-1-Maven数据仓库的配置" class="headerlink" title="2.4.1   Maven数据仓库的配置"></a>2.4.1   Maven数据仓库的配置</h4><h5 id="MAVEN中还有一个重要的配置就是数据仓库的路径配置，我们找到MAVEN的安装路径，进入conf–-gt-打开settings-xml，找到localRepository标签，此时是被注释掉的，我们解除注释，然后配置一个路径，例如：E-Dev-Java-maven-repo，这样以后MAVEN管理下载的jar包都会在这个路径下。当然我们需要建这样一个目录结构，然后还要讲settings-xml复制一份到E-Dev-Java-maven下，这个在与Eclipse集成时会用到。修改默认保存路径"><a href="#MAVEN中还有一个重要的配置就是数据仓库的路径配置，我们找到MAVEN的安装路径，进入conf–-gt-打开settings-xml，找到localRepository标签，此时是被注释掉的，我们解除注释，然后配置一个路径，例如：E-Dev-Java-maven-repo，这样以后MAVEN管理下载的jar包都会在这个路径下。当然我们需要建这样一个目录结构，然后还要讲settings-xml复制一份到E-Dev-Java-maven下，这个在与Eclipse集成时会用到。修改默认保存路径" class="headerlink" title="MAVEN中还有一个重要的配置就是数据仓库的路径配置，我们找到MAVEN的安装路径，进入conf–&gt;打开settings.xml，找到localRepository标签，此时是被注释掉的，我们解除注释，然后配置一个路径，例如：E:\Dev\Java\maven\repo，这样以后MAVEN管理下载的jar包都会在这个路径下。当然我们需要建这样一个目录结构，然后还要讲settings.xml复制一份到E:\Dev\Java\maven下，这个在与Eclipse集成时会用到。修改默认保存路径"></a>MAVEN中还有一个重要的配置就是数据仓库的路径配置，我们找到MAVEN的安装路径，进入conf–&gt;打开settings.xml，找到localRepository标签，此时是被注释掉的，我们解除注释，然后配置一个路径，例如：E:\Dev\Java\maven\repo，这样以后MAVEN管理下载的jar包都会在这个路径下。当然我们需要建这样一个目录结构，然后还要讲settings.xml复制一份到E:\Dev\Java\maven下，这个在与Eclipse集成时会用到。<strong><em>修改默认保存路径</em></strong></h5><p><img src="https://github.com/shangrila-xiu/IMG/raw/master/mavenSQL.png" alt="https://github.com/shangrila-xiu/IMG/blob/master/mavenSQL.png"></p>
+<h4 id="2-4-1-Eclipse中集成Maven"><a href="#2-4-1-Eclipse中集成Maven" class="headerlink" title="2.4.1 Eclipse中集成Maven"></a>2.4.1 Eclipse中集成Maven</h4><h5 id="，点击File–-gt-new–-gt-other–-gt-输入maven–-gt-–-gt-Maven-Project，如果可以看到这些，证明配置成功，已经可以建立Maven项目了。"><a href="#，点击File–-gt-new–-gt-other–-gt-输入maven–-gt-–-gt-Maven-Project，如果可以看到这些，证明配置成功，已经可以建立Maven项目了。" class="headerlink" title="，点击File–&gt;new–&gt;other–&gt;输入maven–&gt;–&gt;Maven Project，如果可以看到这些，证明配置成功，已经可以建立Maven项目了。"></a>，点击File–&gt;new–&gt;other–&gt;输入maven–&gt;–&gt;Maven Project，如果可以看到这些，证明配置成功，已经可以建立Maven项目了。</h5><h6 id="如果indexjsp-提示有错误需要在pom-xml中导入-javaee-api-jar"><a href="#如果indexjsp-提示有错误需要在pom-xml中导入-javaee-api-jar" class="headerlink" title="如果indexjsp 提示有错误需要在pom.xml中导入  javaee-api.jar"></a>如果indexjsp 提示有错误需要在pom.xml中导入  javaee-api.jar</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;javax&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;javaee-api&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;7.0&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<h2 id="2-5-SVN安装"><a href="#2-5-SVN安装" class="headerlink" title="2.5 SVN安装"></a>2.5 SVN安装</h2><h4 id="转载：http-www-cnblogs-com-zyw-205520-p-4598091-html"><a href="#转载：http-www-cnblogs-com-zyw-205520-p-4598091-html" class="headerlink" title="转载：http://www.cnblogs.com/zyw-205520/p/4598091.html"></a>转载：<a href="http://www.cnblogs.com/zyw-205520/p/4598091.html" target="_blank" rel="external">http://www.cnblogs.com/zyw-205520/p/4598091.html</a></h4><h3 id="Log4j"><a href="#Log4j" class="headerlink" title="Log4j"></a>Log4j</h3><h4 id="转载http-blog-csdn-net-zhshulin-article-details-37937365-http-blog-csdn-net-zhshulin-article-details-37937365"><a href="#转载http-blog-csdn-net-zhshulin-article-details-37937365-http-blog-csdn-net-zhshulin-article-details-37937365" class="headerlink" title="转载http://blog.csdn.net/zhshulin/article/details/37937365](http://blog.csdn.net/zhshulin/article/details/37937365)"></a>转载<a href="http://blog.csdn.net/zhshulin/article/details/37937365](http://blog.csdn.net/zhshulin/article/details/37937365" target="_blank" rel="external">http://blog.csdn.net/zhshulin/article/details/37937365](http://blog.csdn.net/zhshulin/article/details/37937365</a>)</h4><hr>
+<h3 id="转载：http-www-cnblogs-com-zyw-205520-p-4767633-html"><a href="#转载：http-www-cnblogs-com-zyw-205520-p-4767633-html" class="headerlink" title="转载：http://www.cnblogs.com/zyw-205520/p/4767633.html"></a>转载：<a href="http://www.cnblogs.com/zyw-205520/p/4767633.html" target="_blank" rel="external">http://www.cnblogs.com/zyw-205520/p/4767633.html</a></h3><h3 id="转载：https-blog-csdn-net-gebitan505-article-details-44455235"><a href="#转载：https-blog-csdn-net-gebitan505-article-details-44455235" class="headerlink" title="转载：https://blog.csdn.net/gebitan505/article/details/44455235"></a>转载：<a href="https://blog.csdn.net/gebitan505/article/details/44455235" target="_blank" rel="external">https://blog.csdn.net/gebitan505/article/details/44455235</a></h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/22/javasSM框架/" data-id="cjuwmevds002c44g01tzsnnat" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/25/javascript获取元素的方法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          javascript获取元素的方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/21/vue解决vue在IE11版本上的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue解决vue在IE11版本上的问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_28/MtTaAg4sNzU0NC1ibG9n.html" target="_blank" title="vue实现h5移动端项目参考文献">
+          vue实现h5移动端项目参考文献
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/zhouheblog/archive/2018/01/12/8275781.html" target="_blank" title="vue请求java服务端并返回数据">
+          vue请求java服务端并返回数据
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_2c/MtTaAg4sMDg3OS1ibG9n.html" target="_blank" title="vue与java数据交互">
+          vue与java数据交互
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
