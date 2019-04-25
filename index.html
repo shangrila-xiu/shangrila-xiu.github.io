@@ -103,18 +103,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="javascript获取元素的方法"><a href="#javascript获取元素的方法" class="headerlink" title="javascript获取元素的方法"></a>javascript获取元素的方法</h1><h2 id="原生js获取DOM对象的几种方法"><a href="#原生js获取DOM对象的几种方法" class="headerlink" title="原生js获取DOM对象的几种方法"></a>原生js获取DOM对象的几种方法</h2><p><a href="https://blog.csdn.net/qq_33036599/article/details/80660923" target="_blank" rel="external">原生JS获取DOM对象的方法</a></p>
-<h3 id="a、通过id获取"><a href="#a、通过id获取" class="headerlink" title="a、通过id获取"></a>a、通过id获取</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">var</span> box = <span class="built_in">document</span>.getELementById(<span class="string">'box1'</span>);<span class="comment">//document.getELementById()括号里面不需要加上“#”，因为该方法已经决定里面的值是一个元素id值。且该方法返回一个DOM对象</span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="b、通过class获取"><a href="#b、通过class获取" class="headerlink" title="b、通过class获取"></a>b、通过class获取</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">var</span> box = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'box2'</span>);<span class="comment">//document.getElementsByClassName()括号里面不需要加上“.”，因为该方法就决定了括号中的值是一个class。该方法返回一个集合。</span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h5 id="不能给集合直接绑定事件，需要获取到其中的某一个元素，再为它绑定事件。"><a href="#不能给集合直接绑定事件，需要获取到其中的某一个元素，再为它绑定事件。" class="headerlink" title="不能给集合直接绑定事件，需要获取到其中的某一个元素，再为它绑定事件。"></a>不能给集合直接绑定事件，需要获取到其中的某一个元素，再为它绑定事件。</h5><h2 id="c、通过标签名获取"><a href="#c、通过标签名获取" class="headerlink" title="c、通过标签名获取"></a>c、通过标签名获取</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box3"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">    您好，标签名1</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">    您好，标签名2</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">    您好，标签名3</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">var</span> pCollection = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'p'</span>);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h5 id="该方法返回的是一个集合。"><a href="#该方法返回的是一个集合。" class="headerlink" title="该方法返回的是一个集合。"></a>该方法返回的是一个集合。</h5><h2 id="d、通过name属性获取"><a href="#d、通过name属性获取" class="headerlink" title="d、通过name属性获取"></a>d、通过name属性获取</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box3"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span> = <span class="string">"user"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="keyword">var</span> InputName = getElement.getElementsByName(<span class="string">'user'</span>);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h5 id="只有含有name属性的元素（表单元素），才能通过name属性获取。"><a href="#只有含有name属性的元素（表单元素），才能通过name属性获取。" class="headerlink" title="只有含有name属性的元素（表单元素），才能通过name属性获取。"></a>只有含有name属性的元素（表单元素），才能通过name属性获取。</h5><h2 id="e、通过querySelector获取"><a href="#e、通过querySelector获取" class="headerlink" title="e、通过querySelector获取"></a>e、通过querySelector获取</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box4"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">var</span> querS = <span class="built_in">document</span>.querySelector(<span class="string">'#box4'</span>);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h5 id="document-querySelector-中的值是元素选择器，所以加上“-”，使用的是id选择器。此方法直接返回DOM对象本身"><a href="#document-querySelector-中的值是元素选择器，所以加上“-”，使用的是id选择器。此方法直接返回DOM对象本身" class="headerlink" title="document.querySelector()中的值是元素选择器，所以加上“#”，使用的是id选择器。此方法直接返回DOM对象本身"></a>document.querySelector()中的值是元素选择器，所以加上“#”，使用的是id选择器。此方法直接返回DOM对象本身</h5><h2 id="f、通过querySelectorAll获取"><a href="#f、通过querySelectorAll获取" class="headerlink" title="f、通过querySelectorAll获取"></a>f、通过querySelectorAll获取</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="keyword">let</span> box1= <span class="built_in">document</span>.querySelector(<span class="string">".box"</span>);</span></div><div class="line"><span class="javascript">    <span class="keyword">let</span> boxes= <span class="built_in">document</span>.querySelectorAll(<span class="string">".box"</span>);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h5 id="querySelector和querySelectorAll方法括号中取值都是选择器。但两者返回的结果是有区别的。当有多个class相同的元素，querySelector只会返回第一个class为box的对象。querySelectorAll获取到所以class为box的集合。"><a href="#querySelector和querySelectorAll方法括号中取值都是选择器。但两者返回的结果是有区别的。当有多个class相同的元素，querySelector只会返回第一个class为box的对象。querySelectorAll获取到所以class为box的集合。" class="headerlink" title="querySelector和querySelectorAll方法括号中取值都是选择器。但两者返回的结果是有区别的。当有多个class相同的元素，querySelector只会返回第一个class为box的对象。querySelectorAll获取到所以class为box的集合。"></a>querySelector和querySelectorAll方法括号中取值都是选择器。但两者返回的结果是有区别的。当有多个class相同的元素，querySelector只会返回第一个class为box的对象。querySelectorAll获取到所以class为box的集合。</h5><h3 id="总结如下："><a href="#总结如下：" class="headerlink" title="总结如下："></a>总结如下：</h3><h4 id="1、所有获取DOM对象的方法中，只有getElementById-和querySelector-这两个方法直接返回的DOM对象本身，可直接为其绑定事件。"><a href="#1、所有获取DOM对象的方法中，只有getElementById-和querySelector-这两个方法直接返回的DOM对象本身，可直接为其绑定事件。" class="headerlink" title="1、所有获取DOM对象的方法中，只有getElementById()和querySelector()这两个方法直接返回的DOM对象本身，可直接为其绑定事件。"></a>1、所有获取DOM对象的方法中，只有getElementById()和querySelector()这两个方法直接返回的DOM对象本身，可直接为其绑定事件。</h4><h4 id="2、getElementXXX类型的方法，除了通过Id获取元素，其他都返回一个集合，如果需要取到具体的DOM元素，需要加索引，如：document-getElementsByClassName-“box”-0-gt-获取class为box的所有元素中的第一个DOM元素。"><a href="#2、getElementXXX类型的方法，除了通过Id获取元素，其他都返回一个集合，如果需要取到具体的DOM元素，需要加索引，如：document-getElementsByClassName-“box”-0-gt-获取class为box的所有元素中的第一个DOM元素。" class="headerlink" title="2、getElementXXX类型的方法，除了通过Id获取元素，其他都返回一个集合，如果需要取到具体的DOM元素，需要加索引，如：document.getElementsByClassName(“box”)[0] =&gt;获取class为box的所有元素中的第一个DOM元素。"></a>2、getElementXXX类型的方法，除了通过Id获取元素，其他都返回一个集合，如果需要取到具体的DOM元素，需要加索引，如：document.getElementsByClassName(“box”)[0] =&gt;获取class为box的所有元素中的第一个DOM元素。</h4><h4 id="3、querySelector-与querySelectorAll-两者的联系与区别："><a href="#3、querySelector-与querySelectorAll-两者的联系与区别：" class="headerlink" title="3、querySelector()与querySelectorAll()两者的联系与区别："></a>3、querySelector()与querySelectorAll()两者的联系与区别：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">联系： 两者括号中的取值都是选择器 </div><div class="line">区别： 当有多个class相同的元素时，使用querySelector()方法只能获取到第一个class为box的元素，而querySelectorAll()获取到了所有class为box的元素集合。</div></pre></td></tr></table></figure>
-
+        
+          <p class="article-more-link">
+            <a href="/2019/04/25/javascript获取元素的方法/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/25/javascript获取元素的方法/" data-id="cjuwd7xyd005k38g0lkqhj6lh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/25/javascript获取元素的方法/" data-id="cjuwe3422002l0og0ct2gm0ze" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -173,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/22/javasSM框架/" data-id="cjuwd7xy0005438g0aalq3o96" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/22/javasSM框架/" data-id="cjuwe3420002h0og0p8l0ae6p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li></ul>
@@ -228,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/21/vue解决vue在IE11版本上的问题/" data-id="cjuwd7xzz007g38g0a1jsoevt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/21/vue解决vue在IE11版本上的问题/" data-id="cjuwe346p007l0og02qw7nj6f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -281,7 +278,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/20/vue项目中e-target-files-0/" data-id="cjuwd7xzx007d38g0squ9zoa5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/20/vue项目中e-target-files-0/" data-id="cjuwe346r007n0og0zlmy8zep" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -336,7 +333,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/20/vue中axios请求为什么调两次接口/" data-id="cjuwd7xzp007238g0x2flbrc2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/20/vue中axios请求为什么调两次接口/" data-id="cjuwe346n007h0og052h4skn8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -395,7 +392,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/16/vue项目整理问题合集/" data-id="cjuwd7y02007k38g0276fafbc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/16/vue项目整理问题合集/" data-id="cjuwe346v007s0og0k89pnj53" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -454,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/11/vuenews前端展示3/" data-id="cjuwd7y0g008138g0t55442fq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/11/vuenews前端展示3/" data-id="cjuwe346l007e0og0j5saptvz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -513,7 +510,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/08/vue2news后台笔记整理2/" data-id="cjuwd7y3p00c638g014vrlf5o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/08/vue2news后台笔记整理2/" data-id="cjuwe346g007a0og00ewq0s1c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -572,7 +569,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/vue2e2-news后台管理笔记整理1/" data-id="cjuwd7xzr007738g0ojrg0xx7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/vue2e2-news后台管理笔记整理1/" data-id="cjuwe346c00770og0cvprhvx3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -631,7 +628,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/06/vue-news毕设笔记整理2/" data-id="cjuwd7y3f00by38g0k51xnytq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/06/vue-news毕设笔记整理2/" data-id="cjuwe34a200c20og0auccx0oz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>

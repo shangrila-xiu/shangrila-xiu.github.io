@@ -5,18 +5,18 @@
   
   <title>javascript获取元素的方法 | shangrila-xiu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript获取元素的方法原生js获取DOM对象的几种方法原生JS获取DOM对象的方法 a、通过id获取1234&amp;lt;div id=&quot;box1&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;	var box = document.getELementById(&apos;box1&apos;);//document.getELementById()括号里面不需要加上“#”，因为该方法已经决定里">
+  <meta name="description" content="javascript获取元素的方法原生js获取DOM对象的几种方法原生JS获取DOM对象的方法">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript获取元素的方法">
 <meta property="og:url" content="http://yoursite.com/2019/04/25/javascript获取元素的方法/index.html">
 <meta property="og:site_name" content="shangrila-xiu">
-<meta property="og:description" content="javascript获取元素的方法原生js获取DOM对象的几种方法原生JS获取DOM对象的方法 a、通过id获取1234&amp;lt;div id=&quot;box1&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;	var box = document.getELementById(&apos;box1&apos;);//document.getELementById()括号里面不需要加上“#”，因为该方法已经决定里">
+<meta property="og:description" content="javascript获取元素的方法原生js获取DOM对象的几种方法原生JS获取DOM对象的方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-25T08:08:08.820Z">
+<meta property="og:updated_time" content="2019-04-25T08:32:40.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript获取元素的方法">
-<meta name="twitter:description" content="javascript获取元素的方法原生js获取DOM对象的几种方法原生JS获取DOM对象的方法 a、通过id获取1234&amp;lt;div id=&quot;box1&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;	var box = document.getELementById(&apos;box1&apos;);//document.getELementById()括号里面不需要加上“#”，因为该方法已经决定里">
+<meta name="twitter:description" content="javascript获取元素的方法原生js获取DOM对象的几种方法原生JS获取DOM对象的方法">
   
     <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
   
@@ -106,6 +106,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="javascript获取元素的方法"><a href="#javascript获取元素的方法" class="headerlink" title="javascript获取元素的方法"></a>javascript获取元素的方法</h1><h2 id="原生js获取DOM对象的几种方法"><a href="#原生js获取DOM对象的几种方法" class="headerlink" title="原生js获取DOM对象的几种方法"></a>原生js获取DOM对象的几种方法</h2><p><a href="https://blog.csdn.net/qq_33036599/article/details/80660923" target="_blank" rel="external">原生JS获取DOM对象的方法</a></p>
+<a id="more"></a>
 <h3 id="a、通过id获取"><a href="#a、通过id获取" class="headerlink" title="a、通过id获取"></a>a、通过id获取</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">var</span> box = <span class="built_in">document</span>.getELementById(<span class="string">'box1'</span>);<span class="comment">//document.getELementById()括号里面不需要加上“#”，因为该方法已经决定里面的值是一个元素id值。且该方法返回一个DOM对象</span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="b、通过class获取"><a href="#b、通过class获取" class="headerlink" title="b、通过class获取"></a>b、通过class获取</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">var</span> box = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'box2'</span>);<span class="comment">//document.getElementsByClassName()括号里面不需要加上“.”，因为该方法就决定了括号中的值是一个class。该方法返回一个集合。</span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h5 id="不能给集合直接绑定事件，需要获取到其中的某一个元素，再为它绑定事件。"><a href="#不能给集合直接绑定事件，需要获取到其中的某一个元素，再为它绑定事件。" class="headerlink" title="不能给集合直接绑定事件，需要获取到其中的某一个元素，再为它绑定事件。"></a>不能给集合直接绑定事件，需要获取到其中的某一个元素，再为它绑定事件。</h5><h2 id="c、通过标签名获取"><a href="#c、通过标签名获取" class="headerlink" title="c、通过标签名获取"></a>c、通过标签名获取</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box3"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">    您好，标签名1</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">    您好，标签名2</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">    您好，标签名3</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">var</span> pCollection = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'p'</span>);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -117,7 +118,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/25/javascript获取元素的方法/" data-id="cjuwd7xyd005k38g0lkqhj6lh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/25/javascript获取元素的方法/" data-id="cjuwe3422002l0og0ct2gm0ze" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
