@@ -1,21 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html>
 <head>
-
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="shangrila-xiu" />
-
-
-
-<meta name="description" content="窗体与后端处理建立窗体form元素form元素用来HTML文件中插入窗体，属性如下：1、accept-charset=”utf-8”：指定窗体数据的字符编码方式，Web服务器必须根据指定的字符编码方式处理窗体数据。2、action=”uri”：指定窗口处理程序的相对地址和绝对地址。">
+  <meta charset="utf-8">
+  
+  <title>html_chuangtiAndHouduanChuli | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="窗体与后端处理建立窗体form元素form元素用来HTML文件中插入窗体，属性如下：1、accept-charset=”utf-8”：指定窗体数据的字符编码方式，Web服务器必须根据指定的字符编码方式处理窗体数据。2、action=”uri”：指定窗口处理程序的相对地址和绝对地址。">
 <meta name="keywords" content="html,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="html_chuangtiAndHouduanChuli">
@@ -27,250 +17,69 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html_chuangtiAndHouduanChuli">
 <meta name="twitter:description" content="窗体与后端处理建立窗体form元素form元素用来HTML文件中插入窗体，属性如下：1、accept-charset=”utf-8”：指定窗体数据的字符编码方式，Web服务器必须根据指定的字符编码方式处理窗体数据。2、action=”uri”：指定窗口处理程序的相对地址和绝对地址。">
-
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
-
-
+  
     <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/favicon.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
-<title>html_chuangtiAndHouduanChuli | shangrila-xiu</title>
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-<script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: false,
-        isPost: true,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
-    }
-</script>
-
-
-    <script> yiliaConfig.jquery_ui = [false]; </script>
-
-
-
-    <script> yiliaConfig.rootUrl = "\/";</script>
-
-
-
-
-
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
 
 </head>
+
 <body>
   <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            <img src="/img/love.jpg" class="animated zoomIn">
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">shangrila-xiu</a></h1>
-        </hgroup>
-
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
         
-
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
         
-
-
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
         
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
         
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/">主页</a></li>
-                        
-                            <li><a href="/archives/">所有文章</a></li>
-                        
-                            <li><a href="/tags/">标签云</a></li>
-                        
-                            <li><a href="/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
-                            
-                                <a class="fa GitHub" href="#" title="GitHub"></a>
-                            
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/">SSM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data/">data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hbuilder/">hbuilder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo安装和使用/">hexo安装和使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/login/">login</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/malloc/">malloc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/myeclipse/">myeclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nfs/">nfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/socket/">socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/struct/">struct</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tftp/">tftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xampp/">xampp</a></li></ul>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">专注于前端</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
+    </ul>
+  </div>
 </div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">shangrila-xiu</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                <img src="/img/love.jpg" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">shangrila-xiu</a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/">主页</a></li>
-                
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/tags/">标签云</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
-                            
-                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
-</nav>
-      <div class="body-wrap"><article id="post-html-chuangtiAndHouduanChuli" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/02/html-chuangtiAndHouduanChuli/" class="article-date">
-      <time datetime="2018-05-02T10:34:13.000Z" itemprop="datePublished">2018-05-02</time>
+
+        <section id="main"><article id="post-html-chuangtiAndHouduanChuli" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/02/html-chuangtiAndHouduanChuli/" class="article-date">
+  <time class="post-time" datetime="2018-05-02T10:34:13.000Z" itemprop="datePublished">
+    <span class="post-month">5月</span><br/>
+    <span class="post-day">02</span>
+  </time>
 </a>
-
-
-    </div>
-  
+   
+  </div>
   <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -281,27 +90,21 @@
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
+        <div>
+          
+  <div class="article-category">
     <a class="article-category-link" href="/categories/窗体和后端处理/">窗体和后端处理</a>
-    </div>
+  </div>
 
+          
+              
 
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
+          
+        </div>
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-          
         <h1 id="窗体与后端处理"><a href="#窗体与后端处理" class="headerlink" title="窗体与后端处理"></a>窗体与后端处理</h1><h2 id="建立窗体"><a href="#建立窗体" class="headerlink" title="建立窗体"></a>建立窗体</h2><h1 id="form元素"><a href="#form元素" class="headerlink" title="form元素"></a>form元素</h1><h3 id="form元素用来HTML文件中插入窗体，属性如下："><a href="#form元素用来HTML文件中插入窗体，属性如下：" class="headerlink" title="form元素用来HTML文件中插入窗体，属性如下："></a>form元素用来HTML文件中插入窗体，属性如下：</h3><h4 id="1、accept-charset-”utf-8”：指定窗体数据的字符编码方式，Web服务器必须根据指定的字符编码方式处理窗体数据。"><a href="#1、accept-charset-”utf-8”：指定窗体数据的字符编码方式，Web服务器必须根据指定的字符编码方式处理窗体数据。" class="headerlink" title="1、accept-charset=”utf-8”：指定窗体数据的字符编码方式，Web服务器必须根据指定的字符编码方式处理窗体数据。"></a>1、accept-charset=”utf-8”：指定窗体数据的字符编码方式，Web服务器必须根据指定的字符编码方式处理窗体数据。</h4><h4 id="2、action-”uri”：指定窗口处理程序的相对地址和绝对地址。"><a href="#2、action-”uri”：指定窗口处理程序的相对地址和绝对地址。" class="headerlink" title="2、action=”uri”：指定窗口处理程序的相对地址和绝对地址。"></a>2、action=”uri”：指定窗口处理程序的相对地址和绝对地址。</h4><a id="more"></a>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"handler.php"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
 <h4 id="3、accept-”…”：指定mime类型（超过一个的话，。中间用逗号隔开），如accept-”image-gif-image-jpeg”。"><a href="#3、accept-”…”：指定mime类型（超过一个的话，。中间用逗号隔开），如accept-”image-gif-image-jpeg”。" class="headerlink" title="3、accept=”…”：指定mime类型（超过一个的话，。中间用逗号隔开），如accept=”image/gif,image/jpeg”。"></a>3、accept=”…”：指定mime类型（超过一个的话，。中间用逗号隔开），如accept=”image/gif,image/jpeg”。</h4><h4 id="4、enctype-”…”：指定将窗口数据传回Web服务器所采用的编码方式，默认值为”applicaiton-x-www-form-urlencoded”；若要允许上传文件给web服务器，则它的值要指定为”multipart-form-data”；若要将窗体数据传送到电子邮件地址，则enctype属性的值要指定为”text-plain”。"><a href="#4、enctype-”…”：指定将窗口数据传回Web服务器所采用的编码方式，默认值为”applicaiton-x-www-form-urlencoded”；若要允许上传文件给web服务器，则它的值要指定为”multipart-form-data”；若要将窗体数据传送到电子邮件地址，则enctype属性的值要指定为”text-plain”。" class="headerlink" title="4、enctype=”…”：指定将窗口数据传回Web服务器所采用的编码方式，默认值为”applicaiton/x-www-form-urlencoded”；若要允许上传文件给web服务器，则它的值要指定为”multipart/form-data”；若要将窗体数据传送到电子邮件地址，则enctype属性的值要指定为”text/plain”。"></a>4、enctype=”…”：指定将窗口数据传回Web服务器所采用的编码方式，默认值为”applicaiton/x-www-form-urlencoded”；若要允许上传文件给web服务器，则它的值要指定为”multipart/form-data”；若要将窗体数据传送到电子邮件地址，则enctype属性的值要指定为”text/plain”。</h4><h4 id="5、"><a href="#5、" class="headerlink" title="5、"></a>5、</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">method=&quot;&#123;get,post&#125;&quot;：指定窗体数据传送给窗体处理程序的方式。当它的值为&quot;get&quot;时，窗体数据会被存放在HTTP GET变量（$_GET），窗体处理程序可以通过这个变量获取窗体数据；当它的值为&quot;post&quot;时，，，，，，，，，，，放在HTTP POST变量 ($_POST)。默认值是get</div></pre></td></tr></table></figure>
@@ -348,214 +151,253 @@
 <h4 id="有了form属性后，窗体元素就不一定放在窗体内，也可以放在窗体意外的其他位置，然后通过form属性建立窗体元素与窗体的关联即可。"><a href="#有了form属性后，窗体元素就不一定放在窗体内，也可以放在窗体意外的其他位置，然后通过form属性建立窗体元素与窗体的关联即可。" class="headerlink" title="有了form属性后，窗体元素就不一定放在窗体内，也可以放在窗体意外的其他位置，然后通过form属性建立窗体元素与窗体的关联即可。"></a>有了form属性后，窗体元素就不一定放在窗体内，也可以放在窗体意外的其他位置，然后通过form属性建立窗体元素与窗体的关联即可。</h4>
       
     </div>
-    
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/02/html-chuangtiAndHouduanChuli/" data-id="cjuwnp5b700cq4sg09yn2wmr4" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/05/02/html-chuangtiAndHouduanChuli/">html_chuangtiAndHouduanChuli</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">shangrila-xiu</a></p>
-        <p><span>发布时间:</span>2018-05-02, 18:34:13</p>
-        <p><span>最后更新:</span>2018-06-04, 10:18:32</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/05/02/html-chuangtiAndHouduanChuli/" title="html_chuangtiAndHouduanChuli">http://yoursite.com/2018/05/02/html-chuangtiAndHouduanChuli/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/05/02/html-chuangtiAndHouduanChuli/　　作者: shangrila-xiu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
+<nav id="article-nav">
+  
+    <a href="/2018/06/04/js-first/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/06/04/js-first/">
-                    js_first
-                </a>
-            </div>
+          js_first
         
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/05/01/js-paomadeng/">
-                    js_paomadeng
-                </a>
-            </div>
-        
-    </nav>
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/01/js-paomadeng/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">js_paomadeng</div>
+    </a>
+  
+</nav>
 
   
 </article>
 
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
+
+
+</section>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#窗体与后端处理"><span class="toc-number">1.</span> <span class="toc-text">窗体与后端处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#建立窗体"><span class="toc-number">1.1.</span> <span class="toc-text">建立窗体</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#form元素"><span class="toc-number">2.</span> <span class="toc-text">form元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#form元素用来HTML文件中插入窗体，属性如下："><span class="toc-number">2.0.1.</span> <span class="toc-text">form元素用来HTML文件中插入窗体，属性如下：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、accept-charset-”utf-8”：指定窗体数据的字符编码方式，Web服务器必须根据指定的字符编码方式处理窗体数据。"><span class="toc-number">2.0.1.1.</span> <span class="toc-text">1、accept-charset=”utf-8”：指定窗体数据的字符编码方式，Web服务器必须根据指定的字符编码方式处理窗体数据。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、action-”uri”：指定窗口处理程序的相对地址和绝对地址。"><span class="toc-number">2.0.1.2.</span> <span class="toc-text">2、action=”uri”：指定窗口处理程序的相对地址和绝对地址。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、accept-”…”：指定mime类型（超过一个的话，。中间用逗号隔开），如accept-”image-gif-image-jpeg”。"><span class="toc-number">2.0.1.3.</span> <span class="toc-text">3、accept=”…”：指定mime类型（超过一个的话，。中间用逗号隔开），如accept=”image/gif,image/jpeg”。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、enctype-”…”：指定将窗口数据传回Web服务器所采用的编码方式，默认值为”applicaiton-x-www-form-urlencoded”；若要允许上传文件给web服务器，则它的值要指定为”multipart-form-data”；若要将窗体数据传送到电子邮件地址，则enctype属性的值要指定为”text-plain”。"><span class="toc-number">2.0.1.4.</span> <span class="toc-text">4、enctype=”…”：指定将窗口数据传回Web服务器所采用的编码方式，默认值为”applicaiton/x-www-form-urlencoded”；若要允许上传文件给web服务器，则它的值要指定为”multipart/form-data”；若要将窗体数据传送到电子邮件地址，则enctype属性的值要指定为”text/plain”。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、"><span class="toc-number">2.0.1.5.</span> <span class="toc-text">5、</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、name-”…”：指定窗体的名称（限英文且唯一），此名称不会显示出来，但是后端可以用来处理，供Script使用。"><span class="toc-number">2.0.1.6.</span> <span class="toc-text">6、name=”…”：指定窗体的名称（限英文且唯一），此名称不会显示出来，但是后端可以用来处理，供Script使用。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、target-”…”：指定用来显示窗体处理程序的结构的目标框架。"><span class="toc-number">2.0.1.7.</span> <span class="toc-text">7、target=”…”：指定用来显示窗体处理程序的结构的目标框架。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、autocomplete-”-on-off-default-”：指定是否启用自动完成功能，默认为on"><span class="toc-number">2.0.1.8.</span> <span class="toc-text">*8、autocomplete=”{on,off,default}”：指定是否启用自动完成功能，默认为on</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#input元素"><span class="toc-number">3.</span> <span class="toc-text">input元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#input元素用来在窗体中插入输入的字段或按钮，没有结束标签。属性如下："><span class="toc-number">3.0.1.</span> <span class="toc-text">input元素用来在窗体中插入输入的字段或按钮，没有结束标签。属性如下：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、align-“-left-center-right-”：（禁用了）指定对其方式"><span class="toc-number">3.0.1.1.</span> <span class="toc-text">1、align=“{left,center,right}”：（禁用了）指定对其方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、accept-”…”：Mime类型"><span class="toc-number">3.0.1.2.</span> <span class="toc-text">2、accept=”…”：Mime类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、checked：将单选按钮或复选框默认为已选状态"><span class="toc-number">3.0.1.3.</span> <span class="toc-text">3、checked：将单选按钮或复选框默认为已选状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、disabled：取消窗体字段，使窗体数据无法被接受或提交，也就是不可用状态"><span class="toc-number">3.0.1.4.</span> <span class="toc-text">4、disabled：取消窗体字段，使窗体数据无法被接受或提交，也就是不可用状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、maxlength-”n”：指定单行文本框、密码字段、搜索字段等窗体字段的宽度（n为字符数）"><span class="toc-number">3.0.1.5.</span> <span class="toc-text">5、maxlength=”n”：指定单行文本框、密码字段、搜索字段等窗体字段的宽度（n为字符数）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、name-”…”：指定窗体字段的名称（限英文且唯一）"><span class="toc-number">3.0.1.6.</span> <span class="toc-text">6、name=”…”：指定窗体字段的名称（限英文且唯一）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、notab：不允许用户以按【Tab】键的方式移至窗体字段。"><span class="toc-number">3.0.1.7.</span> <span class="toc-text">7、notab：不允许用户以按【Tab】键的方式移至窗体字段。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、readonly：不允许用户变更窗体字段的数据"><span class="toc-number">3.0.1.8.</span> <span class="toc-text">8、readonly：不允许用户变更窗体字段的数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9、size-”n”：指定单行文本框、密码字段、搜索字段等窗体字段的宽度（n为字符数）"><span class="toc-number">3.0.1.9.</span> <span class="toc-text">9、size=”n”：指定单行文本框、密码字段、搜索字段等窗体字段的宽度（n为字符数）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意："><span class="toc-number">3.0.1.10.</span> <span class="toc-text">注意：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#size和maxlength的区别？"><span class="toc-number">3.0.1.11.</span> <span class="toc-text">size和maxlength的区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#答：size并不是指定用户可以输入的字符数，而是指定用户在画面上可以看到的字符数。"><span class="toc-number">3.0.1.11.1.</span> <span class="toc-text">答：size并不是指定用户可以输入的字符数，而是指定用户在画面上可以看到的字符数。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10、src-”uri”：指定图片提交按钮的地址（当type-”image”时）。"><span class="toc-number">3.0.1.12.</span> <span class="toc-text">10、src=”uri”：指定图片提交按钮的地址（当type=”image”时）。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11、usemap：指定浏览器端影像地图所在的文件地址及名称。"><span class="toc-number">3.0.1.13.</span> <span class="toc-text">11、usemap：指定浏览器端影像地图所在的文件地址及名称。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12、value-”…”：指定窗体字段的初始值。"><span class="toc-number">3.0.1.14.</span> <span class="toc-text">12、value=”…”：指定窗体字段的初始值。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13、form-”formid”：指定窗体字段隶属于ID为formid的窗体"><span class="toc-number">3.0.1.15.</span> <span class="toc-text">*13、form=”formid”：指定窗体字段隶属于ID为formid的窗体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14min-”n”、max-”n”、step-”n”：指定数字输入类型或日期输入类型的最小值、最大值、间隔值。"><span class="toc-number">3.0.1.16.</span> <span class="toc-text">*14min=”n”、max=”n”、step=”n”：指定数字输入类型或日期输入类型的最小值、最大值、间隔值。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15、required：指定用户必须在窗体字段中输入数据"><span class="toc-number">3.0.1.17.</span> <span class="toc-text">*15、required：指定用户必须在窗体字段中输入数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16、multiple：（如："><span class="toc-number">3.0.1.18.</span> <span class="toc-text">*16、multiple：（如：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17、pattern-”…”：针对窗体字段指定进一步的输入格式，如："><span class="toc-number">3.0.1.19.</span> <span class="toc-text">*17、pattern=”…”：针对窗体字段指定进一步的输入格式，如：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18、autocomplete-”-on-off-default-”：同form元素的一样"><span class="toc-number">3.0.1.20.</span> <span class="toc-text">*18、autocomplete=”{on,off,default}”：同form元素的一样</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19、autofocus：指定在加载网页的当下，令焦点自动移至窗体字段。"><span class="toc-number">3.0.1.21.</span> <span class="toc-text">*19、autofocus：指定在加载网页的当下，令焦点自动移至窗体字段。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20、placeholder-”…”：指定在窗体字段内显示的提示文字，待用户将焦点移至窗体字段时，自动消失。"><span class="toc-number">3.0.1.22.</span> <span class="toc-text">*20、placeholder=”…”：指定在窗体字段内显示的提示文字，待用户将焦点移至窗体字段时，自动消失。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21、list：它和html5的新增的”datalist“元素搭配，让用户从预先输入的列表中选择数据或自行输入其他数据。"><span class="toc-number">3.0.1.23.</span> <span class="toc-text">*21、list：它和html5的新增的”datalist“元素搭配，让用户从预先输入的列表中选择数据或自行输入其他数据。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22、还有比较重要的："><span class="toc-number">3.0.1.24.</span> <span class="toc-text">*22、还有比较重要的：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23、type-”state”属性，html4-01提供如下表的输入类型"><span class="toc-number">3.0.1.25.</span> <span class="toc-text">*23、type=”state”属性，html4.01提供如下表的输入类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#注意：-1"><span class="toc-number">3.0.1.25.1.</span> <span class="toc-text">注意：</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#为了维持旧浏览器的向下兼容，type属性的默认值是”text”，当浏览器不支持HTML5新增的type属性值时，就会显示默认的单行文本框。"><span class="toc-number">3.0.1.25.1.1.</span> <span class="toc-text">为了维持旧浏览器的向下兼容，type属性的默认值是”text”，当浏览器不支持HTML5新增的type属性值时，就会显示默认的单行文本框。</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML4-0现有的输入类型"><span class="toc-number">3.1.</span> <span class="toc-text">HTML4.0现有的输入类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、按钮"><span class="toc-number">3.1.1.</span> <span class="toc-text">1、按钮</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1在body元素里面是有from元素"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">1.1在body元素里面是有from元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2在form里面使用input元素插入提交和重置按钮，type属性分别为submit和reset"><span class="toc-number">3.1.1.2.</span> <span class="toc-text">1.2在form里面使用input元素插入提交和重置按钮，type属性分别为submit和reset</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单行文本框"><span class="toc-number">3.1.2.</span> <span class="toc-text">单行文本框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单选按钮"><span class="toc-number">3.1.3.</span> <span class="toc-text">单选按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多行文本框：可以使用textarea元素在窗体插入多行文本框，标记-的为HTML5新增属性"><span class="toc-number">3.1.4.</span> <span class="toc-text">多行文本框：可以使用textarea元素在窗体插入多行文本框，标记 * 的为HTML5新增属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、cols-”n”-：宽度"><span class="toc-number">3.1.4.1.</span> <span class="toc-text">1、cols=”n” ：宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、disabled-：取消多行文本框，使之无法存取"><span class="toc-number">3.1.4.2.</span> <span class="toc-text">2、disabled ：取消多行文本框，使之无法存取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、name-”…”：名称，（限英文且唯一）"><span class="toc-number">3.1.4.3.</span> <span class="toc-text">3、name=”…”：名称，（限英文且唯一）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、readonly：不允许用户变更多行文本框的资料"><span class="toc-number">3.1.4.4.</span> <span class="toc-text">4、readonly：不允许用户变更多行文本框的资料</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、rows-”n”：高度"><span class="toc-number">3.1.4.5.</span> <span class="toc-text">5、rows=”n”：高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、form-”formid”："><span class="toc-number">3.1.4.6.</span> <span class="toc-text">*6、form=”formid”：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、required：指定用户必须在多行文本框中输入资料"><span class="toc-number">3.1.4.7.</span> <span class="toc-text">*7、required：指定用户必须在多行文本框中输入资料</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、autofocus：指定在网页加载的当下，令焦点自动移至多行文本框。"><span class="toc-number">3.1.4.8.</span> <span class="toc-text">*8、autofocus：指定在网页加载的当下，令焦点自动移至多行文本框。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9、placeholder-”…”：指定在多行文本框内显示提示文字，等到用户将焦点移至多行文本框，该提示文字会自动消失"><span class="toc-number">3.1.4.9.</span> <span class="toc-text">*9、placeholder=”…”：指定在多行文本框内显示提示文字，等到用户将焦点移至多行文本框，该提示文字会自动消失</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10、"><span class="toc-number">3.1.4.10.</span> <span class="toc-text">*10、</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#：注意："><span class="toc-number">3.1.4.10.1.</span> <span class="toc-text">：注意：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下拉菜单：允许用户从下拉式列表中选择项目，可以使用select-元素搭配option-元素在窗体中插入"><span class="toc-number">3.1.5.</span> <span class="toc-text">下拉菜单：允许用户从下拉式列表中选择项目，可以使用select  元素搭配option  元素在窗体中插入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、multiple：指定用户可以在下拉菜单中选择多个项目"><span class="toc-number">3.1.5.1.</span> <span class="toc-text">1、multiple：指定用户可以在下拉菜单中选择多个项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、name-”…”：下拉菜单的名称（英文且唯一）"><span class="toc-number">3.1.5.2.</span> <span class="toc-text">2、name=”…”：下拉菜单的名称（英文且唯一）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、readonly：不允许用户变更下拉菜单项目"><span class="toc-number">3.1.5.3.</span> <span class="toc-text">3、readonly：不允许用户变更下拉菜单项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、size-”n”：指定下拉菜单的高度"><span class="toc-number">3.1.5.4.</span> <span class="toc-text">4、size=”n”：指定下拉菜单的高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、form-”formid”"><span class="toc-number">3.1.5.5.</span> <span class="toc-text">*5、form=”formid”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、required：用户必须在下拉菜单中选择项目"><span class="toc-number">3.1.5.6.</span> <span class="toc-text">*6、required：用户必须在下拉菜单中选择项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、autofocus：指定在加载网页的当下，令焦点自动移至多行文本框"><span class="toc-number">3.1.5.7.</span> <span class="toc-text">*7、autofocus：指定在加载网页的当下，令焦点自动移至多行文本框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8。、"><span class="toc-number">3.1.5.8.</span> <span class="toc-text">*8。、</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#option元素是放在select元素的里面的，用来指定下拉菜单的项目，其属性如下"><span class="toc-number">3.1.6.</span> <span class="toc-text">option元素是放在select元素的里面的，用来指定下拉菜单的项目，其属性如下</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、disabled：取消下拉菜单的项目，使之无法存取"><span class="toc-number">3.1.6.1.</span> <span class="toc-text">1、disabled：取消下拉菜单的项目，使之无法存取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、selected：指定预先选取的项目"><span class="toc-number">3.1.6.2.</span> <span class="toc-text">2、selected：指定预先选取的项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、value-”…”：指定下拉菜单项目的值，在用户单击【提交】按钮后，被选取至下的下拉菜单的值会被传入服务器，若没有指定value属性，那么下拉菜单项目的数据会传入服务器。"><span class="toc-number">3.1.6.3.</span> <span class="toc-text">3、value=”…”：指定下拉菜单项目的值，在用户单击【提交】按钮后，被选取至下的下拉菜单的值会被传入服务器，若没有指定value属性，那么下拉菜单项目的数据会传入服务器。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#窗体的后端处理"><span class="toc-number">3.2.</span> <span class="toc-text">窗体的后端处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在用户输入窗体数据并单击【提交按钮】后，窗体的数据会传入Web服务器，至于窗体数据的传回方式则取决于form元素的method-属性，当它的值为“get”时，窗体数据会被存放在HTTP-GET变量（“-GET”）"><span class="toc-number">3.2.1.</span> <span class="toc-text">在用户输入窗体数据并单击【提交按钮】后，窗体的数据会传入Web服务器，至于窗体数据的传回方式则取决于form元素的method   属性，当它的值为“get”时，窗体数据会被存放在HTTP GET变量（“$_GET”）;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当它的值为“post”时，窗体数据会被存放在HTTP-POST变量（“-POST”）。"><span class="toc-number">3.2.2.</span> <span class="toc-text">当它的值为“post”时，窗体数据会被存放在HTTP POST变量（“$_POST”）。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#将窗体数据以E-mail的形式传送给指定的收件人"><span class="toc-number">3.2.2.1.</span> <span class="toc-text">将窗体数据以E-mail的形式传送给指定的收件人</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#读取窗体数据并制作成确认网页"><span class="toc-number">3.2.2.2.</span> <span class="toc-text">读取窗体数据并制作成确认网页</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#confirm-php"><span class="toc-number">3.2.2.2.1.</span> <span class="toc-text">confirm.php</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#密码字段"><span class="toc-number">3.2.3.</span> <span class="toc-text">密码字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐藏字段"><span class="toc-number">3.2.4.</span> <span class="toc-text">隐藏字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传文件字段"><span class="toc-number">3.2.5.</span> <span class="toc-text">上传文件字段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html5新增的输入类型"><span class="toc-number">3.3.</span> <span class="toc-text">html5新增的输入类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#email类型"><span class="toc-number">3.3.1.</span> <span class="toc-text">email类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注意事项："><span class="toc-number">3.3.1.1.</span> <span class="toc-text">注意事项：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#url类型"><span class="toc-number">3.3.2.</span> <span class="toc-text">url类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#search类型-它与text类型的区别在于，字段的外观不同。"><span class="toc-number">3.3.3.</span> <span class="toc-text">search类型:它与text类型的区别在于，字段的外观不同。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tel类型-很难验证用户输入的电话号码是否有效。但是tel输入类型和text输入类型的字段外观是一样的。"><span class="toc-number">3.3.4.</span> <span class="toc-text">tel类型:很难验证用户输入的电话号码是否有效。但是tel输入类型和text输入类型的字段外观是一样的。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#number类型"><span class="toc-number">3.3.5.</span> <span class="toc-text">number类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#用户使用了number类型，另外还有搭配的三个属性：min-最小值-、max（最大值）、step（间隔值）。它们三个必须为有效的浮点"><span class="toc-number">3.3.5.1.</span> <span class="toc-text">用户使用了number类型，另外还有搭配的三个属性：min(最小值)、max（最大值）、step（间隔值）。它们三个必须为有效的浮点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#number类型是用来限制用户只能输入0-10之间的数字，而且向上和向下按钮，所递增和递减的间隔值默认为“1”。"><span class="toc-number">3.3.5.2.</span> <span class="toc-text">number类型是用来限制用户只能输入0~10之间的数字，而且向上和向下按钮，所递增和递减的间隔值默认为“1”。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#range类型：要求用户通过滑杆的接口输入指定范围内的数字。"><span class="toc-number">3.3.6.</span> <span class="toc-text">range类型：要求用户通过滑杆的接口输入指定范围内的数字。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#用户使用了range类型，另外还有搭配的三个属性：min-最小值-、max（最大值）、step（间隔值）。若没有指定，那么最小默认值是0，最大默认值是100，间隔值为1，默认的时候，滑杆默认指向中间值，若要指定初始值，那么用value属性来指定。"><span class="toc-number">3.3.6.1.</span> <span class="toc-text">用户使用了range类型，另外还有搭配的三个属性：min(最小值)、max（最大值）、step（间隔值）。若没有指定，那么最小默认值是0，最大默认值是100，间隔值为1，默认的时候，滑杆默认指向中间值，若要指定初始值，那么用value属性来指定。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#color类型"><span class="toc-number">3.3.7.</span> <span class="toc-text">color类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期时间类型（date，time，datetime，month，week，datetime-local）"><span class="toc-number">3.3.8.</span> <span class="toc-text">日期时间类型（date，time，datetime，month，week，datetime-local）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签文字—lable元素"><span class="toc-number">3.4.</span> <span class="toc-text">标签文字—lable元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将窗体字段框起来—-fieldset、legend元素"><span class="toc-number">3.5.</span> <span class="toc-text">将窗体字段框起来—-fieldset、legend元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#filedset元素用来将指定的窗体字段框起来，其属性如下："><span class="toc-number">3.5.1.</span> <span class="toc-text">filedset元素用来将指定的窗体字段框起来，其属性如下：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、-disabled：取消-lt-filedset-gt-元素所框起来的窗体字段无法存取"><span class="toc-number">3.5.1.0.1.</span> <span class="toc-text">1、*disabled：取消<filedset>元素所框起来的窗体字段无法存取</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、-name-”…”：指定它的名称。唯一且英文"><span class="toc-number">3.5.1.0.2.</span> <span class="toc-text">2、*name=”…”：指定它的名称。唯一且英文</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、-form-”formid”：指定其隶属于id为formid的窗体。"><span class="toc-number">3.5.1.0.3.</span> <span class="toc-text">3、*form=”formid”：指定其隶属于id为formid的窗体。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-legend-gt-元素用来在方框的左上方加上说明的文字。属性有align-“top-bottom-left-right”-，已经禁用了，用来指定文字的位置。且必须放在-lt-fieldset-gt-里面"><span class="toc-number">3.5.2.</span> <span class="toc-text"><legend>元素用来在方框的左上方加上说明的文字。属性有align={“top,bottom,left,right”}，已经禁用了，用来指定文字的位置。且必须放在<fieldset> 里面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他新增的窗体元素"><span class="toc-number">3.6.</span> <span class="toc-text">其他新增的窗体元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#html5除了支持现有的form、fieldset、legend、input、select、option、textarea-等窗体元素，还新增了，"><span class="toc-number">3.6.0.1.</span> <span class="toc-text">html5除了支持现有的form、fieldset、legend、input、select、option、textarea 等窗体元素，还新增了，</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output元素：用来显示计算结果或处理结果"><span class="toc-number">3.6.1.</span> <span class="toc-text">output元素：用来显示计算结果或处理结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#progress元素：用来显示进度条，代表某个工作的完成进度"><span class="toc-number">3.6.2.</span> <span class="toc-text">progress元素：用来显示进度条，代表某个工作的完成进度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#meter元素：用来显示某个范围内的比例或量标，例如磁盘的使用率、候选人的得票率等。"><span class="toc-number">3.6.3.</span> <span class="toc-text">meter元素：用来显示某个范围内的比例或量标，例如磁盘的使用率、候选人的得票率等。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#keygen元素：可以根据PSA算法产生一堆密钥。例如在用户从窗体中字段中选择密钥的长度，并单击【送出后】，会产生一对密钥，其中公钥会传送到服务器，私钥会存储在客户端。"><span class="toc-number">3.6.4.</span> <span class="toc-text">keygen元素：可以根据PSA算法产生一堆密钥。例如在用户从窗体中字段中选择密钥的长度，并单击【送出后】，会产生一对密钥，其中公钥会传送到服务器，私钥会存储在客户端。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outgroup元素：可以替代一群option元素加上共同的标签"><span class="toc-number">3.6.5.</span> <span class="toc-text">outgroup元素：可以替代一群option元素加上共同的标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5新增的form元素"><span class="toc-number">3.7.</span> <span class="toc-text">HTML5新增的form元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#form的属性是用来表示该元素隶属于指定的窗体。"><span class="toc-number">3.7.1.</span> <span class="toc-text">form的属性是用来表示该元素隶属于指定的窗体。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#有了form属性后，窗体元素就不一定放在窗体内，也可以放在窗体意外的其他位置，然后通过form属性建立窗体元素与窗体的关联即可。"><span class="toc-number">3.7.1.1.</span> <span class="toc-text">有了form属性后，窗体元素就不一定放在窗体内，也可以放在窗体意外的其他位置，然后通过form属性建立窗体元素与窗体的关联即可。</span></a></li></ol></li></ol></li></ol></li></ol>
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
         
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
-        </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"html_chuangtiAndHouduanChuli　| shangrila-xiu　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
 </div>
 
-
-
-
-
-
-
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2018/06/04/js-first/" title="上一篇: js_first">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2018/05/01/js-paomadeng/" title="下一篇: js_paomadeng">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/25/javascript获取元素的方法/">javascript获取元素的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/22/javasSM框架/">javasSM框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/21/vue解决vue在IE11版本上的问题/">vue解决vue在IE11版本上的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/20/vue项目中e-target-files-0/">vue项目中e.target.files[0]</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/20/vue中axios请求为什么调两次接口/">vue中axios请求为什么调两次接口</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/16/vue项目整理问题合集/">vue项目整理问题合集</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/11/vuenews前端展示3/">vuenews前端展示3</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/08/vue2news后台笔记整理2/">vue2news后台笔记整理2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/07/vue2e2-news后台管理笔记整理1/">vue2e2_news后台管理笔记整理1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/06/vue-news毕设笔记整理2/">vue-news毕设笔记整理2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/04/vue-news毕设笔记整理/">vue-news毕设笔记整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/vue-library/">vue_library</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/vue-devtools的使用/">vue-devtools的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/03/xampp和myeclipse的配置/">xampp和myeclipse的配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/20/hbuilderAnd海马玩模拟器的连接/">hbuilderAnd海马玩模拟器的连接</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/19/js-结点/">js_结点实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/14/js-实例/">js_实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/如何上传本地项目到GitHub上/">如何上传本地项目到GitHub上</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/js-调试代码/">js_调试代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/12/js-作用域/">js_作用域和作用域链</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/12/js-预解析/">js_预解析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/11/js-内置对象/">js-内置对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue-常用指令的讲解/">vue-常用指令的讲解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue-data中的数据/">vue-data中的数据</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/js-对象实例/">js_对象实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/js-对象/">js_对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js_break和continue的讲解/">js_break和continue的讲解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-数组实例/">js_数组实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-数组/">js_数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-函数实例/">js_函数实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-函数/">js_函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-循环/">js_循环</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-流程控制-类型-运算符实例-循环/">js_流程控制-类型-运算符-循环实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-运算符-流程控制/">js_运算符&流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-类型/">js_类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-first/">js_first</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/02/html-chuangtiAndHouduanChuli/">html_chuangtiAndHouduanChuli</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/js-paomadeng/">js_paomadeng</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/h5-yingyin/">h5_yingyin</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/23/html-practice/">practice_HTML</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/23/html-font/">font_html</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/23/html-frame-img/">html-frame_img</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/25/h5-wenzigeshi/">wenzigeshi</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/html-goodslist/">goodslist</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/html-salary/">salaryhtml</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/html-guimeishop/">guimeishop</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/h5-qukuaigeshi/">qukuaigeshi</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/html-time/">time-html</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/html5-address-html-information/">address-html-information</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/h5-aside/">html5-aside</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/19/h5-headerAndFooter/">headerAndFooter</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/19/html-nav/">nav</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/09/h5WriteStart/">h5WriteStart</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/09/h5BasicGrammar/">h5BasicGrammar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/09/h5wrtie/">h5wrtie</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/08/h5newfun/">h5newfun</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/h5MobileAndPC/">MobileAndPC</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/h5-WebDesignStep/">WebDesignStep</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/hexodwrong/">hexodwrong</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-UDP/">UDP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-TCP/">TCP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-IPAddress/">IPAddress</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-socket/">socket</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/LinuxNetworkProgramming/">LinuxNetworkProgramming</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-MemmoryDistribution/">MemmoryDistribution</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-functionOfMain/">functionOfMain</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-functionReview/">functionReview</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/LinuxAddCOfBasic/">LinuxAddCOfBasic</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/Linux-SystemCorelBurning/">SystemCorelBurning</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/Linuxcorel/">Linuxcorel</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-chardrivefram/">chardrivefram</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-drive/">drive</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-EMMCAddcorelandfileSystem/">EMMCAddcorelandfileSystem</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-server/">server</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-系统移植/">sysmovelive</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-进程process/">process</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-data-fun-struct/">data_fun_struct</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/howtoshowimg/">howtoshowimg</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/15/linuxconcept1/">linuxconcept1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletCart3/">ServletCart3</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletCart2/">ServletCart2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletCart1/">ServletCart1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletStudy1/">ServletStudy1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/07/jsp-rememberPassword/">rememberPassword</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/jsp-reFoundPassword/">reFoundPassword</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/sqlquestion1/">sqlquestion1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/jsp-sqlregister/">sqlregister</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/02/jsp-login/">jsp-login</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/xampp1/">xampp1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/xampp/">xampp</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/16/sqlquesiton/">sqlquesiton</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/12/jsp-neizhiduixiang/">jsp_neizhiduixiang</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/12/jsp-connectsql/">jsp_connectsql</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/11/connectionsql/">connectionsql</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/04/vue-生命周期/">生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/04/vue-messageBoard/">messageBoard</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/07/hexo-problems/">hexo-problems</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/07/vue-problems/">vue-problems</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/30/vue-ex-teraction/">ex-teraction</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/vue-interaction交互/">inteaction交互</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/25/vue-过滤器/">过滤器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/23/vue-classAndStyle/">classAndStyle</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/20/v-bind属性/">v-bind属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/20/vue-鼠标事件/">键盘事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/vue-默认行为/">阻止默认行为</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/vue-事件冒泡/">事件冒泡</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/vue-todolist/">todolist简易留言板</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/Vue-second/">Vue.js基础二</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/vue-first/">vue.js 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/01/hello-First/">hello First</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/01/hello-world/">Hello World</a></li></ul>
 
 
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
 
-
-    <script>
-        
-    </script>
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_28/MtTaAg4sNzU0NC1ibG9n.html" target="_blank" title="vue实现h5移动端项目参考文献">
+          vue实现h5移动端项目参考文献
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/zhouheblog/archive/2018/01/12/8275781.html" target="_blank" title="vue请求java服务端并返回数据">
+          vue请求java服务端并返回数据
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_2c/MtTaAg4sMDg3OS1ibG9n.html" target="_blank" title="vue与java数据交互">
+          vue与java数据交互
+        </a>
+      
+    </div>
+  </div>
 </div>
+
+  
+</aside>
+        
+      </div>
       <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-                2016-2019 shangrila-xiu
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
     </div>
+    
+  </div>
 </footer>
     </div>
     
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
-
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-</div>
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
 <script>
-    // Open in New Window
-    
-        var oOpenInNew = {
-            
-            
-            
-            
-            
-            
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
-    
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
 </script>
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
   </div>
 </body>
 </html>

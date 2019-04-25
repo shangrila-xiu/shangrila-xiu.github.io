@@ -1,21 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html>
 <head>
-
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="shangrila-xiu" />
-
-
-
-<meta name="description" content="JavaScript内置对象JavaScript对象隶属于window对象，由于它是“全局对象”，同时也是默认对象，因此window关键字可以省略不写。window对象包含需对的子对象，这些子对象可以分为三种类型：">
+  <meta charset="utf-8">
+  
+  <title>js-内置对象 | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript内置对象JavaScript对象隶属于window对象，由于它是“全局对象”，同时也是默认对象，因此window关键字可以省略不写。window对象包含需对的子对象，这些子对象可以分为三种类型：">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js-内置对象">
@@ -27,250 +17,69 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js-内置对象">
 <meta name="twitter:description" content="JavaScript内置对象JavaScript对象隶属于window对象，由于它是“全局对象”，同时也是默认对象，因此window关键字可以省略不写。window对象包含需对的子对象，这些子对象可以分为三种类型：">
-
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
-
-
+  
     <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/favicon.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
-<title>js-内置对象 | shangrila-xiu</title>
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-<script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: false,
-        isPost: true,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
-    }
-</script>
-
-
-    <script> yiliaConfig.jquery_ui = [false]; </script>
-
-
-
-    <script> yiliaConfig.rootUrl = "\/";</script>
-
-
-
-
-
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
 
 </head>
+
 <body>
   <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            <img src="/img/love.jpg" class="animated zoomIn">
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">shangrila-xiu</a></h1>
-        </hgroup>
-
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
         
-
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
         
-
-
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
         
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
         
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/">主页</a></li>
-                        
-                            <li><a href="/archives/">所有文章</a></li>
-                        
-                            <li><a href="/tags/">标签云</a></li>
-                        
-                            <li><a href="/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
-                            
-                                <a class="fa GitHub" href="#" title="GitHub"></a>
-                            
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/">SSM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data/">data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hbuilder/">hbuilder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo安装和使用/">hexo安装和使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/login/">login</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/malloc/">malloc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/myeclipse/">myeclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nfs/">nfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/socket/">socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/struct/">struct</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tftp/">tftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xampp/">xampp</a></li></ul>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">专注于前端</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
+    </ul>
+  </div>
 </div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">shangrila-xiu</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                <img src="/img/love.jpg" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">shangrila-xiu</a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/">主页</a></li>
-                
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/tags/">标签云</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
-                            
-                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
-</nav>
-      <div class="body-wrap"><article id="post-js-内置对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/06/11/js-内置对象/" class="article-date">
-      <time datetime="2018-06-10T23:46:53.000Z" itemprop="datePublished">2018-06-11</time>
+
+        <section id="main"><article id="post-js-内置对象" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/11/js-内置对象/" class="article-date">
+  <time class="post-time" datetime="2018-06-10T23:46:53.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">11</span>
+  </time>
 </a>
-
-
-    </div>
-  
+   
+  </div>
   <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -281,27 +90,21 @@
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
+        <div>
+          
+  <div class="article-category">
     <a class="article-category-link" href="/categories/JavaScript内置对象/">JavaScript内置对象</a>
-    </div>
+  </div>
 
+          
+              
 
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
+          
+        </div>
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-          
         <h1 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h1><h4 id="JavaScript对象隶属于window对象，由于它是“全局对象”，同时也是默认对象，因此window关键字可以省略不写。"><a href="#JavaScript对象隶属于window对象，由于它是“全局对象”，同时也是默认对象，因此window关键字可以省略不写。" class="headerlink" title="JavaScript对象隶属于window对象，由于它是“全局对象”，同时也是默认对象，因此window关键字可以省略不写。"></a>JavaScript对象隶属于window对象，由于它是“全局对象”，同时也是默认对象，因此window关键字可以省略不写。</h4><h4 id="window对象包含需对的子对象，这些子对象可以分为三种类型："><a href="#window对象包含需对的子对象，这些子对象可以分为三种类型：" class="headerlink" title="window对象包含需对的子对象，这些子对象可以分为三种类型："></a>window对象包含需对的子对象，这些子对象可以分为三种类型：</h4><a id="more"></a>
 <p><a href="https://segmentfault.com/a/1190000011467723" target="_blank" rel="external">JavaScript内置对象</a></p>
 <h5 id="1、核心对象：这是指的是真正属于JavaScript所内置的对象，与网页、浏览器或其他环境无关，也就是说，无论使用JavaScript做任何应用都可以通过这些对象访问数据或进行运算，包括Array、Boolean、Date、Error、Function、Global、Math、Number、Object、RegExp、String等。"><a href="#1、核心对象：这是指的是真正属于JavaScript所内置的对象，与网页、浏览器或其他环境无关，也就是说，无论使用JavaScript做任何应用都可以通过这些对象访问数据或进行运算，包括Array、Boolean、Date、Error、Function、Global、Math、Number、Object、RegExp、String等。" class="headerlink" title="1、核心对象：这是指的是真正属于JavaScript所内置的对象，与网页、浏览器或其他环境无关，也就是说，无论使用JavaScript做任何应用都可以通过这些对象访问数据或进行运算，包括Array、Boolean、Date、Error、Function、Global、Math、Number、Object、RegExp、String等。"></a>1、核心对象：这是指的是真正属于JavaScript所内置的对象，与网页、浏览器或其他环境无关，也就是说，无论使用JavaScript做任何应用都可以通过这些对象访问数据或进行运算，包括Array、Boolean、Date、Error、Function、Global、Math、Number、Object、RegExp、String等。</h5><h5 id="2、环境对象：可以通过环境对象访问浏览器或用户屏幕等信息，包括location、screen、navigator、history等。"><a href="#2、环境对象：可以通过环境对象访问浏览器或用户屏幕等信息，包括location、screen、navigator、history等。" class="headerlink" title="2、环境对象：可以通过环境对象访问浏览器或用户屏幕等信息，包括location、screen、navigator、history等。"></a>2、环境对象：可以通过环境对象访问浏览器或用户屏幕等信息，包括location、screen、navigator、history等。</h5><h5 id="3、document对象：这个对象代表的是HTML文件本身，可以通过它访问HTML文件的元素，包括窗体、图片、表格、超链接等。"><a href="#3、document对象：这个对象代表的是HTML文件本身，可以通过它访问HTML文件的元素，包括窗体、图片、表格、超链接等。" class="headerlink" title="3、document对象：这个对象代表的是HTML文件本身，可以通过它访问HTML文件的元素，包括窗体、图片、表格、超链接等。"></a>3、document对象：这个对象代表的是HTML文件本身，可以通过它访问HTML文件的元素，包括窗体、图片、表格、超链接等。</h5><h3 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h3><h4 id="window对象代表一个浏览器窗口、索引标签或框架。"><a href="#window对象代表一个浏览器窗口、索引标签或框架。" class="headerlink" title="window对象代表一个浏览器窗口、索引标签或框架。"></a>window对象代表一个浏览器窗口、索引标签或框架。</h4><p><a href="http://www.w3school.com.cn/jsref/dom_obj_window.asp" target="_blank" rel="external">w3c中讲解的window对象</a></p>
@@ -375,214 +178,253 @@
 
       
     </div>
-    
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/11/js-内置对象/" data-id="cjuwnp5b900ct4sg0t2g2oix8" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/06/11/js-内置对象/">js-内置对象</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">shangrila-xiu</a></p>
-        <p><span>发布时间:</span>2018-06-11, 07:46:53</p>
-        <p><span>最后更新:</span>2018-06-19, 14:00:11</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/06/11/js-内置对象/" title="js-内置对象">http://yoursite.com/2018/06/11/js-内置对象/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/06/11/js-内置对象/　　作者: shangrila-xiu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
+<nav id="article-nav">
+  
+    <a href="/2018/06/12/js-预解析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/06/12/js-预解析/">
-                    js_预解析
-                </a>
-            </div>
+          js_预解析
         
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/06/09/vue-常用指令的讲解/">
-                    vue-常用指令的讲解
-                </a>
-            </div>
-        
-    </nav>
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/09/vue-常用指令的讲解/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">vue-常用指令的讲解</div>
+    </a>
+  
+</nav>
 
   
 </article>
 
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
+
+
+</section>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript内置对象"><span class="toc-number">1.</span> <span class="toc-text">JavaScript内置对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript对象隶属于window对象，由于它是“全局对象”，同时也是默认对象，因此window关键字可以省略不写。"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">JavaScript对象隶属于window对象，由于它是“全局对象”，同时也是默认对象，因此window关键字可以省略不写。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#window对象包含需对的子对象，这些子对象可以分为三种类型："><span class="toc-number">1.0.0.2.</span> <span class="toc-text">window对象包含需对的子对象，这些子对象可以分为三种类型：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、核心对象：这是指的是真正属于JavaScript所内置的对象，与网页、浏览器或其他环境无关，也就是说，无论使用JavaScript做任何应用都可以通过这些对象访问数据或进行运算，包括Array、Boolean、Date、Error、Function、Global、Math、Number、Object、RegExp、String等。"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">1、核心对象：这是指的是真正属于JavaScript所内置的对象，与网页、浏览器或其他环境无关，也就是说，无论使用JavaScript做任何应用都可以通过这些对象访问数据或进行运算，包括Array、Boolean、Date、Error、Function、Global、Math、Number、Object、RegExp、String等。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、环境对象：可以通过环境对象访问浏览器或用户屏幕等信息，包括location、screen、navigator、history等。"><span class="toc-number">1.0.0.2.2.</span> <span class="toc-text">2、环境对象：可以通过环境对象访问浏览器或用户屏幕等信息，包括location、screen、navigator、history等。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、document对象：这个对象代表的是HTML文件本身，可以通过它访问HTML文件的元素，包括窗体、图片、表格、超链接等。"><span class="toc-number">1.0.0.2.3.</span> <span class="toc-text">3、document对象：这个对象代表的是HTML文件本身，可以通过它访问HTML文件的元素，包括窗体、图片、表格、超链接等。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window对象"><span class="toc-number">1.0.1.</span> <span class="toc-text">window对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#window对象代表一个浏览器窗口、索引标签或框架。"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">window对象代表一个浏览器窗口、索引标签或框架。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面开始讲解内置对象"><span class="toc-number">1.1.</span> <span class="toc-text">下面开始讲解内置对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#核心对象"><span class="toc-number">2.</span> <span class="toc-text">核心对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Number对象：可以通过Number对象建立数值类型的变量。"><span class="toc-number">2.1.</span> <span class="toc-text">Number对象：可以通过Number对象建立数值类型的变量。</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#但是通常是下面的写法："><span class="toc-number">2.1.0.0.1.</span> <span class="toc-text">但是通常是下面的写法：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Boolean对象：通过Boolean对象可以建立布尔类型的变量"><span class="toc-number">2.2.</span> <span class="toc-text">Boolean对象：通过Boolean对象可以建立布尔类型的变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#同样的，通常用的是下面的这种写法："><span class="toc-number">2.2.0.0.1.</span> <span class="toc-text">同样的，通常用的是下面的这种写法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当以第一种方法建立布尔类型的变量时，只有参数为false、0、null或undefined的时候，会得到false值，否则会得到true。"><span class="toc-number">2.2.1.</span> <span class="toc-text">当以第一种方法建立布尔类型的变量时，只有参数为false、0、null或undefined的时候，会得到false值，否则会得到true。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String对象：通过String对象建立字符串类型的变量。"><span class="toc-number">2.3.</span> <span class="toc-text">String对象：通过String对象建立字符串类型的变量。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通常用的是下面的这种用法："><span class="toc-number">2.3.0.1.</span> <span class="toc-text">通常用的是下面的这种用法：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String对象只有一个属性length，表示字符串的长度"><span class="toc-number">2.3.1.</span> <span class="toc-text">String对象只有一个属性length，表示字符串的长度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、字符串可以看成是字符组成的数组，但是js中没有字符类型；"><span class="toc-number">2.3.1.1.</span> <span class="toc-text">1、字符串可以看成是字符组成的数组，但是js中没有字符类型；</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、字符是一个个的，在别的语言中的字符用一对单引号阔起来"><span class="toc-number">2.3.1.2.</span> <span class="toc-text">2、字符是一个个的，在别的语言中的字符用一对单引号阔起来</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、在js中可以使用单引号或者双引号"><span class="toc-number">2.3.1.3.</span> <span class="toc-text">3、在js中可以使用单引号或者双引号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、因为字符串可以看成数组，所以，可以通过for循环遍历"><span class="toc-number">2.3.1.4.</span> <span class="toc-text">4、因为字符串可以看成数组，所以，可以通过for循环遍历</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串特性：不可变性-字符串的值是不可以改变的"><span class="toc-number">2.3.2.</span> <span class="toc-text">字符串特性：不可变性,字符串的值是不可以改变的</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#string—–-gt-字符串类型——-基本类型"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">string—–>字符串类型——-基本类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#String——-gt-字符串类型——-引用类型"><span class="toc-number">2.3.2.2.</span> <span class="toc-text">String——->字符串类型——-引用类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#String——-gt-字符串对象，全局对象"><span class="toc-number">2.3.2.3.</span> <span class="toc-text">String——>字符串对象，全局对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String对象的属性和方法"><span class="toc-number">2.3.3.</span> <span class="toc-text">String对象的属性和方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#length——–-gt-字符串的长度"><span class="toc-number">2.3.3.1.</span> <span class="toc-text">.length——–>字符串的长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#charAt-索引-———-gt-默认索引是0，索引为0-length-1中的一个整数，超出索引，结果-是空字符串"><span class="toc-number">2.3.3.2.</span> <span class="toc-text">.charAt(索引);———> 默认索引是0，索引为0~length-1中的一个整数，超出索引，结果 是空字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#String-fromCharCode-数字值-——-gt-必须是String-fromCharCode-数字值可以是多个-，返回的是ASCII码对应的值"><span class="toc-number">2.3.3.3.</span> <span class="toc-text">String.fromCharCode(数字值);——-> 必须是String.fromCharCode(数字值可以是多个);，返回的是ASCII码对应的值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#concat-字符串1-字符串2-…-——-两个字符串组合成一个，返回的是新的字符串"><span class="toc-number">2.3.3.4.</span> <span class="toc-text">.concat(字符串1,字符串2,…);——-两个字符串组合成一个，返回的是新的字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#indexOf-要找的字符串-从某个位置开始的索引-——–后面的参数可以不用，返回的是索引，找不到的话，返回-1"><span class="toc-number">2.3.3.5.</span> <span class="toc-text">.indexOf(要找的字符串,从某个位置开始的索引);——–后面的参数可以不用，返回的是索引，找不到的话，返回-1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lastIndexOf-要找的字符串-——–从后向前找，索引仍然是从前到后的，找不到的话，返回-1"><span class="toc-number">2.3.3.6.</span> <span class="toc-text">.lastIndexOf(要找的字符串);——–从后向前找，索引仍然是从前到后的，找不到的话，返回-1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#replace-原来的字符串-新的字符串-——–用来替换原来的字符串"><span class="toc-number">2.3.3.7.</span> <span class="toc-text">.replace(原来的字符串,新的字符串);——–用来替换原来的字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slice-开始索引位置-结束字索引位置-——-截取一个字符串的一部分，—–不包含结束索引的值"><span class="toc-number">2.3.3.8.</span> <span class="toc-text">.slice(开始索引位置,结束字索引位置);——-截取一个字符串的一部分，—–不包含结束索引的值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#split-要去掉的字符串-切割后留下来的个数-————切割字符串"><span class="toc-number">2.3.3.9.</span> <span class="toc-text">.split(要去掉的字符串,切割后留下来的个数);————切割字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#substr-开始的位置-个数-———-返回的是截取后的新的字符串"><span class="toc-number">2.3.3.10.</span> <span class="toc-text">.substr(开始的位置,个数);———-返回的是截取后的新的字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#substring-开始的索引-结束的索引-———-返回截取后的字符串，不包含结束的索引的字符"><span class="toc-number">2.3.3.11.</span> <span class="toc-text">.substring(开始的索引,结束的索引);———-返回截取后的字符串，不包含结束的索引的字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#toLocaleLowerCase-———将大写字母转为小写字母"><span class="toc-number">2.3.3.12.</span> <span class="toc-text">.toLocaleLowerCase();———将大写字母转为小写字母</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#toLowerCase-将大写字母转为小写字母"><span class="toc-number">2.3.3.12.1.</span> <span class="toc-text">.toLowerCase();将大写字母转为小写字母</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#toLocaleUpperCase-———将小写字母转为大写字母"><span class="toc-number">2.3.3.13.</span> <span class="toc-text">.toLocaleUpperCase();———将小写字母转为大写字母</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#toUpperCase-————将小写字母转为大写字母"><span class="toc-number">2.3.3.14.</span> <span class="toc-text">.toUpperCase();————将小写字母转为大写字母</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#match-str-———–-gt-寻找字符串str，返回值为字符串，不是索引"><span class="toc-number">2.3.3.15.</span> <span class="toc-text">.match(str)———–> 寻找字符串str，返回值为字符串，不是索引</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#function对象：可以建立用户自定义函数"><span class="toc-number">2.4.</span> <span class="toc-text">function对象：可以建立用户自定义函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通常使用的是下面的这种方法"><span class="toc-number">2.4.0.1.</span> <span class="toc-text">通常使用的是下面的这种方法:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object对象：建立用户自定义对象"><span class="toc-number">2.5.</span> <span class="toc-text">Object对象：建立用户自定义对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Math对象：提供了和数学运算相关的属性和方法，比较特别的是当使用Math的对象的属性与方法时，并不需要new关键字建立Math对象。"><span class="toc-number">2.6.</span> <span class="toc-text">Math对象：提供了和数学运算相关的属性和方法，比较特别的是当使用Math的对象的属性与方法时，并不需要new关键字建立Math对象。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Math不能实例化对象，不是构造器"><span class="toc-number">2.6.1.</span> <span class="toc-text">Math不能实例化对象，不是构造器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-PI——-π"><span class="toc-number">2.6.1.1.</span> <span class="toc-text">Math.PI——-π</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-E——–常数的底数，自然数E-2-718281828459045"><span class="toc-number">2.6.1.2.</span> <span class="toc-text">Math.E——–常数的底数，自然数E=2.718281828459045</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-abs-值-———–求绝对值"><span class="toc-number">2.6.1.3.</span> <span class="toc-text">Math.abs(值);———–求绝对值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-ceil-值-———-向上取整"><span class="toc-number">2.6.1.4.</span> <span class="toc-text">Math.ceil(值);———-向上取整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-floor-值-———向下取整"><span class="toc-number">2.6.1.5.</span> <span class="toc-text">Math.floor(值);———向下取整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-fround-值-—-化为小数"><span class="toc-number">2.6.1.6.</span> <span class="toc-text">Math.fround(值);—-化为小数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-max-12-90-29-20-110-11-20-———求最大值"><span class="toc-number">2.6.1.7.</span> <span class="toc-text">Math.max(12,90,29,20,110,11,20);———求最大值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-pow-3-2-————-求方根-多少次幂，3的2次幂"><span class="toc-number">2.6.1.8.</span> <span class="toc-text">Math.pow(3,2);————-求方根,多少次幂，3的2次幂</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-sqrt-4-—————-开方，如：给4开方"><span class="toc-number">2.6.1.9.</span> <span class="toc-text">Math.sqrt(4);—————-开方，如：给4开方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-random-————–伪随机数（范围0-1）"><span class="toc-number">2.6.1.10.</span> <span class="toc-text">Math.random();————–伪随机数（范围0-1）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-log-num-————-gt-返回e为底的对数"><span class="toc-number">2.6.1.11.</span> <span class="toc-text">Math.log(num)————> 返回e为底的对数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-SQRT-2———-gt-1-2的平方根"><span class="toc-number">2.6.1.12.</span> <span class="toc-text">Math.SQRT_2———-> 1/2的平方根</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-SQRT2———-gt-2的平方根"><span class="toc-number">2.6.1.13.</span> <span class="toc-text">Math.SQRT2———-> 2的平方根</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Date对象-提供了和日期时间运算相关的方法，只是在访问这些变量之前先使用new关键字建立Date对象。"><span class="toc-number">2.7.</span> <span class="toc-text">Date对象:提供了和日期时间运算相关的方法，只是在访问这些变量之前先使用new关键字建立Date对象。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#返回毫秒数"><span class="toc-number">2.7.0.1.</span> <span class="toc-text">返回毫秒数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获得时间的各个变量的值"><span class="toc-number">2.7.0.2.</span> <span class="toc-text">获得时间的各个变量的值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#现在的毫秒数减去程序开始运行时毫秒数"><span class="toc-number">2.7.0.3.</span> <span class="toc-text">现在的毫秒数减去程序开始运行时毫秒数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#时间的多种显示方法"><span class="toc-number">2.7.0.4.</span> <span class="toc-text">时间的多种显示方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array对象"><span class="toc-number">2.8.</span> <span class="toc-text">Array对象:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#可以建立数组，数组和变量一样来存储数据的，不同的是数组虽然只有一个，但是存储的数据可以是多个。"><span class="toc-number">2.8.0.0.1.</span> <span class="toc-text">可以建立数组，数组和变量一样来存储数据的，不同的是数组虽然只有一个，但是存储的数据可以是多个。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么判断是不是Array对象？"><span class="toc-number">2.8.1.</span> <span class="toc-text">怎么判断是不是Array对象？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组存放的每个数据叫做元素。数组是如何区分它所存储的多个数据？"><span class="toc-number">2.8.1.1.</span> <span class="toc-text">数组存放的每个数据叫做元素。数组是如何区分它所存储的多个数据？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#答：下标。-index-，下标是一个数字，JavaScript默认下标是“零”代表第一个元素，下标为“1”的是第二个元素，依次类推，“n-1”则代表数组的第“n”个元素，即数组的最后一个元素。"><span class="toc-number">2.8.1.1.1.</span> <span class="toc-text">答：下标。(index)，下标是一个数字，JavaScript默认下标是“零”代表第一个元素，下标为“1”的是第二个元素，依次类推，“n-1”则代表数组的第“n”个元素，即数组的最后一个元素。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可以使用如下语法声明一个包含5个元素的一维数组，然后分别给各个元素赋值："><span class="toc-number">2.8.1.2.</span> <span class="toc-text">可以使用如下语法声明一个包含5个元素的一维数组，然后分别给各个元素赋值：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#或者是下面的声明方法："><span class="toc-number">2.8.1.3.</span> <span class="toc-text">或者是下面的声明方法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#另外JavaScript还允许使用如下方法声明一维数组："><span class="toc-number">2.8.1.4.</span> <span class="toc-text">另外JavaScript还允许使用如下方法声明一维数组：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-form-方法——-gt-方法是类似数组或可迭代的对象中创建一个新的数组实例"><span class="toc-number">2.8.1.5.</span> <span class="toc-text">Array.form()方法——-> 方法是类似数组或可迭代的对象中创建一个新的数组实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-prototype-concat-方法-———–-gt-将传入的数组或非数组值与原数组合并-组成一个新的数组并返回"><span class="toc-number">2.8.1.6.</span> <span class="toc-text">Array.prototype.concat()方法=———–> 将传入的数组或非数组值与原数组合并,组成一个新的数组并返回</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#every-函数-————-gt"><span class="toc-number">2.8.1.7.</span> <span class="toc-text">every(函数)————-></span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#filter-函数-—————-gt-类似于过滤器"><span class="toc-number">2.8.1.8.</span> <span class="toc-text">filter(函数)—————->类似于过滤器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#foreach-函数-————-gt-循环"><span class="toc-number">2.8.1.9.</span> <span class="toc-text">foreach(函数)————>循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#indexOf-方法———-gt-找某个元素的索引。如果找到这个元素，则返回元素的索引，否则返回-1"><span class="toc-number">2.8.1.10.</span> <span class="toc-text">indexOf()方法———-> 找某个元素的索引。如果找到这个元素，则返回元素的索引，否则返回-1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#join-“字符串”-————-gt-将数组中的元素作为字符串输出"><span class="toc-number">2.8.1.11.</span> <span class="toc-text">join(“字符串”)————-> 将数组中的元素作为字符串输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#map-函数-方法———————-gt-创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后的返回的结果-在把最新的结果全部放在新的数组中"><span class="toc-number">2.8.1.12.</span> <span class="toc-text">map(函数)方法———————> 创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后的返回的结果,在把最新的结果全部放在新的数组中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reverse-方法———-gt-反转数组中的元素"><span class="toc-number">2.8.1.13.</span> <span class="toc-text">.reverse()方法———-> 反转数组中的元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#splice-开始的索引，要删除的个数-替换元素的值-———–-gt-一般是用于删除数组中的元素，或者是替换元素，或者是插入元素"><span class="toc-number">2.8.1.14.</span> <span class="toc-text">.splice(开始的索引，要删除的个数,替换元素的值)———–> 一般是用于删除数组中的元素，或者是替换元素，或者是插入元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slice-开始的索引，结束的索引-————-gt-包含开始索引的值，不包含结束索引的值"><span class="toc-number">2.8.1.15.</span> <span class="toc-text">.slice(开始的索引，结束的索引)————->包含开始索引的值，不包含结束索引的值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sort-函数-———–-gt-方法在适当的位置对数组进行排序，并返回数组，sort的排序不一定是稳定的，默认的排序顺序是根据字符串的unicode码点。"><span class="toc-number">2.8.1.16.</span> <span class="toc-text">.sort(函数)———–>方法在适当的位置对数组进行排序，并返回数组，sort的排序不一定是稳定的，默认的排序顺序是根据字符串的unicode码点。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加元素和删除元素的讲解："><span class="toc-number">2.8.2.</span> <span class="toc-text">添加元素和删除元素的讲解：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#push-值-方法：把值追加数组中。在原本的数组的元素后面增加元素"><span class="toc-number">2.8.2.1.</span> <span class="toc-text">.push(值)方法：把值追加数组中。在原本的数组的元素后面增加元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pop-方法：删除数组中的最后一个值，就是这个数组的最后一个值"><span class="toc-number">2.8.2.2.</span> <span class="toc-text">.pop()方法：删除数组中的最后一个值，就是这个数组的最后一个值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shift-方法：删除的是数组的第一个元素，是数组的第一个元素"><span class="toc-number">2.8.2.3.</span> <span class="toc-text">.shift()方法：删除的是数组的第一个元素，是数组的第一个元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unshift-方法：向数组的第一个元素前追加一个元素，结果是数组的长度"><span class="toc-number">2.8.2.4.</span> <span class="toc-text">.unshift()方法：向数组的第一个元素前追加一个元素，结果是数组的长度</span></a></li></ol></li></ol></li></ol></li></ol>
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
         
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
-        </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"js-内置对象　| shangrila-xiu　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
 </div>
 
-
-
-
-
-
-
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2018/06/12/js-预解析/" title="上一篇: js_预解析">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2018/06/09/vue-常用指令的讲解/" title="下一篇: vue-常用指令的讲解">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/25/javascript获取元素的方法/">javascript获取元素的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/22/javasSM框架/">javasSM框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/21/vue解决vue在IE11版本上的问题/">vue解决vue在IE11版本上的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/20/vue项目中e-target-files-0/">vue项目中e.target.files[0]</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/20/vue中axios请求为什么调两次接口/">vue中axios请求为什么调两次接口</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/16/vue项目整理问题合集/">vue项目整理问题合集</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/11/vuenews前端展示3/">vuenews前端展示3</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/08/vue2news后台笔记整理2/">vue2news后台笔记整理2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/07/vue2e2-news后台管理笔记整理1/">vue2e2_news后台管理笔记整理1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/06/vue-news毕设笔记整理2/">vue-news毕设笔记整理2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/04/vue-news毕设笔记整理/">vue-news毕设笔记整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/vue-library/">vue_library</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/vue-devtools的使用/">vue-devtools的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/03/xampp和myeclipse的配置/">xampp和myeclipse的配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/20/hbuilderAnd海马玩模拟器的连接/">hbuilderAnd海马玩模拟器的连接</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/19/js-结点/">js_结点实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/14/js-实例/">js_实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/如何上传本地项目到GitHub上/">如何上传本地项目到GitHub上</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/js-调试代码/">js_调试代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/12/js-作用域/">js_作用域和作用域链</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/12/js-预解析/">js_预解析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/11/js-内置对象/">js-内置对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue-常用指令的讲解/">vue-常用指令的讲解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue-data中的数据/">vue-data中的数据</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/js-对象实例/">js_对象实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/js-对象/">js_对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js_break和continue的讲解/">js_break和continue的讲解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-数组实例/">js_数组实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-数组/">js_数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-函数实例/">js_函数实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-函数/">js_函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-循环/">js_循环</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-流程控制-类型-运算符实例-循环/">js_流程控制-类型-运算符-循环实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-运算符-流程控制/">js_运算符&流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-类型/">js_类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-first/">js_first</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/02/html-chuangtiAndHouduanChuli/">html_chuangtiAndHouduanChuli</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/js-paomadeng/">js_paomadeng</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/h5-yingyin/">h5_yingyin</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/23/html-practice/">practice_HTML</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/23/html-font/">font_html</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/23/html-frame-img/">html-frame_img</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/25/h5-wenzigeshi/">wenzigeshi</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/html-goodslist/">goodslist</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/html-salary/">salaryhtml</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/html-guimeishop/">guimeishop</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/h5-qukuaigeshi/">qukuaigeshi</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/html-time/">time-html</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/html5-address-html-information/">address-html-information</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/h5-aside/">html5-aside</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/19/h5-headerAndFooter/">headerAndFooter</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/19/html-nav/">nav</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/09/h5WriteStart/">h5WriteStart</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/09/h5BasicGrammar/">h5BasicGrammar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/09/h5wrtie/">h5wrtie</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/08/h5newfun/">h5newfun</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/h5MobileAndPC/">MobileAndPC</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/h5-WebDesignStep/">WebDesignStep</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/hexodwrong/">hexodwrong</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-UDP/">UDP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-TCP/">TCP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-IPAddress/">IPAddress</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-socket/">socket</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/LinuxNetworkProgramming/">LinuxNetworkProgramming</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-MemmoryDistribution/">MemmoryDistribution</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-functionOfMain/">functionOfMain</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-functionReview/">functionReview</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/LinuxAddCOfBasic/">LinuxAddCOfBasic</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/Linux-SystemCorelBurning/">SystemCorelBurning</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/Linuxcorel/">Linuxcorel</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-chardrivefram/">chardrivefram</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-drive/">drive</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-EMMCAddcorelandfileSystem/">EMMCAddcorelandfileSystem</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-server/">server</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-系统移植/">sysmovelive</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-进程process/">process</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-data-fun-struct/">data_fun_struct</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/howtoshowimg/">howtoshowimg</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/15/linuxconcept1/">linuxconcept1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletCart3/">ServletCart3</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletCart2/">ServletCart2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletCart1/">ServletCart1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletStudy1/">ServletStudy1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/07/jsp-rememberPassword/">rememberPassword</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/jsp-reFoundPassword/">reFoundPassword</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/sqlquestion1/">sqlquestion1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/jsp-sqlregister/">sqlregister</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/02/jsp-login/">jsp-login</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/xampp1/">xampp1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/xampp/">xampp</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/16/sqlquesiton/">sqlquesiton</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/12/jsp-neizhiduixiang/">jsp_neizhiduixiang</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/12/jsp-connectsql/">jsp_connectsql</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/11/connectionsql/">connectionsql</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/04/vue-生命周期/">生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/04/vue-messageBoard/">messageBoard</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/07/hexo-problems/">hexo-problems</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/07/vue-problems/">vue-problems</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/30/vue-ex-teraction/">ex-teraction</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/vue-interaction交互/">inteaction交互</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/25/vue-过滤器/">过滤器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/23/vue-classAndStyle/">classAndStyle</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/20/v-bind属性/">v-bind属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/20/vue-鼠标事件/">键盘事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/vue-默认行为/">阻止默认行为</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/vue-事件冒泡/">事件冒泡</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/vue-todolist/">todolist简易留言板</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/Vue-second/">Vue.js基础二</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/vue-first/">vue.js 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/01/hello-First/">hello First</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/01/hello-world/">Hello World</a></li></ul>
 
 
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
 
-
-    <script>
-        
-    </script>
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_28/MtTaAg4sNzU0NC1ibG9n.html" target="_blank" title="vue实现h5移动端项目参考文献">
+          vue实现h5移动端项目参考文献
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/zhouheblog/archive/2018/01/12/8275781.html" target="_blank" title="vue请求java服务端并返回数据">
+          vue请求java服务端并返回数据
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_2c/MtTaAg4sMDg3OS1ibG9n.html" target="_blank" title="vue与java数据交互">
+          vue与java数据交互
+        </a>
+      
+    </div>
+  </div>
 </div>
+
+  
+</aside>
+        
+      </div>
       <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-                2016-2019 shangrila-xiu
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
     </div>
+    
+  </div>
 </footer>
     </div>
     
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
-
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-</div>
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
 <script>
-    // Open in New Window
-    
-        var oOpenInNew = {
-            
-            
-            
-            
-            
-            
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
-    
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
 </script>
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
   </div>
 </body>
 </html>

@@ -1,21 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html>
 <head>
-
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="shangrila-xiu" />
-
-
-
-<meta name="description" content="对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解">
+  <meta charset="utf-8">
+  
+  <title>data_fun_struct | shangrila-xiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解">
 <meta name="keywords" content="data,function,struct">
 <meta property="og:type" content="article">
 <meta property="og:title" content="data_fun_struct">
@@ -30,250 +20,69 @@
 <meta name="twitter:title" content="data_fun_struct">
 <meta name="twitter:description" content="对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解">
 <meta name="twitter:image" content="https://github.com/shangrila-xiu/IMG/raw/master/linklistExe.png">
-
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
-
-
+  
     <link rel="alternate" href="/atom.xml" title="shangrila-xiu" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/favicon.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
-<title>data_fun_struct | shangrila-xiu</title>
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-<script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: false,
-        isPost: true,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
-    }
-</script>
-
-
-    <script> yiliaConfig.jquery_ui = [false]; </script>
-
-
-
-    <script> yiliaConfig.rootUrl = "\/";</script>
-
-
-
-
-
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
 
 </head>
+
 <body>
   <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            <img src="/img/love.jpg" class="animated zoomIn">
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">shangrila-xiu</a></h1>
-        </hgroup>
-
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
         
-
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
         
-
-
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
         
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
         
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/">主页</a></li>
-                        
-                            <li><a href="/archives/">所有文章</a></li>
-                        
-                            <li><a href="/tags/">标签云</a></li>
-                        
-                            <li><a href="/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
-                            
-                                <a class="fa GitHub" href="#" title="GitHub"></a>
-                            
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/">SSM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data/">data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hbuilder/">hbuilder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo安装和使用/">hexo安装和使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/login/">login</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/malloc/">malloc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/myeclipse/">myeclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nfs/">nfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/socket/">socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/struct/">struct</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tftp/">tftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xampp/">xampp</a></li></ul>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">专注于前端</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
+    </ul>
+  </div>
 </div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">shangrila-xiu</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                <img src="/img/love.jpg" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">shangrila-xiu</a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/">主页</a></li>
-                
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/tags/">标签云</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
-                            
-                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
-</nav>
-      <div class="body-wrap"><article id="post-linux-data-fun-struct" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/01/16/linux-data-fun-struct/" class="article-date">
-      <time datetime="2018-01-16T08:17:12.000Z" itemprop="datePublished">2018-01-16</time>
+
+        <section id="main"><article id="post-linux-data-fun-struct" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/16/linux-data-fun-struct/" class="article-date">
+  <time class="post-time" datetime="2018-01-16T08:17:12.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
+    <span class="post-day">16</span>
+  </time>
 </a>
-
-
-    </div>
-  
+   
+  </div>
   <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -284,27 +93,21 @@
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
+        <div>
+          
+  <div class="article-category">
     <a class="article-category-link" href="/categories/对数据结构、C语言的指针，函数、结构体的讲解/">对数据结构、C语言的指针，函数、结构体的讲解</a>
-    </div>
+  </div>
 
+          
+              
 
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/">data</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/struct/">struct</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
+          
+        </div>
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-          
         <h1 id="对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解"><a href="#对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解" class="headerlink" title="对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解"></a>对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解</h1><a id="more"></a>
 <h2 id="1、存储结构"><a href="#1、存储结构" class="headerlink" title="1、存储结构"></a>1、存储结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">1、数组：</div><div class="line">a、一位数组：数组名  《==》数组的首地址，数组的起始地址，首元素的地址</div><div class="line">一维数组名：列性质的地址</div><div class="line">*(array + i)  每次移动到下一个地址（地址偏移）</div><div class="line">*代表解引用，根据所在的地址，获取该地址上的内容</div><div class="line">b、二维数组：数组名《==》数组的起始地址</div><div class="line">二维数组数组名：行性质地址</div><div class="line">a[0] 列性质地址</div><div class="line">&amp;a[0][0]列地址</div><div class="line">*（*（a+i）括号中的*,表示降级处理，将a+i由行性质地址转换</div><div class="line">结论：a[i]《=》*(a+i)</div><div class="line">一维组中*，代表解引用</div><div class="line">二维数组中*  代表降级处理</div></pre></td></tr></table></figure>
 <h2 id="2、指针"><a href="#2、指针" class="headerlink" title="2、指针"></a>2、指针</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1、指针变量在内存上占有4字节，与其指向无关</div><div class="line">    普通指针是列指针，保存的是指向的数据所在内存的地址。如：int *p[3];/2、</div><div class="line">2、数组指针：指向数组的指针，不同于普通指针，数组指针是行指针数组指针是数组：是可以指向数组的指针</div><div class="line">例： int (*p)[4];</div><div class="line">3、指针数组：数组里面放的指针，指针里面放的地址</div><div class="line">	数组，数组中的元素是指针（可以是普通指针或函数指针），保存的是地址</div><div class="line">4、函数指针与指针函数的区别：</div><div class="line">	Int (*p)(int a,int b)函数指针</div><div class="line">	(Int *)p(int a,int b)指针函数</div></pre></td></tr></table></figure>
@@ -389,214 +192,253 @@
 
       
     </div>
-    
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/16/linux-data-fun-struct/" data-id="cjuwnp55h004r4sg0j63wp5xq" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/">data</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/struct/">struct</a></li></ul>
+
+    </footer>
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/01/16/linux-data-fun-struct/">data_fun_struct</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">shangrila-xiu</a></p>
-        <p><span>发布时间:</span>2018-01-16, 16:17:12</p>
-        <p><span>最后更新:</span>2018-03-06, 21:03:25</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/01/16/linux-data-fun-struct/" title="data_fun_struct">http://yoursite.com/2018/01/16/linux-data-fun-struct/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/01/16/linux-data-fun-struct/　　作者: shangrila-xiu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
+<nav id="article-nav">
+  
+    <a href="/2018/01/16/linux-进程process/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/01/16/linux-进程process/">
-                    process
-                </a>
-            </div>
+          process
         
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/01/16/howtoshowimg/">
-                    howtoshowimg
-                </a>
-            </div>
-        
-    </nav>
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/16/howtoshowimg/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">howtoshowimg</div>
+    </a>
+  
+</nav>
 
   
 </article>
 
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
+
+
+</section>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解"><span class="toc-number">1.</span> <span class="toc-text">对数据结构、存储结构、C语言的指针，函数、结构体等知识点的讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、存储结构"><span class="toc-number">1.1.</span> <span class="toc-text">1、存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、指针"><span class="toc-number">1.2.</span> <span class="toc-text">2、指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、结构体"><span class="toc-number">1.3.</span> <span class="toc-text">3、结构体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、IO"><span class="toc-number">1.4.</span> <span class="toc-text">4、IO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、函数"><span class="toc-number">1.5.</span> <span class="toc-text">5、函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mode"><span class="toc-number">1.6.</span> <span class="toc-text">mode</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mode与umask（权限掩码，屏蔽权限值）a-化为二进制取反相与-取反"><span class="toc-number">1.6.0.1.</span> <span class="toc-text">mode与umask（权限掩码，屏蔽权限值）à(化为二进制取反相与)取反</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、数据结构"><span class="toc-number">1.7.</span> <span class="toc-text">6、数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、单链表（线性表的链式存储）的实现"><span class="toc-number">1.7.1.</span> <span class="toc-text">1、单链表（线性表的链式存储）的实现</span></a></li></ol></li></ol></li></ol>
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">shangrila-xiu</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
         
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
-        </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"data_fun_struct　| shangrila-xiu　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
 </div>
 
-
-
-
-
-
-
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2018/01/16/linux-进程process/" title="上一篇: process">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2018/01/16/howtoshowimg/" title="下一篇: howtoshowimg">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/img/love.jpg">
+    <h2 class="author">shangrila-xiu</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>111</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>100</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>32</strong><br>标签</div></a>
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/25/javascript获取元素的方法/">javascript获取元素的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/22/javasSM框架/">javasSM框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/21/vue解决vue在IE11版本上的问题/">vue解决vue在IE11版本上的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/20/vue项目中e-target-files-0/">vue项目中e.target.files[0]</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/20/vue中axios请求为什么调两次接口/">vue中axios请求为什么调两次接口</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/16/vue项目整理问题合集/">vue项目整理问题合集</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/11/vuenews前端展示3/">vuenews前端展示3</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/08/vue2news后台笔记整理2/">vue2news后台笔记整理2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/07/vue2e2-news后台管理笔记整理1/">vue2e2_news后台管理笔记整理1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/06/vue-news毕设笔记整理2/">vue-news毕设笔记整理2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/04/vue-news毕设笔记整理/">vue-news毕设笔记整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/vue-library/">vue_library</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/vue-devtools的使用/">vue-devtools的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/03/xampp和myeclipse的配置/">xampp和myeclipse的配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/20/hbuilderAnd海马玩模拟器的连接/">hbuilderAnd海马玩模拟器的连接</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/19/js-结点/">js_结点实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/14/js-实例/">js_实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/如何上传本地项目到GitHub上/">如何上传本地项目到GitHub上</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/js-调试代码/">js_调试代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/12/js-作用域/">js_作用域和作用域链</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/12/js-预解析/">js_预解析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/11/js-内置对象/">js-内置对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue-常用指令的讲解/">vue-常用指令的讲解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue-data中的数据/">vue-data中的数据</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/js-对象实例/">js_对象实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/js-对象/">js_对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js_break和continue的讲解/">js_break和continue的讲解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-数组实例/">js_数组实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-数组/">js_数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-函数实例/">js_函数实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-函数/">js_函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-循环/">js_循环</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-流程控制-类型-运算符实例-循环/">js_流程控制-类型-运算符-循环实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-运算符-流程控制/">js_运算符&流程控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-类型/">js_类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/js-first/">js_first</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/02/html-chuangtiAndHouduanChuli/">html_chuangtiAndHouduanChuli</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/js-paomadeng/">js_paomadeng</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/h5-yingyin/">h5_yingyin</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/23/html-practice/">practice_HTML</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/23/html-font/">font_html</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/23/html-frame-img/">html-frame_img</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/25/h5-wenzigeshi/">wenzigeshi</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/html-goodslist/">goodslist</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/html-salary/">salaryhtml</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/24/html-guimeishop/">guimeishop</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/h5-qukuaigeshi/">qukuaigeshi</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/html-time/">time-html</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/html5-address-html-information/">address-html-information</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/h5-aside/">html5-aside</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/19/h5-headerAndFooter/">headerAndFooter</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/19/html-nav/">nav</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/09/h5WriteStart/">h5WriteStart</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/09/h5BasicGrammar/">h5BasicGrammar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/09/h5wrtie/">h5wrtie</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/08/h5newfun/">h5newfun</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/h5MobileAndPC/">MobileAndPC</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/h5-WebDesignStep/">WebDesignStep</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/hexodwrong/">hexodwrong</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-UDP/">UDP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-TCP/">TCP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-IPAddress/">IPAddress</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-socket/">socket</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/LinuxNetworkProgramming/">LinuxNetworkProgramming</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-MemmoryDistribution/">MemmoryDistribution</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-functionOfMain/">functionOfMain</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-functionReview/">functionReview</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/LinuxAddCOfBasic/">LinuxAddCOfBasic</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/Linux-SystemCorelBurning/">SystemCorelBurning</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/Linuxcorel/">Linuxcorel</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-chardrivefram/">chardrivefram</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-drive/">drive</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/linux-EMMCAddcorelandfileSystem/">EMMCAddcorelandfileSystem</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-server/">server</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-系统移植/">sysmovelive</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-进程process/">process</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/linux-data-fun-struct/">data_fun_struct</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/16/howtoshowimg/">howtoshowimg</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/15/linuxconcept1/">linuxconcept1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletCart3/">ServletCart3</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletCart2/">ServletCart2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletCart1/">ServletCart1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/ServletStudy1/">ServletStudy1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/07/jsp-rememberPassword/">rememberPassword</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/jsp-reFoundPassword/">reFoundPassword</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/sqlquestion1/">sqlquestion1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/jsp-sqlregister/">sqlregister</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/02/jsp-login/">jsp-login</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/xampp1/">xampp1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/xampp/">xampp</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/16/sqlquesiton/">sqlquesiton</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/12/jsp-neizhiduixiang/">jsp_neizhiduixiang</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/12/jsp-connectsql/">jsp_connectsql</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/11/connectionsql/">connectionsql</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/04/vue-生命周期/">生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/04/vue-messageBoard/">messageBoard</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/07/hexo-problems/">hexo-problems</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/07/vue-problems/">vue-problems</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/30/vue-ex-teraction/">ex-teraction</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/vue-interaction交互/">inteaction交互</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/25/vue-过滤器/">过滤器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/23/vue-classAndStyle/">classAndStyle</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/20/v-bind属性/">v-bind属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/20/vue-鼠标事件/">键盘事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/vue-默认行为/">阻止默认行为</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/vue-事件冒泡/">事件冒泡</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/vue-todolist/">todolist简易留言板</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/Vue-second/">Vue.js基础二</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/vue-first/">vue.js 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/01/hello-First/">hello First</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/01/hello-world/">Hello World</a></li></ul>
 
 
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/shangrila-xiu/shangrila-xiu.github.io" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
 
-
-    <script>
-        
-    </script>
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.chionlab.moe/" target="_blank" title="Chion Tang">
+          Chion Tang
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://uestcmao.github.io/" target="_blank" title="uestcmao">
+          uestcmao
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://blog.xingbofeng.com/" target="_blank" title="Encounter">
+          Encounter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://chuangzaoshi.com/" target="_blank" title="创造师">
+          创造师
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://calpa.me/" target="_blank" title="Calpa">
+          Calpa
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://blog.csdn.net/qq_25560423/article/details/53785411" target="_blank" title="Updating!">
+          Updating!
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" title="GoonX">
+          GoonX
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://github.com/iissnan/hexo-theme-next/wiki" target="_blank" title="wiki">
+          wiki
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.zhihu.com/question/29017171" target="_blank" title="tagsAndcategories">
+          tagsAndcategories
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.mamicode.com/info-detail-1581625.html" target="_blank" title="property">
+          property
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://echarts.baidu.com/examples.html#chart-type-scatter" target="_blank" title="echart">
+          echart
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.haoeasy.cn/" target="_blank" title="love">
+          love
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://nodelover.me" target="_blank" title="陈微明学长">
+          陈微明学长
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_28/MtTaAg4sNzU0NC1ibG9n.html" target="_blank" title="vue实现h5移动端项目参考文献">
+          vue实现h5移动端项目参考文献
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.cnblogs.com/zhouheblog/archive/2018/01/12/8275781.html" target="_blank" title="vue请求java服务端并返回数据">
+          vue请求java服务端并返回数据
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://www.csdn.net/gather_2c/MtTaAg4sMDg3OS1ibG9n.html" target="_blank" title="vue与java数据交互">
+          vue与java数据交互
+        </a>
+      
+    </div>
+  </div>
 </div>
+
+  
+</aside>
+        
+      </div>
       <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-                2016-2019 shangrila-xiu
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 shangrila-xiu<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
     </div>
+    
+  </div>
 </footer>
     </div>
     
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
-
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-</div>
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
 <script>
-    // Open in New Window
-    
-        var oOpenInNew = {
-            
-            
-            
-            
-            
-            
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
-    
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
 </script>
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
   </div>
 </body>
 </html>
